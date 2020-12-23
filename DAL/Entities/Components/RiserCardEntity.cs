@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DAL.Entities.Components
 {
+    [Table("RiserCard", Schema="COMPONENT")]
     public class RiserCardEntity
     {
+        public long Id { get; set; }
+        public string Category { get; set; }
+        public string Placement { get; set; }
     }
 }
