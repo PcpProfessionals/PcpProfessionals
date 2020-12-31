@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="ConnectionStringManager.cs" />
     <Compile Include="Context\PcpProfessionalContext.cs" />
+    <Compile Include="Entities\Auth\UserEntity.cs" />
     <Compile Include="Entities\Components\BackPlaneEntity.cs" />
     <Compile Include="Entities\Components\BrandEntity.cs" />
     <Compile Include="Entities\Components\EthernetCardEntity.cs" />
@@ -82,8 +83,20 @@
     <Compile Include="Entities\Components\TFTConsoleEntity.cs" />
     <Compile Include="Entities\Components\ThinClientEntity.cs" />
     <Compile Include="Entities\Components\ZeroClientEntity.cs" />
+    <Compile Include="Migrations\202012311325260_InitialCreate.cs" />
+    <Compile Include="Migrations\202012311325260_InitialCreate.designer.cs">
+      <DependentUpon>202012311325260_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012311340299_AddUserTable.cs" />
+    <Compile Include="Migrations\202012311340299_AddUserTable.designer.cs">
+      <DependentUpon>202012311340299_AddUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\ComponentRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -91,7 +104,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DatabaseObjects\" />
-    <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012311325260_InitialCreate.resx">
+      <DependentUpon>202012311325260_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012311340299_AddUserTable.resx">
+      <DependentUpon>202012311340299_AddUserTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
