@@ -32,8 +32,8 @@ namespace PcpProfessionals
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.Logo = new System.Windows.Forms.PictureBox();
             this.LoginBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.UserNameTb = new System.Windows.Forms.TextBox();
+            this.PasswordTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -61,19 +61,21 @@ namespace PcpProfessionals
             this.LoginBtn.UseVisualStyleBackColor = true;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
-            // textBox1
+            // UserNameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(65, 194);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 2;
+            this.UserNameTb.Location = new System.Drawing.Point(65, 194);
+            this.UserNameTb.Name = "UserNameTb";
+            this.UserNameTb.Size = new System.Drawing.Size(179, 20);
+            this.UserNameTb.TabIndex = 2;
+            this.UserNameTb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // PasswordTb
             // 
-            this.textBox2.Location = new System.Drawing.Point(65, 274);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 20);
-            this.textBox2.TabIndex = 3;
+            this.PasswordTb.Location = new System.Drawing.Point(65, 274);
+            this.PasswordTb.Name = "PasswordTb";
+            this.PasswordTb.PasswordChar = '*';
+            this.PasswordTb.Size = new System.Drawing.Size(179, 20);
+            this.PasswordTb.TabIndex = 3;
             // 
             // label1
             // 
@@ -101,8 +103,8 @@ namespace PcpProfessionals
             this.ClientSize = new System.Drawing.Size(338, 443);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PasswordTb);
+            this.Controls.Add(this.UserNameTb);
             this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.Logo);
             this.Name = "Login";
@@ -118,8 +120,8 @@ namespace PcpProfessionals
 
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Button LoginBtn;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox UserNameTb;
+        private System.Windows.Forms.TextBox PasswordTb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
