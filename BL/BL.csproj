@@ -49,6 +49,7 @@
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\ComponentService.cs" />
     <Compile Include="Services\Interfaces\IAuthService.cs" />
+    <Compile Include="Services\Interfaces\IComponentService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

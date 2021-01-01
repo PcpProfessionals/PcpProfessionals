@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Repositories.Interfaces
+namespace BL.Services.Interfaces
 {
-    public interface IComponentRepository
+    public interface IComponentService
     {
         List<string> GetAllComponents();
-        List<TableDetailDto> GetComponentDetails(string selectedComponent);
+        List<TableDetailDto> GetControllsForComponent(string selectedComponent);
     }
 }

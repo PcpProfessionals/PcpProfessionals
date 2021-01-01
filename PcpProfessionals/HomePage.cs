@@ -24,11 +24,13 @@ namespace PcpProfessionals
 
         private void InventoryModuleBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
+
             var inventoryHome = new InventoryPage();
 
             inventoryHome.ShowDialog();
 
-            this.Hide();
+            this.Close();
         }
     }
 }

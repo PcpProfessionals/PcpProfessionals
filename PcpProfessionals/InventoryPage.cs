@@ -30,5 +30,16 @@ namespace PcpProfessionals
 
             this.Hide();
         }
+
+        private void AddInvBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            var addInv = new AddInventory();
+
+            addInv.ShowDialog();
+
+            this.Close();
+        }
     }
 }

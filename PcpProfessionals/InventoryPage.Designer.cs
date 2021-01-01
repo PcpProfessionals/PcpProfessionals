@@ -85,6 +85,7 @@ namespace PcpProfessionals
             this.AddInvBtn.TabIndex = 4;
             this.AddInvBtn.Text = "Add Inventory";
             this.AddInvBtn.UseVisualStyleBackColor = true;
+            this.AddInvBtn.Click += new System.EventHandler(this.AddInvBtn_Click);
             // 
             // InvManagerBtn
             // 

@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="ConnectionStringManager.cs" />
     <Compile Include="Context\PcpProfessionalContext.cs" />
+    <Compile Include="DatabaseObjects\TableDetailDto.cs" />
     <Compile Include="Entities\Auth\UserEntity.cs" />
     <Compile Include="Entities\Components\BackPlaneEntity.cs" />
     <Compile Include="Entities\Components\BrandEntity.cs" />
@@ -104,9 +105,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DatabaseObjects\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202012311325260_InitialCreate.resx">
       <DependentUpon>202012311325260_InitialCreate.cs</DependentUpon>
