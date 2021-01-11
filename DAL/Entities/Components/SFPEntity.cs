@@ -2,8 +2,8 @@
 
 namespace DAL.Entities.Components
 {
-    [Table("SFP", Schema="COMPONENT")]
-    public class SFPEntity
+    [Table("SFP", Schema = "COMPONENT")]
+    public class SFPEntity : BaseComponentEntity
     {
         public long Id { get; set; }
         public string Model { get; set; }

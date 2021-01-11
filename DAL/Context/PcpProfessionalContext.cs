@@ -17,7 +17,7 @@ namespace DAL.Context
         }
 
 
-        public virtual DbSet<BackPlaneEntity> BackPanels { get; set; }
+        public virtual DbSet<BackPlaneEntity> BackPlanes { get; set; }
         public virtual DbSet<BrandEntity> Brands { get; set; }
         public virtual DbSet<EthernetCardEntity> EthernetCards { get; set; }
         public virtual DbSet<FiberCardEntity> FiberCards { get; set; }
@@ -45,18 +45,6 @@ namespace DAL.Context
         public virtual DbSet<ZeroClientEntity> ZeroClients { get; set; }
         public virtual DbSet<RackEntity> Racks { get; set; }
         public virtual DbSet<UserEntity> Users { get; set; }
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public virtual DbSet<ComponentManagerEntity> ComponentManager { get; set; }
     }
 }

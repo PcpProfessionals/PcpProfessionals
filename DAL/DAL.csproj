@@ -57,8 +57,10 @@
     <Compile Include="Context\PcpProfessionalContext.cs" />
     <Compile Include="DatabaseObjects\TableDetailDto.cs" />
     <Compile Include="Entities\Auth\UserEntity.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Components\BackPlaneEntity.cs" />
     <Compile Include="Entities\Components\BrandEntity.cs" />
+    <Compile Include="Entities\Components\ComponentManagerEntity.cs" />
     <Compile Include="Entities\Components\EthernetCardEntity.cs" />
     <Compile Include="Entities\Components\FiberCardEntity.cs" />
     <Compile Include="Entities\Components\HarddiskEntity.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Entities\Components\TFTConsoleEntity.cs" />
     <Compile Include="Entities\Components\ThinClientEntity.cs" />
     <Compile Include="Entities\Components\ZeroClientEntity.cs" />
+    <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Migrations\202012311325260_InitialCreate.cs" />
     <Compile Include="Migrations\202012311325260_InitialCreate.designer.cs">
       <DependentUpon>202012311325260_InitialCreate.cs</DependentUpon>
@@ -91,6 +94,22 @@
     <Compile Include="Migrations\202012311340299_AddUserTable.cs" />
     <Compile Include="Migrations\202012311340299_AddUserTable.designer.cs">
       <DependentUpon>202012311340299_AddUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101021139082_AddBaseEntityTracking.cs" />
+    <Compile Include="Migrations\202101021139082_AddBaseEntityTracking.designer.cs">
+      <DependentUpon>202101021139082_AddBaseEntityTracking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101021141435_AddComponentManager.cs" />
+    <Compile Include="Migrations\202101021141435_AddComponentManager.designer.cs">
+      <DependentUpon>202101021141435_AddComponentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101110613118_ChangeCreatedToPurchasedDate.cs" />
+    <Compile Include="Migrations\202101110613118_ChangeCreatedToPurchasedDate.designer.cs">
+      <DependentUpon>202101110613118_ChangeCreatedToPurchasedDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101110704431_AddingBaseEntityChanges.cs" />
+    <Compile Include="Migrations\202101110704431_AddingBaseEntityChanges.designer.cs">
+      <DependentUpon>202101110704431_AddingBaseEntityChanges.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -112,6 +131,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012311340299_AddUserTable.resx">
       <DependentUpon>202012311340299_AddUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101021139082_AddBaseEntityTracking.resx">
+      <DependentUpon>202101021139082_AddBaseEntityTracking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101021141435_AddComponentManager.resx">
+      <DependentUpon>202101021141435_AddComponentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101110613118_ChangeCreatedToPurchasedDate.resx">
+      <DependentUpon>202101110613118_ChangeCreatedToPurchasedDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101110704431_AddingBaseEntityChanges.resx">
+      <DependentUpon>202101110704431_AddingBaseEntityChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

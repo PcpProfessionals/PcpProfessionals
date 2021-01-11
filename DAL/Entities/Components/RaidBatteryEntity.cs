@@ -3,7 +3,7 @@
 namespace DAL.Entities.Components
 {
     [Table("RaidBattery", Schema="COMPONENT")]
-    public class RaidBatteryEntity
+    public class RaidBatteryEntity : BaseComponentEntity
     {
         public long Id { get; set; }
         public string Type { get; set; }

@@ -35,7 +35,7 @@ namespace PcpProfessionals
             this.AnalyseInvBtn = new System.Windows.Forms.Button();
             this.BiBtn = new System.Windows.Forms.Button();
             this.AddInvBtn = new System.Windows.Forms.Button();
-            this.InvManagerBtn = new System.Windows.Forms.Button();
+            this.CompManagerBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -87,14 +87,14 @@ namespace PcpProfessionals
             this.AddInvBtn.UseVisualStyleBackColor = true;
             this.AddInvBtn.Click += new System.EventHandler(this.AddInvBtn_Click);
             // 
-            // InvManagerBtn
+            // CompManagerBtn
             // 
-            this.InvManagerBtn.Location = new System.Drawing.Point(302, 286);
-            this.InvManagerBtn.Name = "InvManagerBtn";
-            this.InvManagerBtn.Size = new System.Drawing.Size(177, 70);
-            this.InvManagerBtn.TabIndex = 5;
-            this.InvManagerBtn.Text = "Inventory Manager";
-            this.InvManagerBtn.UseVisualStyleBackColor = true;
+            this.CompManagerBtn.Location = new System.Drawing.Point(302, 286);
+            this.CompManagerBtn.Name = "CompManagerBtn";
+            this.CompManagerBtn.Size = new System.Drawing.Size(177, 70);
+            this.CompManagerBtn.TabIndex = 5;
+            this.CompManagerBtn.Text = "Component Manager";
+            this.CompManagerBtn.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -111,7 +111,7 @@ namespace PcpProfessionals
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.InvManagerBtn);
+            this.Controls.Add(this.CompManagerBtn);
             this.Controls.Add(this.AddInvBtn);
             this.Controls.Add(this.BiBtn);
             this.Controls.Add(this.AnalyseInvBtn);
@@ -132,7 +132,7 @@ namespace PcpProfessionals
         private System.Windows.Forms.Button AnalyseInvBtn;
         private System.Windows.Forms.Button BiBtn;
         private System.Windows.Forms.Button AddInvBtn;
-        private System.Windows.Forms.Button InvManagerBtn;
+        private System.Windows.Forms.Button CompManagerBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

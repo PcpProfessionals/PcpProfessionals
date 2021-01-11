@@ -8,13 +8,11 @@ using System.Threading.Tasks;
 namespace DAL.Entities.Components
 {
     [Table("HddCady", Schema="COMPONENT")]
-    public class HDDCadyEntity
+    public class HDDCadyEntity : BaseComponentEntity
     {
         public long Id { get; set; }
         public double Size { get; set; }
 
-        //Relation
-        public BrandEntity Brand { get; set; }
-        public long BrandId { get; set; }
+        public string Brand { get; set; }
     }
 }

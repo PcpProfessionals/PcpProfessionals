@@ -3,7 +3,7 @@
 namespace DAL.Entities.Components
 {
     [Table("Harddisk",Schema ="COMPONENT")]
-    public class HarddiskEntity
+    public class HarddiskEntity : BaseComponentEntity
     {
         public long Id { get; set; }
 
@@ -18,8 +18,6 @@ namespace DAL.Entities.Components
 
         public string Type { get; set; }
 
-        //Relations
-        public BrandEntity Brand { get; set; }
-        public long BrandId { get; set; }
+        public string Brand { get; set; }
     }
 }

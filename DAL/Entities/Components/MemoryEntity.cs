@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DAL.Entities.Components
 {
     [Table("Memory",Schema="COMPONENT")]
-    public class MemoryEntity
+    public class MemoryEntity : BaseComponentEntity
     {
         public long Id { get; set; }
         public int Size { get; set; }
@@ -16,8 +16,6 @@ namespace DAL.Entities.Components
         public int Ddr { get; set; }
         public bool HeatSink { get; set; }
 
-        //Relation
-        public BrandEntity Brand { get; set; }
-        public long BrandId { get; set; }
+        public string Brand { get; set; }
     }
 }

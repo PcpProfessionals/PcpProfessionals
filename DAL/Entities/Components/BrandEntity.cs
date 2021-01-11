@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DAL.Entities.Components
 {
     [Table("Brand",Schema = "COMPONENT")]
-    public class BrandEntity
+    public class BrandEntity : BaseComponentEntity
     {
         public long Id { get; set; }
 

@@ -3,7 +3,7 @@
 namespace DAL.Entities.Components
 {
     [Table("Rack", Schema="COMPONENT")]
-    public class RackEntity
+    public class RackEntity : BaseComponentEntity
     {
         public long Id { get; set; }
         public string Size { get; set; }

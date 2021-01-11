@@ -3,14 +3,12 @@
 namespace DAL.Entities.Components
 {
     [Table("RailKit", Schema= "COMPONENT")]
-    public class RailKitEntitiy
+    public class RailKitEntitiy : BaseComponentEntity
     {
         public long Id { get; set; }
         public int Size { get; set; }
         public string Model { get; set; }
 
-        //Relation
-        public BrandEntity Brand { get; set; }
-        public long BrandId { get; set; }
+        public string Brand { get; set; }
     }
 }

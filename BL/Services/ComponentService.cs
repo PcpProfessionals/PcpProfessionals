@@ -19,11 +19,41 @@ namespace BL.Services
             _componentRepo = new ComponentRepository();
         }
 
+        public object AddComponentToInventory(string componentName, Dictionary<string, string> valueHolder)
+        {
+            var typeOfEntity = FetchEntityType(componentName);
+
+            
+            var mappedEntity = MapEntityValues(typeOfEntity, valueHolder);
+
+            return new object();
+
+        }
+
+        private object MapEntityValues(Type entityType, Dictionary<string, string> valueHolder)
+        {
+
+            return new object();
+
+        }
+
+        private Type FetchEntityType(string componentName)
+        {
+            return _componentRepo.GetEntityType(componentName);
+        }
+
         public List<string> GetAllComponents()
         {
             var componentList = _componentRepo.GetAllComponents();
 
             return componentList; 
+        }
+
+        public long GetComponentTotalCount(string selectedComponent)
+        {
+            var componentCount = _componentRepo.GetComponentCount(selectedComponent);
+
+            return componentCount;
         }
 
         public List<TableDetailDto> GetControllsForComponent(string selectedComponent)

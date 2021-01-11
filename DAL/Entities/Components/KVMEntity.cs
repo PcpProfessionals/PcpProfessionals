@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DAL.Entities.Components
 {
     [Table("KVM", Schema="COMPONENT")]
-    public class KVMEntity
+    public class KVMEntity : BaseComponentEntity
     {
         public long Id { get; set; }
 
@@ -16,8 +16,6 @@ namespace DAL.Entities.Components
         public int NumberOfPorts { get; set; }
 
 
-        //Relation
-        public BrandEntity Brand { get; set; }
-        public long BrandId { get; set; }
+        public string Brand { get; set; }
     }
 }

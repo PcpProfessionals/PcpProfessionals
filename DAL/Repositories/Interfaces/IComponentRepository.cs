@@ -11,5 +11,7 @@ namespace DAL.Repositories.Interfaces
     {
         List<string> GetAllComponents();
         List<TableDetailDto> GetComponentDetails(string selectedComponent);
+        int GetComponentCount(string selectedComponent);
+        Type GetEntityType(string componentName);
     }
 }

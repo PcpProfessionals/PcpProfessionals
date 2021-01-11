@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities.Components
 {
-    [Table("ThinClient", Schema="COMPONENT")]
-    public class ThinClientEntity
+    [Table("ThinClient", Schema = "COMPONENT")]
+    public class ThinClientEntity : BaseComponentEntity
     {
         public long Id { get; set; }
         public string Model { get; set; }
@@ -16,8 +16,6 @@ namespace DAL.Entities.Components
         public string Processor { get; set; }
         public string HardDisk { get; set; }
 
-        //Relation
-        public BrandEntity Brand { get; set; }
-        public long BrandId { get; set; }
+        public string Brand { get; set; }
     }
 }

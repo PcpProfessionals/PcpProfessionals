@@ -21,62 +21,59 @@ namespace PcpProfessionals
         {
             _componentService = new ComponentService();
             InitializeComponent();
-            LoadDataSources();
         }
 
-        private void LoadDataSources()
-        {
-            var componentList = _componentService.GetAllComponents();
-            ComponentListCb.DataSource = componentList;
-        }
-
+        
         private void AddInventory_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.BackPlane' table. You can move, or remove it, as needed.
+            this.backPlaneTableAdapter.Fill(this.pcpProfessionalDataSet.BackPlane);
 
         }
 
         private void ComponentListCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedComponent = ComponentListCb.SelectedValue.ToString();
-
-            var controllsForComponent = _componentService.GetControllsForComponent(selectedComponent);
-
-            AddControlsToSplitContainerPanel(splitContainer1.Panel2, controllsForComponent);
-
-            splitContainer1.Panel2.Show();
-        }
-
-        private void AddControlsToSplitContainerPanel(SplitterPanel panel2, List<TableDetailDto> controlls)
-        {
-            panel2.Controls.Clear();
-
-            var initialLabelLocation = new Point(50, 50);
-            var initialInputLocation = new Point(80, 50);
-            controlls.ForEach(x =>
-            {
-                if (x.COLUMN_NAME != "Id")
-                {
-                    Ge
-                    GenerateLabel(x.COLUMN_NAME, panel2, initialLabelLocation);
-                    initialLabelLocation.Y += 30;
-                    initialInputLocation.Y += 30;
-                }
-            });
-        }
-
-        private void GenerateLabel(string columnName, SplitterPanel panelView, Point location)
-        {
-            var controlLabel = new Label();
-
-            controlLabel.Text = columnName;
-            controlLabel.Location = location;
-
-            panelView.Controls.Add(controlLabel);
+            
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void backPlaneBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.backPlaneBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.pcpProfessionalDataSet);
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BackPlaneBtn_Click(object sender, EventArgs e)
+        {
+            var backPlaneEntryForm = new BackPlaneAddInventory();
+
+            this.Hide();
+
+            backPlaneEntryForm.ShowDialog();
+
+            this.Close();
         }
     }
 }

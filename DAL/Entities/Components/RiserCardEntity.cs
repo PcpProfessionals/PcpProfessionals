@@ -3,7 +3,7 @@
 namespace DAL.Entities.Components
 {
     [Table("RiserCard", Schema="COMPONENT")]
-    public class RiserCardEntity
+    public class RiserCardEntity : BaseComponentEntity
     {
         public long Id { get; set; }
         public string Category { get; set; }

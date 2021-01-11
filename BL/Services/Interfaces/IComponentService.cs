@@ -11,5 +11,7 @@ namespace BL.Services.Interfaces
     {
         List<string> GetAllComponents();
         List<TableDetailDto> GetControllsForComponent(string selectedComponent);
+        long GetComponentTotalCount(string v);
+        object AddComponentToInventory(string v, Dictionary<string, string> valueHolder);
     }
 }

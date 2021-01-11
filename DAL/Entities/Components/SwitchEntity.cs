@@ -2,8 +2,8 @@
 
 namespace DAL.Entities.Components
 {
-    [Table("Switch", Schema="COMPONENT")]
-    public class SwitchEntity
+    [Table("Switch", Schema = "COMPONENT")]
+    public class SwitchEntity : BaseComponentEntity
     {
         public long Id { get; set; }
         public string Brand { get; set; }

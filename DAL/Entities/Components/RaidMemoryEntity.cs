@@ -3,14 +3,12 @@
 namespace DAL.Entities.Components
 {
     [Table("RaidMemory", Schema="COMPONENT")]
-    public class RaidMemoryEntity
+    public class RaidMemoryEntity : BaseComponentEntity
     {
         public long Id { get; set; }
         public int Size { get; set; }
 
-        //Relation
-        public BrandEntity Brand { get; set; }
-        public long BrandId { get; set; }
+        public string Brand { get; set; }
     }
 }
  

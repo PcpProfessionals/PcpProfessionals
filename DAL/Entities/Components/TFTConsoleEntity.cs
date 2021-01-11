@@ -3,13 +3,11 @@
 namespace DAL.Entities.Components
 {
     [Table("TFTConsole", Schema="COMPONENT")]
-    public class TFTConsoleEntity
+    public class TFTConsoleEntity : BaseComponentEntity
     {
         public long Id { get; set; }
         public string Size { get; set; }
 
-        //Relation
-        public BrandEntity Brand { get; set; }
-        public long BrandId { get; set; }
+        public string Brand { get; set; }
     }
 }

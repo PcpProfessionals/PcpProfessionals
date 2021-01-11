@@ -8,14 +8,12 @@ using System.Threading.Tasks;
 namespace DAL.Entities.Components
 {
     [Table("LED", Schema="COMPONENT")]
-    public class LEDEntity
+    public class LEDEntity : BaseComponentEntity
     {
         public long Id { get; set; }
 
         public int Size { get; set; }
 
-        //Relation
-        public BrandEntity Brand { get; set; }
-        public long BrandId { get; set; }
+        public string Brand { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DAL.Entities.Components
 {
     [Table("EthernetCard", Schema = "COMPONENT")]
-    public class EthernetCardEntity
+    public class EthernetCardEntity : BaseComponentEntity
     {
         public long Id { get; set; }
 

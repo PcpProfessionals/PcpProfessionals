@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DAL.Entities.Components
 {
     [Table("Processor", Schema="COMPONENT")]
-    public class ProcessorEntity
+    public class ProcessorEntity : BaseComponentEntity
     {
         public long Id { get; set; }
         public string ModelNumber { get; set; }
