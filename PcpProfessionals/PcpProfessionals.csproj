@@ -62,53 +62,11 @@
     <Compile Include="AddInventory.Designer.cs">
       <DependentUpon>AddInventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="BackPlaneAddInventory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BackPlaneAddInventory.Designer.cs">
-      <DependentUpon>BackPlaneAddInventory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EthernetCardAddInventory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EthernetCardAddInventory.Designer.cs">
-      <DependentUpon>EthernetCardAddInventory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FiberCardAddInventory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FiberCardAddInventory.Designer.cs">
-      <DependentUpon>FiberCardAddInventory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HardDiskAddInventory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HardDiskAddInventory.Designer.cs">
-      <DependentUpon>HardDiskAddInventory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HddCaddyAddInventory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HddCaddyAddInventory.Designer.cs">
-      <DependentUpon>HddCaddyAddInventory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HeatSinkAddInventory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HeatSinkAddInventory.Designer.cs">
-      <DependentUpon>HeatSinkAddInventory.cs</DependentUpon>
-    </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KVMAddInventory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KVMAddInventory.Designer.cs">
-      <DependentUpon>KVMAddInventory.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -137,24 +95,6 @@
     </Compile>
     <EmbeddedResource Include="AddInventory.resx">
       <DependentUpon>AddInventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BackPlaneAddInventory.resx">
-      <DependentUpon>BackPlaneAddInventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EthernetCardAddInventory.resx">
-      <DependentUpon>EthernetCardAddInventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FiberCardAddInventory.resx">
-      <DependentUpon>FiberCardAddInventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HardDiskAddInventory.resx">
-      <DependentUpon>HardDiskAddInventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HddCaddyAddInventory.resx">
-      <DependentUpon>HddCaddyAddInventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HeatSinkAddInventory.resx">
-      <DependentUpon>HeatSinkAddInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PcpProfessionals
 {
-    public partial class KVMAddInventory : Form
+    public partial class BackPanelAddInventory : Form
     {
-        public KVMAddInventory()
+        public BackPanelAddInventory()
         {
             InitializeComponent();
         }

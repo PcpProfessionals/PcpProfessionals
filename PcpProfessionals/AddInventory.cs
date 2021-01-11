@@ -26,9 +26,7 @@ namespace PcpProfessionals
         
         private void AddInventory_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.BackPlane' table. You can move, or remove it, as needed.
-            this.backPlaneTableAdapter.Fill(this.pcpProfessionalDataSet.BackPlane);
-
+            
         }
 
         private void ComponentListCb_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,10 +52,7 @@ namespace PcpProfessionals
 
         private void backPlaneBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.backPlaneBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pcpProfessionalDataSet);
-
+            
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -67,13 +62,7 @@ namespace PcpProfessionals
 
         private void BackPlaneBtn_Click(object sender, EventArgs e)
         {
-            var backPlaneEntryForm = new BackPlaneAddInventory();
-
-            this.Hide();
-
-            backPlaneEntryForm.ShowDialog();
-
-            this.Close();
+            
         }
     }
 }

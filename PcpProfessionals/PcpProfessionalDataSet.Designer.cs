@@ -1271,6 +1271,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public BackPlaneDataTable() {
@@ -1354,6 +1358,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1389,7 +1409,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BackPlaneRow AddBackPlaneRow(string Type, int Size, int NumberOfPorts, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public BackPlaneRow AddBackPlaneRow(string Type, int Size, int NumberOfPorts, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 BackPlaneRow rowBackPlaneRow = ((BackPlaneRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1397,7 +1417,9 @@ namespace PcpProfessionals {
                         Size,
                         NumberOfPorts,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowBackPlaneRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBackPlaneRow);
                 return rowBackPlaneRow;
@@ -1433,6 +1455,8 @@ namespace PcpProfessionals {
                 this.columnNumberOfPorts = base.Columns["NumberOfPorts"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1450,6 +1474,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1462,6 +1490,8 @@ namespace PcpProfessionals {
                 this.columnSize.AllowDBNull = false;
                 this.columnNumberOfPorts.AllowDBNull = false;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1603,6 +1633,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public BrandDataTable() {
@@ -1670,6 +1704,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1705,13 +1755,15 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BrandRow AddBrandRow(string Name, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public BrandRow AddBrandRow(string Name, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 BrandRow rowBrandRow = ((BrandRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowBrandRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBrandRow);
                 return rowBrandRow;
@@ -1745,6 +1797,8 @@ namespace PcpProfessionals {
                 this.columnName = base.Columns["Name"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1758,6 +1812,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1768,6 +1826,8 @@ namespace PcpProfessionals {
                 this.columnId.Unique = true;
                 this.columnName.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1915,6 +1975,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public EthernetCardDataTable() {
@@ -2006,6 +2070,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2041,7 +2121,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EthernetCardRow AddEthernetCardRow(string Type, int NumberOfPorts, int Speed, string SlotType, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public EthernetCardRow AddEthernetCardRow(string Type, int NumberOfPorts, int Speed, string SlotType, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 EthernetCardRow rowEthernetCardRow = ((EthernetCardRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2050,7 +2130,9 @@ namespace PcpProfessionals {
                         Speed,
                         SlotType,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowEthernetCardRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEthernetCardRow);
                 return rowEthernetCardRow;
@@ -2087,6 +2169,8 @@ namespace PcpProfessionals {
                 this.columnSlotType = base.Columns["SlotType"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2106,6 +2190,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -2119,6 +2207,8 @@ namespace PcpProfessionals {
                 this.columnSpeed.AllowDBNull = false;
                 this.columnSlotType.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2264,6 +2354,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public FiberCardDataTable() {
@@ -2347,6 +2441,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2382,7 +2492,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FiberCardRow AddFiberCardRow(string ModelNumber, string TransferRate, int NumberOfPorts, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public FiberCardRow AddFiberCardRow(string ModelNumber, string TransferRate, int NumberOfPorts, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 FiberCardRow rowFiberCardRow = ((FiberCardRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2390,7 +2500,9 @@ namespace PcpProfessionals {
                         TransferRate,
                         NumberOfPorts,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowFiberCardRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFiberCardRow);
                 return rowFiberCardRow;
@@ -2426,6 +2538,8 @@ namespace PcpProfessionals {
                 this.columnNumberOfPorts = base.Columns["NumberOfPorts"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2443,6 +2557,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -2455,6 +2573,8 @@ namespace PcpProfessionals {
                 this.columnTransferRate.MaxLength = 2147483647;
                 this.columnNumberOfPorts.AllowDBNull = false;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2606,6 +2726,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public HarddiskDataTable() {
@@ -2713,6 +2837,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2748,7 +2888,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HarddiskRow AddHarddiskRow(string PartNumber, int Capacity, string RPM, int Size, string Type, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public HarddiskRow AddHarddiskRow(string PartNumber, int Capacity, string RPM, int Size, string Type, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 HarddiskRow rowHarddiskRow = ((HarddiskRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2759,7 +2899,9 @@ namespace PcpProfessionals {
                         Type,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowHarddiskRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHarddiskRow);
                 return rowHarddiskRow;
@@ -2798,6 +2940,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2821,6 +2965,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -2836,6 +2984,8 @@ namespace PcpProfessionals {
                 this.columnType.MaxLength = 2147483647;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2979,6 +3129,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public HddCadyDataTable() {
@@ -3054,6 +3208,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3089,14 +3259,16 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HddCadyRow AddHddCadyRow(double Size, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public HddCadyRow AddHddCadyRow(double Size, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 HddCadyRow rowHddCadyRow = ((HddCadyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Size,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowHddCadyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHddCadyRow);
                 return rowHddCadyRow;
@@ -3131,6 +3303,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3146,6 +3320,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -3157,6 +3335,8 @@ namespace PcpProfessionals {
                 this.columnSize.AllowDBNull = false;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3298,6 +3478,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public HeatSinkDataTable() {
@@ -3365,6 +3549,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3400,13 +3600,15 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HeatSinkRow AddHeatSinkRow(string ServerModel, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public HeatSinkRow AddHeatSinkRow(string ServerModel, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 HeatSinkRow rowHeatSinkRow = ((HeatSinkRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         ServerModel,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowHeatSinkRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHeatSinkRow);
                 return rowHeatSinkRow;
@@ -3440,6 +3642,8 @@ namespace PcpProfessionals {
                 this.columnServerModel = base.Columns["ServerModel"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3453,6 +3657,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -3463,6 +3671,8 @@ namespace PcpProfessionals {
                 this.columnId.Unique = true;
                 this.columnServerModel.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3608,6 +3818,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public KVMDataTable() {
@@ -3691,6 +3905,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3726,7 +3956,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public KVMRow AddKVMRow(string Type, int NumberOfPorts, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public KVMRow AddKVMRow(string Type, int NumberOfPorts, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 KVMRow rowKVMRow = ((KVMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3734,7 +3964,9 @@ namespace PcpProfessionals {
                         NumberOfPorts,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowKVMRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowKVMRow);
                 return rowKVMRow;
@@ -3770,6 +4002,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3787,6 +4021,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -3799,6 +4037,8 @@ namespace PcpProfessionals {
                 this.columnNumberOfPorts.AllowDBNull = false;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3942,6 +4182,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LEDDataTable() {
@@ -4017,6 +4261,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4052,14 +4312,16 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LEDRow AddLEDRow(int Size, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public LEDRow AddLEDRow(int Size, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 LEDRow rowLEDRow = ((LEDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Size,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowLEDRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLEDRow);
                 return rowLEDRow;
@@ -4094,6 +4356,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4109,6 +4373,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -4120,6 +4388,8 @@ namespace PcpProfessionals {
                 this.columnSize.AllowDBNull = false;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4261,6 +4531,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ManagerDataTable() {
@@ -4328,6 +4602,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4363,13 +4653,15 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ManagerRow AddManagerRow(string ComponentName, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public ManagerRow AddManagerRow(string ComponentName, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 ManagerRow rowManagerRow = ((ManagerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         ComponentName,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowManagerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowManagerRow);
                 return rowManagerRow;
@@ -4403,6 +4695,8 @@ namespace PcpProfessionals {
                 this.columnComponentName = base.Columns["ComponentName"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4416,6 +4710,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -4426,6 +4724,8 @@ namespace PcpProfessionals {
                 this.columnId.Unique = true;
                 this.columnComponentName.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4575,6 +4875,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MemoryDataTable() {
@@ -4674,6 +4978,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4709,7 +5029,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MemoryRow AddMemoryRow(int Size, string Rank, int Ddr, bool HeatSink, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public MemoryRow AddMemoryRow(int Size, string Rank, int Ddr, bool HeatSink, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 MemoryRow rowMemoryRow = ((MemoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4719,7 +5039,9 @@ namespace PcpProfessionals {
                         HeatSink,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowMemoryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMemoryRow);
                 return rowMemoryRow;
@@ -4757,6 +5079,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4778,6 +5102,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -4792,6 +5120,8 @@ namespace PcpProfessionals {
                 this.columnHeatSink.AllowDBNull = false;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4933,6 +5263,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MotherBroadDataTable() {
@@ -5000,6 +5334,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5035,13 +5385,15 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MotherBroadRow AddMotherBroadRow(string Type, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public MotherBroadRow AddMotherBroadRow(string Type, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 MotherBroadRow rowMotherBroadRow = ((MotherBroadRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Type,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowMotherBroadRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMotherBroadRow);
                 return rowMotherBroadRow;
@@ -5075,6 +5427,8 @@ namespace PcpProfessionals {
                 this.columnType = base.Columns["Type"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5088,6 +5442,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -5098,6 +5456,8 @@ namespace PcpProfessionals {
                 this.columnId.Unique = true;
                 this.columnType.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5241,6 +5601,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PDUDataTable() {
@@ -5316,6 +5680,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5351,14 +5731,16 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PDURow AddPDURow(int NumberOfPorts, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public PDURow AddPDURow(int NumberOfPorts, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 PDURow rowPDURow = ((PDURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         NumberOfPorts,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowPDURow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPDURow);
                 return rowPDURow;
@@ -5393,6 +5775,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5408,6 +5792,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -5419,6 +5807,8 @@ namespace PcpProfessionals {
                 this.columnNumberOfPorts.AllowDBNull = false;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5566,6 +5956,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PowerSupplyDataTable() {
@@ -5657,6 +6051,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5692,7 +6102,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PowerSupplyRow AddPowerSupplyRow(string ModelNumber, string Watt, int NumberOfPorts, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public PowerSupplyRow AddPowerSupplyRow(string ModelNumber, string Watt, int NumberOfPorts, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 PowerSupplyRow rowPowerSupplyRow = ((PowerSupplyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5701,7 +6111,9 @@ namespace PcpProfessionals {
                         NumberOfPorts,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowPowerSupplyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPowerSupplyRow);
                 return rowPowerSupplyRow;
@@ -5738,6 +6150,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5757,6 +6171,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -5770,6 +6188,8 @@ namespace PcpProfessionals {
                 this.columnNumberOfPorts.AllowDBNull = false;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5919,6 +6339,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProcessorDataTable() {
@@ -6018,6 +6442,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6053,7 +6493,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProcessorRow AddProcessorRow(string ModelNumber, int CacheSize, int NumberOfPorts, string Type, double Speed, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public ProcessorRow AddProcessorRow(string ModelNumber, int CacheSize, int NumberOfPorts, string Type, double Speed, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 ProcessorRow rowProcessorRow = ((ProcessorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -6063,7 +6503,9 @@ namespace PcpProfessionals {
                         Type,
                         Speed,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowProcessorRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProcessorRow);
                 return rowProcessorRow;
@@ -6101,6 +6543,8 @@ namespace PcpProfessionals {
                 this.columnSpeed = base.Columns["Speed"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6122,6 +6566,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -6136,6 +6584,8 @@ namespace PcpProfessionals {
                 this.columnType.MaxLength = 2147483647;
                 this.columnSpeed.AllowDBNull = false;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6283,6 +6733,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RackDataTable() {
@@ -6374,6 +6828,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6409,7 +6879,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RackRow AddRackRow(string Size, int Height, int Width, int Depth, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public RackRow AddRackRow(string Size, int Height, int Width, int Depth, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 RackRow rowRackRow = ((RackRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -6418,7 +6888,9 @@ namespace PcpProfessionals {
                         Width,
                         Depth,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowRackRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRackRow);
                 return rowRackRow;
@@ -6455,6 +6927,8 @@ namespace PcpProfessionals {
                 this.columnDepth = base.Columns["Depth"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6474,6 +6948,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -6487,6 +6965,8 @@ namespace PcpProfessionals {
                 this.columnWidth.AllowDBNull = false;
                 this.columnDepth.AllowDBNull = false;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6628,6 +7108,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RaidBatteryDataTable() {
@@ -6695,6 +7179,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6730,13 +7230,15 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RaidBatteryRow AddRaidBatteryRow(string Type, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public RaidBatteryRow AddRaidBatteryRow(string Type, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 RaidBatteryRow rowRaidBatteryRow = ((RaidBatteryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Type,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowRaidBatteryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRaidBatteryRow);
                 return rowRaidBatteryRow;
@@ -6770,6 +7272,8 @@ namespace PcpProfessionals {
                 this.columnType = base.Columns["Type"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6783,6 +7287,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -6793,6 +7301,8 @@ namespace PcpProfessionals {
                 this.columnId.Unique = true;
                 this.columnType.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6938,6 +7448,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RaidCardDataTable() {
@@ -7021,6 +7535,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7056,7 +7586,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RaidCardRow AddRaidCardRow(string Category, string Placement, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public RaidCardRow AddRaidCardRow(string Category, string Placement, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 RaidCardRow rowRaidCardRow = ((RaidCardRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -7064,7 +7594,9 @@ namespace PcpProfessionals {
                         Placement,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowRaidCardRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRaidCardRow);
                 return rowRaidCardRow;
@@ -7100,6 +7632,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7117,6 +7651,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -7129,6 +7667,8 @@ namespace PcpProfessionals {
                 this.columnPlacement.MaxLength = 2147483647;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7272,6 +7812,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RaidMemoryDataTable() {
@@ -7347,6 +7891,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7382,14 +7942,16 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RaidMemoryRow AddRaidMemoryRow(int Size, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public RaidMemoryRow AddRaidMemoryRow(int Size, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 RaidMemoryRow rowRaidMemoryRow = ((RaidMemoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Size,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowRaidMemoryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRaidMemoryRow);
                 return rowRaidMemoryRow;
@@ -7424,6 +7986,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7439,6 +8003,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -7450,6 +8018,8 @@ namespace PcpProfessionals {
                 this.columnSize.AllowDBNull = false;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7595,6 +8165,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RailKitDataTable() {
@@ -7678,6 +8252,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7713,7 +8303,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RailKitRow AddRailKitRow(int Size, string Model, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public RailKitRow AddRailKitRow(int Size, string Model, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 RailKitRow rowRailKitRow = ((RailKitRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -7721,7 +8311,9 @@ namespace PcpProfessionals {
                         Model,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowRailKitRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRailKitRow);
                 return rowRailKitRow;
@@ -7757,6 +8349,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7774,6 +8368,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -7786,6 +8384,8 @@ namespace PcpProfessionals {
                 this.columnModel.MaxLength = 2147483647;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7929,6 +8529,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RiserCardDataTable() {
@@ -8004,6 +8608,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8039,14 +8659,16 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RiserCardRow AddRiserCardRow(string Category, string Placement, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public RiserCardRow AddRiserCardRow(string Category, string Placement, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 RiserCardRow rowRiserCardRow = ((RiserCardRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Category,
                         Placement,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowRiserCardRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRiserCardRow);
                 return rowRiserCardRow;
@@ -8081,6 +8703,8 @@ namespace PcpProfessionals {
                 this.columnPlacement = base.Columns["Placement"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8096,6 +8720,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -8107,6 +8735,8 @@ namespace PcpProfessionals {
                 this.columnCategory.MaxLength = 2147483647;
                 this.columnPlacement.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8250,6 +8880,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SAASCableDataTable() {
@@ -8325,6 +8959,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8360,14 +9010,16 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SAASCableRow AddSAASCableRow(double Size, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public SAASCableRow AddSAASCableRow(double Size, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 SAASCableRow rowSAASCableRow = ((SAASCableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Size,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowSAASCableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSAASCableRow);
                 return rowSAASCableRow;
@@ -8402,6 +9054,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8417,6 +9071,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -8428,6 +9086,8 @@ namespace PcpProfessionals {
                 this.columnSize.AllowDBNull = false;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8571,6 +9231,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SFPDataTable() {
@@ -8646,6 +9310,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8681,14 +9361,16 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SFPRow AddSFPRow(string Model, int Speed, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public SFPRow AddSFPRow(string Model, int Speed, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 SFPRow rowSFPRow = ((SFPRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Model,
                         Speed,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowSFPRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSFPRow);
                 return rowSFPRow;
@@ -8723,6 +9405,8 @@ namespace PcpProfessionals {
                 this.columnSpeed = base.Columns["Speed"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8738,6 +9422,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -8749,6 +9437,8 @@ namespace PcpProfessionals {
                 this.columnModel.MaxLength = 2147483647;
                 this.columnSpeed.AllowDBNull = false;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8892,6 +9582,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public StorageDataTable() {
@@ -8967,6 +9661,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9002,14 +9712,16 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public StorageRow AddStorageRow(string Controller, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public StorageRow AddStorageRow(string Controller, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 StorageRow rowStorageRow = ((StorageRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Controller,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowStorageRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStorageRow);
                 return rowStorageRow;
@@ -9044,6 +9756,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9059,6 +9773,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -9070,6 +9788,8 @@ namespace PcpProfessionals {
                 this.columnController.MaxLength = 2147483647;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9215,6 +9935,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SwitchDataTable() {
@@ -9298,6 +10022,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9333,7 +10073,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SwitchRow AddSwitchRow(string Brand, int NumberOfPorts, string ModelNumber, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public SwitchRow AddSwitchRow(string Brand, int NumberOfPorts, string ModelNumber, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 SwitchRow rowSwitchRow = ((SwitchRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -9341,7 +10081,9 @@ namespace PcpProfessionals {
                         NumberOfPorts,
                         ModelNumber,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowSwitchRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSwitchRow);
                 return rowSwitchRow;
@@ -9377,6 +10119,8 @@ namespace PcpProfessionals {
                 this.columnModelNumber = base.Columns["ModelNumber"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9394,6 +10138,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -9406,6 +10154,8 @@ namespace PcpProfessionals {
                 this.columnNumberOfPorts.AllowDBNull = false;
                 this.columnModelNumber.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9549,6 +10299,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TFTConsoleDataTable() {
@@ -9624,6 +10378,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9659,14 +10429,16 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TFTConsoleRow AddTFTConsoleRow(string Size, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public TFTConsoleRow AddTFTConsoleRow(string Size, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 TFTConsoleRow rowTFTConsoleRow = ((TFTConsoleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Size,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowTFTConsoleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTFTConsoleRow);
                 return rowTFTConsoleRow;
@@ -9701,6 +10473,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9716,6 +10490,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -9727,6 +10505,8 @@ namespace PcpProfessionals {
                 this.columnSize.MaxLength = 2147483647;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9876,6 +10656,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ThinClientDataTable() {
@@ -9975,6 +10759,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10010,7 +10810,7 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ThinClientRow AddThinClientRow(string Model, string Ram, string Processor, string HardDisk, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public ThinClientRow AddThinClientRow(string Model, string Ram, string Processor, string HardDisk, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 ThinClientRow rowThinClientRow = ((ThinClientRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -10020,7 +10820,9 @@ namespace PcpProfessionals {
                         HardDisk,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowThinClientRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowThinClientRow);
                 return rowThinClientRow;
@@ -10058,6 +10860,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10079,6 +10883,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -10093,6 +10901,8 @@ namespace PcpProfessionals {
                 this.columnHardDisk.MaxLength = 2147483647;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10588,6 +11398,10 @@ namespace PcpProfessionals {
             
             private global::System.Data.DataColumn columnPurchaseDate;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnUnitPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ZeroClientDataTable() {
@@ -10663,6 +11477,22 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnitPriceColumn {
+                get {
+                    return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10698,14 +11528,16 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ZeroClientRow AddZeroClientRow(string Model, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate) {
+            public ZeroClientRow AddZeroClientRow(string Model, string Brand, System.DateTime ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
                 ZeroClientRow rowZeroClientRow = ((ZeroClientRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Model,
                         Brand,
                         ModifiedDate,
-                        PurchaseDate};
+                        PurchaseDate,
+                        Quantity,
+                        UnitPrice};
                 rowZeroClientRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowZeroClientRow);
                 return rowZeroClientRow;
@@ -10740,6 +11572,8 @@ namespace PcpProfessionals {
                 this.columnBrand = base.Columns["Brand"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnPurchaseDate = base.Columns["PurchaseDate"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnUnitPrice = base.Columns["UnitPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10755,6 +11589,10 @@ namespace PcpProfessionals {
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnPurchaseDate = new global::System.Data.DataColumn("PurchaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPurchaseDate);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -10766,6 +11604,8 @@ namespace PcpProfessionals {
                 this.columnModel.MaxLength = 2147483647;
                 this.columnBrand.MaxLength = 2147483647;
                 this.columnPurchaseDate.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnUnitPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10984,6 +11824,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableBackPlane.QuantityColumn]));
+                }
+                set {
+                    this[this.tableBackPlane.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableBackPlane.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableBackPlane.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTypeNull() {
                 return this.IsNull(this.tableBackPlane.TypeColumn);
             }
@@ -11072,6 +11934,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableBrand.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableBrand.QuantityColumn]));
+                }
+                set {
+                    this[this.tableBrand.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableBrand.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableBrand.UnitPriceColumn] = value;
                 }
             }
             
@@ -11208,6 +12092,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableEthernetCard.QuantityColumn]));
+                }
+                set {
+                    this[this.tableEthernetCard.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableEthernetCard.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableEthernetCard.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTypeNull() {
                 return this.IsNull(this.tableEthernetCard.TypeColumn);
             }
@@ -11335,6 +12241,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableFiberCard.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableFiberCard.QuantityColumn]));
+                }
+                set {
+                    this[this.tableFiberCard.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableFiberCard.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableFiberCard.UnitPriceColumn] = value;
                 }
             }
             
@@ -11515,6 +12443,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableHarddisk.QuantityColumn]));
+                }
+                set {
+                    this[this.tableHarddisk.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableHarddisk.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableHarddisk.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPartNumberNull() {
                 return this.IsNull(this.tableHarddisk.PartNumberColumn);
             }
@@ -11655,6 +12605,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableHddCady.QuantityColumn]));
+                }
+                set {
+                    this[this.tableHddCady.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableHddCady.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableHddCady.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsBrandNull() {
                 return this.IsNull(this.tableHddCady.BrandColumn);
             }
@@ -11743,6 +12715,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableHeatSink.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableHeatSink.QuantityColumn]));
+                }
+                set {
+                    this[this.tableHeatSink.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableHeatSink.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableHeatSink.UnitPriceColumn] = value;
                 }
             }
             
@@ -11868,6 +12862,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableKVM.QuantityColumn]));
+                }
+                set {
+                    this[this.tableKVM.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableKVM.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableKVM.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTypeNull() {
                 return this.IsNull(this.tableKVM.TypeColumn);
             }
@@ -11984,6 +13000,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableLED.QuantityColumn]));
+                }
+                set {
+                    this[this.tableLED.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableLED.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableLED.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsBrandNull() {
                 return this.IsNull(this.tableLED.BrandColumn);
             }
@@ -12072,6 +13110,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableManager.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableManager.QuantityColumn]));
+                }
+                set {
+                    this[this.tableManager.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableManager.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableManager.UnitPriceColumn] = value;
                 }
             }
             
@@ -12219,6 +13279,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableMemory.QuantityColumn]));
+                }
+                set {
+                    this[this.tableMemory.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableMemory.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableMemory.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsRankNull() {
                 return this.IsNull(this.tableMemory.RankColumn);
             }
@@ -12324,6 +13406,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableMotherBroad.QuantityColumn]));
+                }
+                set {
+                    this[this.tableMotherBroad.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableMotherBroad.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableMotherBroad.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTypeNull() {
                 return this.IsNull(this.tableMotherBroad.TypeColumn);
             }
@@ -12423,6 +13527,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tablePDU.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tablePDU.QuantityColumn]));
+                }
+                set {
+                    this[this.tablePDU.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tablePDU.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tablePDU.UnitPriceColumn] = value;
                 }
             }
             
@@ -12559,6 +13685,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tablePowerSupply.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tablePowerSupply.QuantityColumn]));
+                }
+                set {
+                    this[this.tablePowerSupply.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tablePowerSupply.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tablePowerSupply.UnitPriceColumn] = value;
                 }
             }
             
@@ -12730,6 +13878,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableProcessor.QuantityColumn]));
+                }
+                set {
+                    this[this.tableProcessor.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableProcessor.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableProcessor.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsModelNumberNull() {
                 return this.IsNull(this.tableProcessor.ModelNumberColumn);
             }
@@ -12868,6 +14038,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableRack.QuantityColumn]));
+                }
+                set {
+                    this[this.tableRack.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableRack.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableRack.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSizeNull() {
                 return this.IsNull(this.tableRack.SizeColumn);
             }
@@ -12956,6 +14148,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableRaidBattery.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableRaidBattery.QuantityColumn]));
+                }
+                set {
+                    this[this.tableRaidBattery.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableRaidBattery.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableRaidBattery.UnitPriceColumn] = value;
                 }
             }
             
@@ -13081,6 +14295,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableRaidCard.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableRaidCard.QuantityColumn]));
+                }
+                set {
+                    this[this.tableRaidCard.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableRaidCard.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableRaidCard.UnitPriceColumn] = value;
                 }
             }
             
@@ -13214,6 +14450,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableRaidMemory.QuantityColumn]));
+                }
+                set {
+                    this[this.tableRaidMemory.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableRaidMemory.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableRaidMemory.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsBrandNull() {
                 return this.IsNull(this.tableRaidMemory.BrandColumn);
             }
@@ -13329,6 +14587,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableRailKit.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableRailKit.QuantityColumn]));
+                }
+                set {
+                    this[this.tableRailKit.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableRailKit.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableRailKit.UnitPriceColumn] = value;
                 }
             }
             
@@ -13455,6 +14735,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableRiserCard.QuantityColumn]));
+                }
+                set {
+                    this[this.tableRiserCard.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableRiserCard.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableRiserCard.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCategoryNull() {
                 return this.IsNull(this.tableRiserCard.CategoryColumn);
             }
@@ -13571,6 +14873,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableSAASCable.QuantityColumn]));
+                }
+                set {
+                    this[this.tableSAASCable.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableSAASCable.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableSAASCable.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsBrandNull() {
                 return this.IsNull(this.tableSAASCable.BrandColumn);
             }
@@ -13670,6 +14994,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableSFP.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableSFP.QuantityColumn]));
+                }
+                set {
+                    this[this.tableSFP.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableSFP.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableSFP.UnitPriceColumn] = value;
                 }
             }
             
@@ -13779,6 +15125,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableStorage.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableStorage.QuantityColumn]));
+                }
+                set {
+                    this[this.tableStorage.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableStorage.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableStorage.UnitPriceColumn] = value;
                 }
             }
             
@@ -13916,6 +15284,28 @@ namespace PcpProfessionals {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableSwitch.QuantityColumn]));
+                }
+                set {
+                    this[this.tableSwitch.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableSwitch.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableSwitch.UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsBrandNull() {
                 return this.IsNull(this.tableSwitch.BrandColumn);
             }
@@ -14032,6 +15422,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableTFTConsole.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableTFTConsole.QuantityColumn]));
+                }
+                set {
+                    this[this.tableTFTConsole.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableTFTConsole.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableTFTConsole.UnitPriceColumn] = value;
                 }
             }
             
@@ -14201,6 +15613,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableThinClient.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableThinClient.QuantityColumn]));
+                }
+                set {
+                    this[this.tableThinClient.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableThinClient.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableThinClient.UnitPriceColumn] = value;
                 }
             }
             
@@ -14501,6 +15935,28 @@ namespace PcpProfessionals {
                 }
                 set {
                     this[this.tableZeroClient.PurchaseDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableZeroClient.QuantityColumn]));
+                }
+                set {
+                    this[this.tableZeroClient.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double UnitPrice {
+                get {
+                    return ((double)(this[this.tableZeroClient.UnitPriceColumn]));
+                }
+                set {
+                    this[this.tableZeroClient.UnitPriceColumn] = value;
                 }
             }
             
@@ -15658,10 +17114,12 @@ namespace PcpProfessionals.PcpProfessionalDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("NumberOfPorts", "NumberOfPorts");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[BackPlane] WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[BackPlane] WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -15669,32 +17127,40 @@ namespace PcpProfessionals.PcpProfessionalDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[BackPlane] ([Type], [Size], [NumberOfPorts], [ModifiedDate], [PurchaseDate]) VALUES (@Type, @Size, @NumberOfPorts, @ModifiedDate, @PurchaseDate);
-SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.BackPlane WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[BackPlane] ([Type], [Size], [NumberOfPorts], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Type, @Size, @NumberOfPorts, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.BackPlane WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[BackPlane] SET [Type] = @Type, [Size] = @Size, [NumberOfPorts] = @NumberOfPorts, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.BackPlane WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[BackPlane] SET [Type] = @Type, [Size] = @Size, [NumberOfPorts] = @NumberOfPorts, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.BackPlane WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -15711,8 +17177,8 @@ SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.B" +
-                "ackPlane";
+            this._commandCollection[0].CommandText = "SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate, Quantity, UnitP" +
+                "rice FROM COMPONENT.BackPlane";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -15773,7 +17239,7 @@ SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_Size, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_Size, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Size));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_NumberOfPorts));
@@ -15786,6 +17252,8 @@ SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15806,7 +17274,7 @@ SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Type, int Size, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Type, int Size, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Type == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -15822,6 +17290,8 @@ SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15842,7 +17312,7 @@ SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Type, int Size, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Size, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Type, int Size, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_Size, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Type == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -15858,19 +17328,23 @@ SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Size));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_NumberOfPorts));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Size));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_NumberOfPorts));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15891,8 +17365,8 @@ SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Type, int Size, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Size, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate, Original_Id, Original_Size, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Type, int Size, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_Size, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_Size, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -16021,38 +17495,45 @@ SELECT Id, Type, Size, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[Brand] WHERE (([Id] = @Original_Id) AND ((@IsNull_Modifi" +
-                "edDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDa" +
-                "te)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Brand] WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[Brand] ([Name], [ModifiedDate], [PurchaseDate]) VALUES (" +
-                "@Name, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, Name, ModifiedDate, PurchaseDa" +
-                "te FROM COMPONENT.Brand WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Brand] ([Name], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Name, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Name, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Brand WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Brand] SET [Name] = @Name, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Brand] SET [Name] = @Name, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Name, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Brand WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -16069,7 +17550,8 @@ SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand WHERE (Id = @Id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand";
+            this._commandCollection[0].CommandText = "SELECT Id, Name, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.B" +
+                "rand";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16130,7 +17612,7 @@ SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -16141,6 +17623,8 @@ SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand WHERE (Id = @Id
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16161,7 +17645,7 @@ SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Name, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -16175,6 +17659,8 @@ SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand WHERE (Id = @Id
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16195,7 +17681,7 @@ SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Name, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -16209,17 +17695,21 @@ SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand WHERE (Id = @Id
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16240,8 +17730,8 @@ SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Name, ModifiedDate, PurchaseDate, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Name, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Name, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -16373,10 +17863,12 @@ SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand WHERE (Id = @Id
             tableMapping.ColumnMappings.Add("SlotType", "SlotType");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[EthernetCard] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ([Speed] = @Original_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[EthernetCard] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ([Speed] = @Original_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -16384,10 +17876,12 @@ SELECT Id, Name, ModifiedDate, PurchaseDate FROM COMPONENT.Brand WHERE (Id = @Id
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[EthernetCard] ([Type], [NumberOfPorts], [Speed], [SlotType], [ModifiedDate], [PurchaseDate]) VALUES (@Type, @NumberOfPorts, @Speed, @SlotType, @ModifiedDate, @PurchaseDate);
-SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM COMPONENT.EthernetCard WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[EthernetCard] ([Type], [NumberOfPorts], [Speed], [SlotType], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Type, @NumberOfPorts, @Speed, @SlotType, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.EthernetCard WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -16395,10 +17889,12 @@ SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SlotType", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SlotType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[EthernetCard] SET [Type] = @Type, [NumberOfPorts] = @NumberOfPorts, [Speed] = @Speed, [SlotType] = @SlotType, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ([Speed] = @Original_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM COMPONENT.EthernetCard WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[EthernetCard] SET [Type] = @Type, [NumberOfPorts] = @NumberOfPorts, [Speed] = @Speed, [SlotType] = @SlotType, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ([Speed] = @Original_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.EthernetCard WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -16406,12 +17902,16 @@ SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SlotType", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SlotType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Speed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -16428,8 +17928,8 @@ SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM " +
-                "COMPONENT.EthernetCard";
+            this._commandCollection[0].CommandText = "SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate, Quan" +
+                "tity, UnitPrice FROM COMPONENT.EthernetCard";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16490,7 +17990,7 @@ SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, int Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, int Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_NumberOfPorts));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Speed));
@@ -16503,6 +18003,8 @@ SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16523,7 +18025,7 @@ SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Type, int NumberOfPorts, int Speed, string SlotType, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Type, int NumberOfPorts, int Speed, string SlotType, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Type == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -16545,6 +18047,8 @@ SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16565,7 +18069,23 @@ SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Type, int NumberOfPorts, int Speed, string SlotType, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, int Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(
+                    string Type, 
+                    int NumberOfPorts, 
+                    int Speed, 
+                    string SlotType, 
+                    global::System.Nullable<global::System.DateTime> ModifiedDate, 
+                    System.DateTime PurchaseDate, 
+                    int Quantity, 
+                    double UnitPrice, 
+                    long Original_Id, 
+                    int Original_NumberOfPorts, 
+                    int Original_Speed, 
+                    global::System.Nullable<global::System.DateTime> Original_ModifiedDate, 
+                    System.DateTime Original_PurchaseDate, 
+                    int Original_Quantity, 
+                    double Original_UnitPrice, 
+                    long Id) {
             if ((Type == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -16587,19 +18107,23 @@ SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_NumberOfPorts));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Speed));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_NumberOfPorts));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Speed));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16620,8 +18144,8 @@ SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Type, int NumberOfPorts, int Speed, string SlotType, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, int Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate, Original_Id, Original_NumberOfPorts, Original_Speed, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Type, int NumberOfPorts, int Speed, string SlotType, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_NumberOfPorts, int Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_NumberOfPorts, Original_Speed, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -16752,41 +18276,51 @@ SELECT Id, Type, NumberOfPorts, Speed, SlotType, ModifiedDate, PurchaseDate FROM
             tableMapping.ColumnMappings.Add("NumberOfPorts", "NumberOfPorts");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[FiberCard] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[FiberCard] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[FiberCard] ([ModelNumber], [TransferRate], [NumberOfPorts], [ModifiedDate], [PurchaseDate]) VALUES (@ModelNumber, @TransferRate, @NumberOfPorts, @ModifiedDate, @PurchaseDate);
-SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.FiberCard WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[FiberCard] ([ModelNumber], [TransferRate], [NumberOfPorts], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@ModelNumber, @TransferRate, @NumberOfPorts, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.FiberCard WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModelNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModelNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransferRate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransferRate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[FiberCard] SET [ModelNumber] = @ModelNumber, [TransferRate] = @TransferRate, [NumberOfPorts] = @NumberOfPorts, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate FROM COMPONENT.FiberCard WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[FiberCard] SET [ModelNumber] = @ModelNumber, [TransferRate] = @TransferRate, [NumberOfPorts] = @NumberOfPorts, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.FiberCard WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModelNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModelNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransferRate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransferRate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -16803,8 +18337,8 @@ SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate F" +
-                "ROM COMPONENT.FiberCard";
+            this._commandCollection[0].CommandText = "SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate, " +
+                "Quantity, UnitPrice FROM COMPONENT.FiberCard";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16865,7 +18399,7 @@ SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_NumberOfPorts));
             if ((Original_ModifiedDate.HasValue == true)) {
@@ -16877,6 +18411,8 @@ SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate 
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16897,7 +18433,7 @@ SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ModelNumber, string TransferRate, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string ModelNumber, string TransferRate, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((ModelNumber == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -16918,6 +18454,8 @@ SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate 
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16938,7 +18476,7 @@ SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ModelNumber, string TransferRate, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string ModelNumber, string TransferRate, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((ModelNumber == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -16959,18 +18497,22 @@ SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate 
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_NumberOfPorts));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_NumberOfPorts));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16991,8 +18533,8 @@ SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ModelNumber, string TransferRate, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate, Original_Id, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string ModelNumber, string TransferRate, int NumberOfPorts, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -17126,10 +18668,12 @@ SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate 
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Harddisk] WHERE (([Id] = @Original_Id) AND ([Capacity] = @Original_Capacity) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Harddisk] WHERE (([Id] = @Original_Id) AND ([Capacity] = @Original_Capacity) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Capacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Capacity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -17137,10 +18681,12 @@ SELECT Id, ModelNumber, TransferRate, NumberOfPorts, ModifiedDate, PurchaseDate 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Harddisk] ([PartNumber], [Capacity], [RPM], [Size], [Type], [Brand], [ModifiedDate], [PurchaseDate]) VALUES (@PartNumber, @Capacity, @RPM, @Size, @Type, @Brand, @ModifiedDate, @PurchaseDate);
-SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Harddisk WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Harddisk] ([PartNumber], [Capacity], [RPM], [Size], [Type], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@PartNumber, @Capacity, @RPM, @Size, @Type, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Harddisk WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Capacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Capacity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17150,10 +18696,12 @@ SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseD
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Harddisk] SET [PartNumber] = @PartNumber, [Capacity] = @Capacity, [RPM] = @RPM, [Size] = @Size, [Type] = @Type, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([Capacity] = @Original_Capacity) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Harddisk WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Harddisk] SET [PartNumber] = @PartNumber, [Capacity] = @Capacity, [RPM] = @RPM, [Size] = @Size, [Type] = @Type, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([Capacity] = @Original_Capacity) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Harddisk WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Capacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Capacity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17163,12 +18711,16 @@ SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseD
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Capacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Capacity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -17186,7 +18738,7 @@ SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseD
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseDa" +
-                "te FROM COMPONENT.Harddisk";
+                "te, Quantity, UnitPrice FROM COMPONENT.Harddisk";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -17247,7 +18799,7 @@ SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_Capacity, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_Capacity, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Capacity));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Size));
@@ -17260,6 +18812,8 @@ SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseD
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17280,7 +18834,7 @@ SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string PartNumber, int Capacity, string RPM, int Size, string Type, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string PartNumber, int Capacity, string RPM, int Size, string Type, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((PartNumber == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -17314,6 +18868,8 @@ SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseD
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17334,7 +18890,25 @@ SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PartNumber, int Capacity, string RPM, int Size, string Type, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Capacity, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(
+                    string PartNumber, 
+                    int Capacity, 
+                    string RPM, 
+                    int Size, 
+                    string Type, 
+                    string Brand, 
+                    global::System.Nullable<global::System.DateTime> ModifiedDate, 
+                    System.DateTime PurchaseDate, 
+                    int Quantity, 
+                    double UnitPrice, 
+                    long Original_Id, 
+                    int Original_Capacity, 
+                    int Original_Size, 
+                    global::System.Nullable<global::System.DateTime> Original_ModifiedDate, 
+                    System.DateTime Original_PurchaseDate, 
+                    int Original_Quantity, 
+                    double Original_UnitPrice, 
+                    long Id) {
             if ((PartNumber == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -17368,19 +18942,23 @@ SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseD
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Capacity));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Size));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Capacity));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Size));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17401,8 +18979,25 @@ SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PartNumber, int Capacity, string RPM, int Size, string Type, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Capacity, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_Capacity, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(
+                    string PartNumber, 
+                    int Capacity, 
+                    string RPM, 
+                    int Size, 
+                    string Type, 
+                    string Brand, 
+                    global::System.Nullable<global::System.DateTime> ModifiedDate, 
+                    System.DateTime PurchaseDate, 
+                    int Quantity, 
+                    double UnitPrice, 
+                    long Original_Id, 
+                    int Original_Capacity, 
+                    int Original_Size, 
+                    global::System.Nullable<global::System.DateTime> Original_ModifiedDate, 
+                    System.DateTime Original_PurchaseDate, 
+                    int Original_Quantity, 
+                    double Original_UnitPrice) {
+            return this.Update(PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_Capacity, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -17532,44 +19127,49 @@ SELECT Id, PartNumber, Capacity, RPM, Size, Type, Brand, ModifiedDate, PurchaseD
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[HddCady] WHERE (([Id] = @Original_Id) AND ([Size] = @Ori" +
-                "ginal_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([Modi" +
-                "fiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDat" +
-                "e))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[HddCady] WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[HddCady] ([Size], [Brand], [ModifiedDate], [PurchaseDate" +
-                "]) VALUES (@Size, @Brand, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, Size, Brand" +
-                ", ModifiedDate, PurchaseDate FROM COMPONENT.HddCady WHERE (Id = SCOPE_IDENTITY()" +
-                ")";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[HddCady] ([Size], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Size, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.HddCady WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[HddCady] SET [Size] = @Size, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.HddCady WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[HddCady] SET [Size] = @Size, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.HddCady WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -17586,7 +19186,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.HddCady WHERE 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.HddCady";
+            this._commandCollection[0].CommandText = "SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMP" +
+                "ONENT.HddCady";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -17647,7 +19248,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.HddCady WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((double)(Original_Size));
             if ((Original_ModifiedDate.HasValue == true)) {
@@ -17659,6 +19260,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.HddCady WHERE 
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17679,7 +19282,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.HddCady WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((double)(Size));
             if ((Brand == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -17694,6 +19297,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.HddCady WHERE 
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17714,7 +19319,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.HddCady WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((double)(Size));
             if ((Brand == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -17729,18 +19334,22 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.HddCady WHERE 
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(Original_Size));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(Original_Size));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17761,8 +19370,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.HddCady WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Size, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -17891,39 +19500,45 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.HddCady WHERE 
             tableMapping.ColumnMappings.Add("ServerModel", "ServerModel");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[HeatSink] WHERE (([Id] = @Original_Id) AND ((@IsNull_Mod" +
-                "ifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_Modifie" +
-                "dDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[HeatSink] WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[HeatSink] ([ServerModel], [ModifiedDate], [PurchaseDate]" +
-                ") VALUES (@ServerModel, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, ServerModel, " +
-                "ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink WHERE (Id = SCOPE_IDENTITY())" +
-                "";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[HeatSink] ([ServerModel], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@ServerModel, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, ServerModel, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.HeatSink WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerModel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServerModel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[HeatSink] SET [ServerModel] = @ServerModel, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, ServerModel, ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[HeatSink] SET [ServerModel] = @ServerModel, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, ServerModel, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.HeatSink WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerModel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServerModel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -17940,7 +19555,8 @@ SELECT Id, ServerModel, ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink WHERE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, ServerModel, ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink";
+            this._commandCollection[0].CommandText = "SELECT Id, ServerModel, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMP" +
+                "ONENT.HeatSink";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18001,7 +19617,7 @@ SELECT Id, ServerModel, ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -18012,6 +19628,8 @@ SELECT Id, ServerModel, ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink WHERE
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18032,7 +19650,7 @@ SELECT Id, ServerModel, ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ServerModel, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string ServerModel, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((ServerModel == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -18046,6 +19664,8 @@ SELECT Id, ServerModel, ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink WHERE
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18066,7 +19686,7 @@ SELECT Id, ServerModel, ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ServerModel, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string ServerModel, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((ServerModel == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -18080,17 +19700,21 @@ SELECT Id, ServerModel, ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink WHERE
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18111,8 +19735,8 @@ SELECT Id, ServerModel, ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ServerModel, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(ServerModel, ModifiedDate, PurchaseDate, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string ServerModel, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(ServerModel, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -18243,41 +19867,51 @@ SELECT Id, ServerModel, ModifiedDate, PurchaseDate FROM COMPONENT.HeatSink WHERE
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[KVM] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[KVM] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[KVM] ([Type], [NumberOfPorts], [Brand], [ModifiedDate], [PurchaseDate]) VALUES (@Type, @NumberOfPorts, @Brand, @ModifiedDate, @PurchaseDate);
-SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.KVM WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[KVM] ([Type], [NumberOfPorts], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Type, @NumberOfPorts, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.KVM WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[KVM] SET [Type] = @Type, [NumberOfPorts] = @NumberOfPorts, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.KVM WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[KVM] SET [Type] = @Type, [NumberOfPorts] = @NumberOfPorts, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.KVM WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -18294,8 +19928,8 @@ SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT." +
-                "KVM";
+            this._commandCollection[0].CommandText = "SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Quantity, Unit" +
+                "Price FROM COMPONENT.KVM";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18356,7 +19990,7 @@ SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_NumberOfPorts));
             if ((Original_ModifiedDate.HasValue == true)) {
@@ -18368,6 +20002,8 @@ SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18388,7 +20024,7 @@ SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Type, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Type, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Type == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -18409,6 +20045,8 @@ SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18429,7 +20067,7 @@ SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Type, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Type, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Type == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -18450,18 +20088,22 @@ SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_NumberOfPorts));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_NumberOfPorts));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18482,8 +20124,8 @@ SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Type, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Type, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -18613,42 +20255,49 @@ SELECT Id, Type, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[LED] WHERE (([Id] = @Original_Id) AND ([Size] = @Origina" +
-                "l_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([Modified" +
-                "Date] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[LED] WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[LED] ([Size], [Brand], [ModifiedDate], [PurchaseDate]) V" +
-                "ALUES (@Size, @Brand, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, Size, Brand, Mo" +
-                "difiedDate, PurchaseDate FROM COMPONENT.LED WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[LED] ([Size], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Size, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.LED WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[LED] SET [Size] = @Size, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.LED WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[LED] SET [Size] = @Size, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.LED WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -18665,7 +20314,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.LED WHERE (Id 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.LED";
+            this._commandCollection[0].CommandText = "SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMP" +
+                "ONENT.LED";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18726,7 +20376,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.LED WHERE (Id 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Size));
             if ((Original_ModifiedDate.HasValue == true)) {
@@ -18738,6 +20388,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.LED WHERE (Id 
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18758,7 +20410,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.LED WHERE (Id 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Size));
             if ((Brand == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -18773,6 +20425,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.LED WHERE (Id 
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18793,7 +20447,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.LED WHERE (Id 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Size));
             if ((Brand == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -18808,18 +20462,22 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.LED WHERE (Id 
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Size));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Size));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18840,8 +20498,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.LED WHERE (Id 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Size, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -18970,39 +20628,45 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.LED WHERE (Id 
             tableMapping.ColumnMappings.Add("ComponentName", "ComponentName");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[Manager] WHERE (([Id] = @Original_Id) AND ((@IsNull_Modi" +
-                "fiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_Modified" +
-                "Date)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Manager] WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[Manager] ([ComponentName], [ModifiedDate], [PurchaseDate" +
-                "]) VALUES (@ComponentName, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, ComponentN" +
-                "ame, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHERE (Id = SCOPE_IDENTIT" +
-                "Y())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Manager] ([ComponentName], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@ComponentName, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, ComponentName, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Manager WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ComponentName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ComponentName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Manager] SET [ComponentName] = @ComponentName, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Manager] SET [ComponentName] = @ComponentName, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, ComponentName, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Manager WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ComponentName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ComponentName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -19019,7 +20683,8 @@ SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHER
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager";
+            this._commandCollection[0].CommandText = "SELECT Id, ComponentName, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM CO" +
+                "MPONENT.Manager";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19080,7 +20745,7 @@ SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -19091,6 +20756,8 @@ SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHER
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19111,7 +20778,7 @@ SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ComponentName, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string ComponentName, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((ComponentName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -19125,6 +20792,8 @@ SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHER
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19145,7 +20814,7 @@ SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ComponentName, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string ComponentName, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((ComponentName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -19159,17 +20828,21 @@ SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHER
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19190,8 +20863,8 @@ SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ComponentName, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(ComponentName, ModifiedDate, PurchaseDate, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string ComponentName, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(ComponentName, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -19324,10 +20997,12 @@ SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHER
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Memory] WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ([Ddr] = @Original_Ddr) AND ([HeatSink] = @Original_HeatSink) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Memory] WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ([Ddr] = @Original_Ddr) AND ([HeatSink] = @Original_HeatSink) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -19336,10 +21011,12 @@ SELECT Id, ComponentName, ModifiedDate, PurchaseDate FROM COMPONENT.Manager WHER
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Memory] ([Size], [Rank], [Ddr], [HeatSink], [Brand], [ModifiedDate], [PurchaseDate]) VALUES (@Size, @Rank, @Ddr, @HeatSink, @Brand, @ModifiedDate, @PurchaseDate);
-SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Memory WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Memory] ([Size], [Rank], [Ddr], [HeatSink], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Size, @Rank, @Ddr, @HeatSink, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Memory WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rank", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rank", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -19348,10 +21025,12 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Memory] SET [Size] = @Size, [Rank] = @Rank, [Ddr] = @Ddr, [HeatSink] = @HeatSink, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ([Ddr] = @Original_Ddr) AND ([HeatSink] = @Original_HeatSink) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Memory WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Memory] SET [Size] = @Size, [Rank] = @Rank, [Ddr] = @Ddr, [HeatSink] = @HeatSink, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ([Ddr] = @Original_Ddr) AND ([HeatSink] = @Original_HeatSink) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Memory WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rank", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rank", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -19360,6 +21039,8 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ddr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ddr", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -19367,6 +21048,8 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -19383,8 +21066,8 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COMP" +
-                "ONENT.Memory";
+            this._commandCollection[0].CommandText = "SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate, Quantity" +
+                ", UnitPrice FROM COMPONENT.Memory";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19445,7 +21128,7 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_Size, int Original_Ddr, bool Original_HeatSink, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_Size, int Original_Ddr, bool Original_HeatSink, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Size));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Ddr));
@@ -19459,6 +21142,8 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
                 this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19479,7 +21164,7 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Size, string Rank, int Ddr, bool HeatSink, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(int Size, string Rank, int Ddr, bool HeatSink, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Size));
             if ((Rank == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -19502,6 +21187,8 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19522,7 +21209,25 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Size, string Rank, int Ddr, bool HeatSink, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Size, int Original_Ddr, bool Original_HeatSink, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(
+                    int Size, 
+                    string Rank, 
+                    int Ddr, 
+                    bool HeatSink, 
+                    string Brand, 
+                    global::System.Nullable<global::System.DateTime> ModifiedDate, 
+                    System.DateTime PurchaseDate, 
+                    int Quantity, 
+                    double UnitPrice, 
+                    long Original_Id, 
+                    int Original_Size, 
+                    int Original_Ddr, 
+                    bool Original_HeatSink, 
+                    global::System.Nullable<global::System.DateTime> Original_ModifiedDate, 
+                    System.DateTime Original_PurchaseDate, 
+                    int Original_Quantity, 
+                    double Original_UnitPrice, 
+                    long Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Size));
             if ((Rank == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -19545,20 +21250,24 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Size));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Ddr));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Original_HeatSink));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Size));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Ddr));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Original_HeatSink));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19579,8 +21288,25 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Size, string Rank, int Ddr, bool HeatSink, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Size, int Original_Ddr, bool Original_HeatSink, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_Size, Original_Ddr, Original_HeatSink, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(
+                    int Size, 
+                    string Rank, 
+                    int Ddr, 
+                    bool HeatSink, 
+                    string Brand, 
+                    global::System.Nullable<global::System.DateTime> ModifiedDate, 
+                    System.DateTime PurchaseDate, 
+                    int Quantity, 
+                    double UnitPrice, 
+                    long Original_Id, 
+                    int Original_Size, 
+                    int Original_Ddr, 
+                    bool Original_HeatSink, 
+                    global::System.Nullable<global::System.DateTime> Original_ModifiedDate, 
+                    System.DateTime Original_PurchaseDate, 
+                    int Original_Quantity, 
+                    double Original_UnitPrice) {
+            return this.Update(Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_Size, Original_Ddr, Original_HeatSink, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -19709,38 +21435,45 @@ SELECT Id, Size, Rank, Ddr, HeatSink, Brand, ModifiedDate, PurchaseDate FROM COM
             tableMapping.ColumnMappings.Add("Type", "Type");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[MotherBroad] WHERE (([Id] = @Original_Id) AND ((@IsNull_" +
-                "ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_Modi" +
-                "fiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[MotherBroad] WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[MotherBroad] ([Type], [ModifiedDate], [PurchaseDate]) VA" +
-                "LUES (@Type, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, Type, ModifiedDate, Purc" +
-                "haseDate FROM COMPONENT.MotherBroad WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[MotherBroad] ([Type], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Type, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Type, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.MotherBroad WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[MotherBroad] SET [Type] = @Type, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.MotherBroad WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[MotherBroad] SET [Type] = @Type, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Type, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.MotherBroad WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -19757,7 +21490,8 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.MotherBroad WHERE (Id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.MotherBroad";
+            this._commandCollection[0].CommandText = "SELECT Id, Type, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.M" +
+                "otherBroad";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19818,7 +21552,7 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.MotherBroad WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -19829,6 +21563,8 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.MotherBroad WHERE (Id
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19849,7 +21585,7 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.MotherBroad WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Type == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -19863,6 +21599,8 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.MotherBroad WHERE (Id
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19883,7 +21621,7 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.MotherBroad WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Type == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -19897,17 +21635,21 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.MotherBroad WHERE (Id
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19928,8 +21670,8 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.MotherBroad WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Type, ModifiedDate, PurchaseDate, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Type, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -20059,39 +21801,49 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.MotherBroad WHERE (Id
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[PDU] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[PDU] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[PDU] ([NumberOfPorts], [Brand], [ModifiedDate], [PurchaseDate]) VALUES (@NumberOfPorts, @Brand, @ModifiedDate, @PurchaseDate);
-SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[PDU] ([NumberOfPorts], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@NumberOfPorts, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.PDU WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[PDU] SET [NumberOfPorts] = @NumberOfPorts, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[PDU] SET [NumberOfPorts] = @NumberOfPorts, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.PDU WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -20108,7 +21860,8 @@ SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU W
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU";
+            this._commandCollection[0].CommandText = "SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice " +
+                "FROM COMPONENT.PDU";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20169,7 +21922,7 @@ SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_NumberOfPorts));
             if ((Original_ModifiedDate.HasValue == true)) {
@@ -20181,6 +21934,8 @@ SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU W
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20201,7 +21956,7 @@ SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(NumberOfPorts));
             if ((Brand == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -20216,6 +21971,8 @@ SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU W
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20236,7 +21993,7 @@ SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(NumberOfPorts));
             if ((Brand == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -20251,18 +22008,22 @@ SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU W
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_NumberOfPorts));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_NumberOfPorts));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20283,8 +22044,8 @@ SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -20416,20 +22177,24 @@ SELECT Id, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PDU W
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[PowerSupply] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[PowerSupply] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[PowerSupply] ([ModelNumber], [Watt], [NumberOfPorts], [Brand], [ModifiedDate], [PurchaseDate]) VALUES (@ModelNumber, @Watt, @NumberOfPorts, @Brand, @ModifiedDate, @PurchaseDate);
-SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PowerSupply WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[PowerSupply] ([ModelNumber], [Watt], [NumberOfPorts], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@ModelNumber, @Watt, @NumberOfPorts, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.PowerSupply WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModelNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModelNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Watt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Watt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20437,10 +22202,12 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[PowerSupply] SET [ModelNumber] = @ModelNumber, [Watt] = @Watt, [NumberOfPorts] = @NumberOfPorts, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.PowerSupply WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[PowerSupply] SET [ModelNumber] = @ModelNumber, [Watt] = @Watt, [NumberOfPorts] = @NumberOfPorts, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.PowerSupply WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModelNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModelNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Watt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Watt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20448,11 +22215,15 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -20469,8 +22240,8 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate FR" +
-                "OM COMPONENT.PowerSupply";
+            this._commandCollection[0].CommandText = "SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Q" +
+                "uantity, UnitPrice FROM COMPONENT.PowerSupply";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20531,7 +22302,7 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_NumberOfPorts));
             if ((Original_ModifiedDate.HasValue == true)) {
@@ -20543,6 +22314,8 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20563,7 +22336,7 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ModelNumber, string Watt, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string ModelNumber, string Watt, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((ModelNumber == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -20590,6 +22363,8 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20610,7 +22385,7 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ModelNumber, string Watt, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string ModelNumber, string Watt, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((ModelNumber == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -20637,18 +22412,22 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_NumberOfPorts));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_NumberOfPorts));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20669,8 +22448,8 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ModelNumber, string Watt, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string ModelNumber, string Watt, int NumberOfPorts, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -20803,10 +22582,12 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
             tableMapping.ColumnMappings.Add("Speed", "Speed");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Processor] WHERE (([Id] = @Original_Id) AND ([CacheSize] = @Original_CacheSize) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ([Speed] = @Original_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Processor] WHERE (([Id] = @Original_Id) AND ([CacheSize] = @Original_CacheSize) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ([Speed] = @Original_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CacheSize", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CacheSize", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -20815,10 +22596,12 @@ SELECT Id, ModelNumber, Watt, NumberOfPorts, Brand, ModifiedDate, PurchaseDate F
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Processor] ([ModelNumber], [CacheSize], [NumberOfPorts], [Type], [Speed], [ModifiedDate], [PurchaseDate]) VALUES (@ModelNumber, @CacheSize, @NumberOfPorts, @Type, @Speed, @ModifiedDate, @PurchaseDate);
-SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.Processor WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Processor] ([ModelNumber], [CacheSize], [NumberOfPorts], [Type], [Speed], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@ModelNumber, @CacheSize, @NumberOfPorts, @Type, @Speed, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Processor WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModelNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModelNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CacheSize", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CacheSize", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20827,10 +22610,12 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Speed", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Processor] SET [ModelNumber] = @ModelNumber, [CacheSize] = @CacheSize, [NumberOfPorts] = @NumberOfPorts, [Type] = @Type, [Speed] = @Speed, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([CacheSize] = @Original_CacheSize) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ([Speed] = @Original_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.Processor WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Processor] SET [ModelNumber] = @ModelNumber, [CacheSize] = @CacheSize, [NumberOfPorts] = @NumberOfPorts, [Type] = @Type, [Speed] = @Speed, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([CacheSize] = @Original_CacheSize) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ([Speed] = @Original_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Processor WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModelNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModelNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CacheSize", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CacheSize", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20839,6 +22624,8 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Speed", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CacheSize", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CacheSize", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -20846,6 +22633,8 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -20863,7 +22652,7 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Purc" +
-                "haseDate FROM COMPONENT.Processor";
+                "haseDate, Quantity, UnitPrice FROM COMPONENT.Processor";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20924,7 +22713,7 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_CacheSize, int Original_NumberOfPorts, double Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_CacheSize, int Original_NumberOfPorts, double Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_CacheSize));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_NumberOfPorts));
@@ -20938,6 +22727,8 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
                 this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20958,7 +22749,7 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ModelNumber, int CacheSize, int NumberOfPorts, string Type, double Speed, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string ModelNumber, int CacheSize, int NumberOfPorts, string Type, double Speed, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((ModelNumber == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -20981,6 +22772,8 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -21001,7 +22794,25 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ModelNumber, int CacheSize, int NumberOfPorts, string Type, double Speed, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_CacheSize, int Original_NumberOfPorts, double Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(
+                    string ModelNumber, 
+                    int CacheSize, 
+                    int NumberOfPorts, 
+                    string Type, 
+                    double Speed, 
+                    global::System.Nullable<global::System.DateTime> ModifiedDate, 
+                    System.DateTime PurchaseDate, 
+                    int Quantity, 
+                    double UnitPrice, 
+                    long Original_Id, 
+                    int Original_CacheSize, 
+                    int Original_NumberOfPorts, 
+                    double Original_Speed, 
+                    global::System.Nullable<global::System.DateTime> Original_ModifiedDate, 
+                    System.DateTime Original_PurchaseDate, 
+                    int Original_Quantity, 
+                    double Original_UnitPrice, 
+                    long Id) {
             if ((ModelNumber == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -21024,20 +22835,24 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_CacheSize));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_NumberOfPorts));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_Speed));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_CacheSize));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_NumberOfPorts));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_Speed));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -21058,8 +22873,25 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ModelNumber, int CacheSize, int NumberOfPorts, string Type, double Speed, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_CacheSize, int Original_NumberOfPorts, double Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, PurchaseDate, Original_Id, Original_CacheSize, Original_NumberOfPorts, Original_Speed, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(
+                    string ModelNumber, 
+                    int CacheSize, 
+                    int NumberOfPorts, 
+                    string Type, 
+                    double Speed, 
+                    global::System.Nullable<global::System.DateTime> ModifiedDate, 
+                    System.DateTime PurchaseDate, 
+                    int Quantity, 
+                    double UnitPrice, 
+                    long Original_Id, 
+                    int Original_CacheSize, 
+                    int Original_NumberOfPorts, 
+                    double Original_Speed, 
+                    global::System.Nullable<global::System.DateTime> Original_ModifiedDate, 
+                    System.DateTime Original_PurchaseDate, 
+                    int Original_Quantity, 
+                    double Original_UnitPrice) {
+            return this.Update(ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_CacheSize, Original_NumberOfPorts, Original_Speed, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -21191,10 +23023,12 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
             tableMapping.ColumnMappings.Add("Depth", "Depth");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Rack] WHERE (([Id] = @Original_Id) AND ([Height] = @Original_Height) AND ([Width] = @Original_Width) AND ([Depth] = @Original_Depth) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Rack] WHERE (([Id] = @Original_Id) AND ([Height] = @Original_Height) AND ([Width] = @Original_Width) AND ([Depth] = @Original_Depth) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Height", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Height", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -21203,10 +23037,12 @@ SELECT Id, ModelNumber, CacheSize, NumberOfPorts, Type, Speed, ModifiedDate, Pur
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Rack] ([Size], [Height], [Width], [Depth], [ModifiedDate], [PurchaseDate]) VALUES (@Size, @Height, @Width, @Depth, @ModifiedDate, @PurchaseDate);
-SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT.Rack WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Rack] ([Size], [Height], [Width], [Depth], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Size, @Height, @Width, @Depth, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Rack WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Height", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Height", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21214,10 +23050,12 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Depth", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Depth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Rack] SET [Size] = @Size, [Height] = @Height, [Width] = @Width, [Depth] = @Depth, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([Height] = @Original_Height) AND ([Width] = @Original_Width) AND ([Depth] = @Original_Depth) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT.Rack WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Rack] SET [Size] = @Size, [Height] = @Height, [Width] = @Width, [Depth] = @Depth, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([Height] = @Original_Height) AND ([Width] = @Original_Width) AND ([Depth] = @Original_Depth) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Rack WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Height", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Height", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21225,6 +23063,8 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Depth", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Depth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Height", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Height", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Width", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Width", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -21232,6 +23072,8 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -21248,8 +23090,8 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT." +
-                "Rack";
+            this._commandCollection[0].CommandText = "SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate, Quantity, Unit" +
+                "Price FROM COMPONENT.Rack";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -21310,7 +23152,7 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_Height, int Original_Width, int Original_Depth, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_Height, int Original_Width, int Original_Depth, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Height));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Width));
@@ -21324,6 +23166,8 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
                 this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -21344,7 +23188,7 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Size, int Height, int Width, int Depth, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Size, int Height, int Width, int Depth, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Size == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -21361,6 +23205,8 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -21381,7 +23227,24 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Size, int Height, int Width, int Depth, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Height, int Original_Width, int Original_Depth, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(
+                    string Size, 
+                    int Height, 
+                    int Width, 
+                    int Depth, 
+                    global::System.Nullable<global::System.DateTime> ModifiedDate, 
+                    System.DateTime PurchaseDate, 
+                    int Quantity, 
+                    double UnitPrice, 
+                    long Original_Id, 
+                    int Original_Height, 
+                    int Original_Width, 
+                    int Original_Depth, 
+                    global::System.Nullable<global::System.DateTime> Original_ModifiedDate, 
+                    System.DateTime Original_PurchaseDate, 
+                    int Original_Quantity, 
+                    double Original_UnitPrice, 
+                    long Id) {
             if ((Size == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -21398,20 +23261,24 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Height));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Width));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Depth));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Height));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Width));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Depth));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -21432,8 +23299,24 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Size, int Height, int Width, int Depth, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Height, int Original_Width, int Original_Depth, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Size, Height, Width, Depth, ModifiedDate, PurchaseDate, Original_Id, Original_Height, Original_Width, Original_Depth, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(
+                    string Size, 
+                    int Height, 
+                    int Width, 
+                    int Depth, 
+                    global::System.Nullable<global::System.DateTime> ModifiedDate, 
+                    System.DateTime PurchaseDate, 
+                    int Quantity, 
+                    double UnitPrice, 
+                    long Original_Id, 
+                    int Original_Height, 
+                    int Original_Width, 
+                    int Original_Depth, 
+                    global::System.Nullable<global::System.DateTime> Original_ModifiedDate, 
+                    System.DateTime Original_PurchaseDate, 
+                    int Original_Quantity, 
+                    double Original_UnitPrice) {
+            return this.Update(Size, Height, Width, Depth, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_Height, Original_Width, Original_Depth, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -21562,38 +23445,45 @@ SELECT Id, Size, Height, Width, Depth, ModifiedDate, PurchaseDate FROM COMPONENT
             tableMapping.ColumnMappings.Add("Type", "Type");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[RaidBattery] WHERE (([Id] = @Original_Id) AND ((@IsNull_" +
-                "ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_Modi" +
-                "fiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[RaidBattery] WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[RaidBattery] ([Type], [ModifiedDate], [PurchaseDate]) VA" +
-                "LUES (@Type, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, Type, ModifiedDate, Purc" +
-                "haseDate FROM COMPONENT.RaidBattery WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[RaidBattery] ([Type], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Type, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Type, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.RaidBattery WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[RaidBattery] SET [Type] = @Type, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.RaidBattery WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[RaidBattery] SET [Type] = @Type, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Type, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.RaidBattery WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -21610,7 +23500,8 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.RaidBattery WHERE (Id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.RaidBattery";
+            this._commandCollection[0].CommandText = "SELECT Id, Type, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.R" +
+                "aidBattery";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -21671,7 +23562,7 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.RaidBattery WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -21682,6 +23573,8 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.RaidBattery WHERE (Id
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -21702,7 +23595,7 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.RaidBattery WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Type == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -21716,6 +23609,8 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.RaidBattery WHERE (Id
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -21736,7 +23631,7 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.RaidBattery WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Type == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -21750,17 +23645,21 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.RaidBattery WHERE (Id
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -21781,8 +23680,8 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.RaidBattery WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Type, ModifiedDate, PurchaseDate, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Type, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Type, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -21913,41 +23812,49 @@ SELECT Id, Type, ModifiedDate, PurchaseDate FROM COMPONENT.RaidBattery WHERE (Id
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[RaidCard] WHERE (([Id] = @Original_Id) AND ((@IsNull_Mod" +
-                "ifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_Modifie" +
-                "dDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[RaidCard] WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[RaidCard] ([Category], [Placement], [Brand], [ModifiedDate], [PurchaseDate]) VALUES (@Category, @Placement, @Brand, @ModifiedDate, @PurchaseDate);
-SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidCard WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[RaidCard] ([Category], [Placement], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Category, @Placement, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.RaidCard WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Placement", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Placement", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[RaidCard] SET [Category] = @Category, [Placement] = @Placement, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidCard WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[RaidCard] SET [Category] = @Category, [Placement] = @Placement, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.RaidCard WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Placement", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Placement", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -21964,8 +23871,8 @@ SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT." +
-                "RaidCard";
+            this._commandCollection[0].CommandText = "SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate, Quantity, Unit" +
+                "Price FROM COMPONENT.RaidCard";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -22026,7 +23933,7 @@ SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -22037,6 +23944,8 @@ SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22057,7 +23966,7 @@ SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Category, string Placement, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Category, string Placement, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Category == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -22083,6 +23992,8 @@ SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22103,7 +24014,7 @@ SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Category, string Placement, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Category, string Placement, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Category == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -22129,17 +24040,21 @@ SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22160,8 +24075,8 @@ SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Category, string Placement, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Category, Placement, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Category, string Placement, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Category, Placement, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -22291,44 +24206,49 @@ SELECT Id, Category, Placement, Brand, ModifiedDate, PurchaseDate FROM COMPONENT
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[RaidMemory] WHERE (([Id] = @Original_Id) AND ([Size] = @" +
-                "Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([M" +
-                "odifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_Purchase" +
-                "Date))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[RaidMemory] WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[RaidMemory] ([Size], [Brand], [ModifiedDate], [PurchaseD" +
-                "ate]) VALUES (@Size, @Brand, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, Size, Br" +
-                "and, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory WHERE (Id = SCOPE_IDEN" +
-                "TITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[RaidMemory] ([Size], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Size, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.RaidMemory WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[RaidMemory] SET [Size] = @Size, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[RaidMemory] SET [Size] = @Size, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.RaidMemory WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -22345,7 +24265,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory WHE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory";
+            this._commandCollection[0].CommandText = "SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMP" +
+                "ONENT.RaidMemory";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -22406,7 +24327,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Size));
             if ((Original_ModifiedDate.HasValue == true)) {
@@ -22418,6 +24339,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory WHE
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22438,7 +24361,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Size));
             if ((Brand == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -22453,6 +24376,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory WHE
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22473,7 +24398,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Size));
             if ((Brand == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -22488,18 +24413,22 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory WHE
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Size));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Size));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22520,8 +24449,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Size, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(int Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -22652,44 +24581,51 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RaidMemory WHE
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[RailKit] WHERE (([Id] = @Original_Id) AND ([Size] = @Ori" +
-                "ginal_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([Modi" +
-                "fiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDat" +
-                "e))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[RailKit] WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[RailKit] ([Size], [Model], [Brand], [ModifiedDate], [PurchaseDate]) VALUES (@Size, @Model, @Brand, @ModifiedDate, @PurchaseDate);
-SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[RailKit] ([Size], [Model], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Size, @Model, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.RailKit WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[RailKit] SET [Size] = @Size, [Model] = @Model, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[RailKit] SET [Size] = @Size, [Model] = @Model, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.RailKit WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -22706,7 +24642,8 @@ SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit";
+            this._commandCollection[0].CommandText = "SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FR" +
+                "OM COMPONENT.RailKit";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -22767,7 +24704,7 @@ SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Size));
             if ((Original_ModifiedDate.HasValue == true)) {
@@ -22779,6 +24716,8 @@ SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22799,7 +24738,7 @@ SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Size, string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(int Size, string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Size));
             if ((Model == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -22820,6 +24759,8 @@ SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22840,7 +24781,7 @@ SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Size, string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(int Size, string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Size));
             if ((Model == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -22861,18 +24802,22 @@ SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Size));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Size));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22893,8 +24838,8 @@ SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Size, string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Size, Model, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(int Size, string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Size, Model, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -23024,39 +24969,47 @@ SELECT Id, Size, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.RailKit
             tableMapping.ColumnMappings.Add("Placement", "Placement");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[RiserCard] WHERE (([Id] = @Original_Id) AND ((@IsNull_Mo" +
-                "difiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_Modifi" +
-                "edDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[RiserCard] WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[RiserCard] ([Category], [Placement], [ModifiedDate], [PurchaseDate]) VALUES (@Category, @Placement, @ModifiedDate, @PurchaseDate);
-SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserCard WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[RiserCard] ([Category], [Placement], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Category, @Placement, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Category, Placement, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.RiserCard WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Placement", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Placement", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[RiserCard] SET [Category] = @Category, [Placement] = @Placement, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserCard WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[RiserCard] SET [Category] = @Category, [Placement] = @Placement, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Category, Placement, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.RiserCard WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Placement", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Placement", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -23073,8 +25026,8 @@ SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserC
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserCa" +
-                "rd";
+            this._commandCollection[0].CommandText = "SELECT Id, Category, Placement, ModifiedDate, PurchaseDate, Quantity, UnitPrice F" +
+                "ROM COMPONENT.RiserCard";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -23135,7 +25088,7 @@ SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -23146,6 +25099,8 @@ SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserC
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23166,7 +25121,7 @@ SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Category, string Placement, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Category, string Placement, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Category == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -23186,6 +25141,8 @@ SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserC
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23206,7 +25163,7 @@ SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Category, string Placement, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Category, string Placement, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Category == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -23226,17 +25183,21 @@ SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserC
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23257,8 +25218,8 @@ SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Category, string Placement, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Category, Placement, ModifiedDate, PurchaseDate, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Category, string Placement, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Category, Placement, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -23388,44 +25349,49 @@ SELECT Id, Category, Placement, ModifiedDate, PurchaseDate FROM COMPONENT.RiserC
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[SAASCable] WHERE (([Id] = @Original_Id) AND ([Size] = @O" +
-                "riginal_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([Mo" +
-                "difiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseD" +
-                "ate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[SAASCable] WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[SAASCable] ([Size], [Brand], [ModifiedDate], [PurchaseDa" +
-                "te]) VALUES (@Size, @Brand, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, Size, Bra" +
-                "nd, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable WHERE (Id = SCOPE_IDENTI" +
-                "TY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[SAASCable] ([Size], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Size, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.SAASCable WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[SAASCable] SET [Size] = @Size, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[SAASCable] SET [Size] = @Size, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([Size] = @Original_Size) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.SAASCable WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -23442,7 +25408,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable WHER
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable";
+            this._commandCollection[0].CommandText = "SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMP" +
+                "ONENT.SAASCable";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -23503,7 +25470,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((double)(Original_Size));
             if ((Original_ModifiedDate.HasValue == true)) {
@@ -23515,6 +25482,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable WHER
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23535,7 +25504,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((double)(Size));
             if ((Brand == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -23550,6 +25519,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable WHER
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23570,7 +25541,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((double)(Size));
             if ((Brand == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -23585,18 +25556,22 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable WHER
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(Original_Size));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(Original_Size));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23617,8 +25592,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Size, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(double Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, double Original_Size, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_Size, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -23748,43 +25723,49 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.SAASCable WHER
             tableMapping.ColumnMappings.Add("Speed", "Speed");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[SFP] WHERE (([Id] = @Original_Id) AND ([Speed] = @Origin" +
-                "al_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([Modifi" +
-                "edDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate)" +
-                ")";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[SFP] WHERE (([Id] = @Original_Id) AND ([Speed] = @Original_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Speed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[SFP] ([Model], [Speed], [ModifiedDate], [PurchaseDate]) " +
-                "VALUES (@Model, @Speed, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, Model, Speed," +
-                " ModifiedDate, PurchaseDate FROM COMPONENT.SFP WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[SFP] ([Model], [Speed], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Model, @Speed, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Model, Speed, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.SFP WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Speed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[SFP] SET [Model] = @Model, [Speed] = @Speed, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([Speed] = @Original_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Model, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.SFP WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[SFP] SET [Model] = @Model, [Speed] = @Speed, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([Speed] = @Original_Speed) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Model, Speed, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.SFP WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Speed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Speed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -23801,7 +25782,8 @@ SELECT Id, Model, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.SFP WHERE (Id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Model, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.SFP";
+            this._commandCollection[0].CommandText = "SELECT Id, Model, Speed, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COM" +
+                "PONENT.SFP";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -23862,7 +25844,7 @@ SELECT Id, Model, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.SFP WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Speed));
             if ((Original_ModifiedDate.HasValue == true)) {
@@ -23874,6 +25856,8 @@ SELECT Id, Model, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.SFP WHERE (Id
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23894,7 +25878,7 @@ SELECT Id, Model, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.SFP WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Model, int Speed, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Model, int Speed, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Model == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -23909,6 +25893,8 @@ SELECT Id, Model, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.SFP WHERE (Id
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23929,7 +25915,7 @@ SELECT Id, Model, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.SFP WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Model, int Speed, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Model, int Speed, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Model == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -23944,18 +25930,22 @@ SELECT Id, Model, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.SFP WHERE (Id
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Speed));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Speed));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23976,8 +25966,8 @@ SELECT Id, Model, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.SFP WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Model, int Speed, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Model, Speed, ModifiedDate, PurchaseDate, Original_Id, Original_Speed, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Model, int Speed, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_Speed, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Model, Speed, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_Speed, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -24107,39 +26097,47 @@ SELECT Id, Model, Speed, ModifiedDate, PurchaseDate FROM COMPONENT.SFP WHERE (Id
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[Storage] WHERE (([Id] = @Original_Id) AND ((@IsNull_Modi" +
-                "fiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_Modified" +
-                "Date)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Storage] WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Storage] ([Controller], [Brand], [ModifiedDate], [PurchaseDate]) VALUES (@Controller, @Brand, @ModifiedDate, @PurchaseDate);
-SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Storage] ([Controller], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Controller, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Storage WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Controller", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Controller", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Storage] SET [Controller] = @Controller, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Storage] SET [Controller] = @Controller, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Storage WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Controller", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Controller", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -24156,7 +26154,8 @@ SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage";
+            this._commandCollection[0].CommandText = "SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FRO" +
+                "M COMPONENT.Storage";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -24217,7 +26216,7 @@ SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -24228,6 +26227,8 @@ SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage 
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24248,7 +26249,7 @@ SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Controller, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Controller, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Controller == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -24268,6 +26269,8 @@ SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage 
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24288,7 +26291,7 @@ SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Controller, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Controller, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Controller == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -24308,17 +26311,21 @@ SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage 
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24339,8 +26346,8 @@ SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Controller, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Controller, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Controller, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Controller, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -24471,41 +26478,51 @@ SELECT Id, Controller, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.Storage 
             tableMapping.ColumnMappings.Add("ModelNumber", "ModelNumber");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Switch] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[Switch] WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Switch] ([Brand], [NumberOfPorts], [ModelNumber], [ModifiedDate], [PurchaseDate]) VALUES (@Brand, @NumberOfPorts, @ModelNumber, @ModifiedDate, @PurchaseDate);
-SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM COMPONENT.Switch WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[Switch] ([Brand], [NumberOfPorts], [ModelNumber], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Brand, @NumberOfPorts, @ModelNumber, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Switch WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModelNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModelNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Switch] SET [Brand] = @Brand, [NumberOfPorts] = @NumberOfPorts, [ModelNumber] = @ModelNumber, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM COMPONENT.Switch WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[Switch] SET [Brand] = @Brand, [NumberOfPorts] = @NumberOfPorts, [ModelNumber] = @ModelNumber, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ([NumberOfPorts] = @Original_NumberOfPorts) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.Switch WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModelNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModelNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumberOfPorts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumberOfPorts", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -24522,8 +26539,8 @@ SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM CO
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM COM" +
-                "PONENT.Switch";
+            this._commandCollection[0].CommandText = "SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate, Quantit" +
+                "y, UnitPrice FROM COMPONENT.Switch";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -24584,7 +26601,7 @@ SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM CO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_NumberOfPorts));
             if ((Original_ModifiedDate.HasValue == true)) {
@@ -24596,6 +26613,8 @@ SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM CO
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24616,7 +26635,7 @@ SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM CO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Brand, int NumberOfPorts, string ModelNumber, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Brand, int NumberOfPorts, string ModelNumber, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Brand == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -24637,6 +26656,8 @@ SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM CO
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24657,7 +26678,7 @@ SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM CO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Brand, int NumberOfPorts, string ModelNumber, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Brand, int NumberOfPorts, string ModelNumber, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Brand == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -24678,18 +26699,22 @@ SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM CO
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_NumberOfPorts));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_NumberOfPorts));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24710,8 +26735,8 @@ SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM CO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Brand, int NumberOfPorts, string ModelNumber, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate, Original_Id, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Brand, int NumberOfPorts, string ModelNumber, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, int Original_NumberOfPorts, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_NumberOfPorts, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -24841,41 +26866,47 @@ SELECT Id, Brand, NumberOfPorts, ModelNumber, ModifiedDate, PurchaseDate FROM CO
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[TFTConsole] WHERE (([Id] = @Original_Id) AND ((@IsNull_M" +
-                "odifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_Modif" +
-                "iedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[TFTConsole] WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[TFTConsole] ([Size], [Brand], [ModifiedDate], [PurchaseD" +
-                "ate]) VALUES (@Size, @Brand, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, Size, Br" +
-                "and, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole WHERE (Id = SCOPE_IDEN" +
-                "TITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[TFTConsole] ([Size], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Size, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.TFTConsole WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[TFTConsole] SET [Size] = @Size, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[TFTConsole] SET [Size] = @Size, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.TFTConsole WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -24892,7 +26923,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole WHE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole";
+            this._commandCollection[0].CommandText = "SELECT Id, Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMP" +
+                "ONENT.TFTConsole";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -24953,7 +26985,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -24964,6 +26996,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole WHE
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24984,7 +27018,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Size == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -25004,6 +27038,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole WHE
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -25024,7 +27060,7 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Size == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -25044,17 +27080,21 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole WHE
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -25075,8 +27115,8 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Size, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Size, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Size, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -25209,21 +27249,23 @@ SELECT Id, Size, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.TFTConsole WHE
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[ThinClient] WHERE (([Id] = @Original_Id) AND ((@IsNull_M" +
-                "odifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_Modif" +
-                "iedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[ThinClient] WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[ThinClient] ([Model], [Ram], [Processor], [HardDisk], [Brand], [ModifiedDate], [PurchaseDate]) VALUES (@Model, @Ram, @Processor, @HardDisk, @Brand, @ModifiedDate, @PurchaseDate);
-SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ThinClient WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[ThinClient] ([Model], [Ram], [Processor], [HardDisk], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Model, @Ram, @Processor, @HardDisk, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.ThinClient WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ram", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ram", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -25232,10 +27274,12 @@ SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FR
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[ThinClient] SET [Model] = @Model, [Ram] = @Ram, [Processor] = @Processor, [HardDisk] = @HardDisk, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ThinClient WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[ThinClient] SET [Model] = @Model, [Ram] = @Ram, [Processor] = @Processor, [HardDisk] = @HardDisk, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.ThinClient WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ram", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ram", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -25244,10 +27288,14 @@ SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FR
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -25264,8 +27312,8 @@ SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FR
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FRO" +
-                "M COMPONENT.ThinClient";
+            this._commandCollection[0].CommandText = "SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate, Qu" +
+                "antity, UnitPrice FROM COMPONENT.ThinClient";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -25326,7 +27374,7 @@ SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -25337,6 +27385,8 @@ SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FR
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -25357,7 +27407,7 @@ SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Model, string Ram, string Processor, string HardDisk, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Model, string Ram, string Processor, string HardDisk, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Model == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -25395,6 +27445,8 @@ SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FR
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -25415,7 +27467,7 @@ SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Model, string Ram, string Processor, string HardDisk, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Model, string Ram, string Processor, string HardDisk, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Model == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -25453,17 +27505,21 @@ SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FR
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -25484,8 +27540,8 @@ SELECT Id, Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Model, string Ram, string Processor, string HardDisk, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Model, string Ram, string Processor, string HardDisk, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Model, Ram, Processor, HardDisk, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     
@@ -25977,41 +28033,47 @@ SELECT Id, Username, Password, LastLogin, ExpiryOn, Email, IsActive FROM AUTH.[U
             tableMapping.ColumnMappings.Add("Brand", "Brand");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("PurchaseDate", "PurchaseDate");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [COMPONENT].[ZeroClient] WHERE (([Id] = @Original_Id) AND ((@IsNull_M" +
-                "odifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_Modif" +
-                "iedDate)) AND ([PurchaseDate] = @Original_PurchaseDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [COMPONENT].[ZeroClient] WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [COMPONENT].[ZeroClient] ([Model], [Brand], [ModifiedDate], [Purchase" +
-                "Date]) VALUES (@Model, @Brand, @ModifiedDate, @PurchaseDate);\r\nSELECT Id, Model," +
-                " Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ZeroClient WHERE (Id = SCOPE_I" +
-                "DENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [COMPONENT].[ZeroClient] ([Model], [Brand], [ModifiedDate], [PurchaseDate], [Quantity], [UnitPrice]) VALUES (@Model, @Brand, @ModifiedDate, @PurchaseDate, @Quantity, @UnitPrice);
+SELECT Id, Model, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.ZeroClient WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[ZeroClient] SET [Model] = @Model, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate));
-SELECT Id, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ZeroClient WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [COMPONENT].[ZeroClient] SET [Model] = @Model, [Brand] = @Brand, [ModifiedDate] = @ModifiedDate, [PurchaseDate] = @PurchaseDate, [Quantity] = @Quantity, [UnitPrice] = @UnitPrice WHERE (([Id] = @Original_Id) AND ((@IsNull_ModifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ([PurchaseDate] = @Original_PurchaseDate) AND ([Quantity] = @Original_Quantity) AND ([UnitPrice] = @Original_UnitPrice));
+SELECT Id, Model, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COMPONENT.ZeroClient WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PurchaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PurchaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UnitPrice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -26028,7 +28090,8 @@ SELECT Id, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ZeroClient WH
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ZeroClient";
+            this._commandCollection[0].CommandText = "SELECT Id, Model, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice FROM COM" +
+                "PONENT.ZeroClient";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -26089,7 +28152,7 @@ SELECT Id, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ZeroClient WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
+        public virtual int Delete(long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -26100,6 +28163,8 @@ SELECT Id, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ZeroClient WH
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -26120,7 +28185,7 @@ SELECT Id, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ZeroClient WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate) {
+        public virtual int Insert(string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice) {
             if ((Model == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -26140,6 +28205,8 @@ SELECT Id, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ZeroClient WH
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(UnitPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -26160,7 +28227,7 @@ SELECT Id, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ZeroClient WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, long Id) {
+        public virtual int Update(string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice, long Id) {
             if ((Model == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -26180,17 +28247,21 @@ SELECT Id, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ZeroClient WH
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_Id));
             if ((Original_ModifiedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_ModifiedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_ModifiedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_PurchaseDate));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_PurchaseDate));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Original_UnitPrice));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((long)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -26211,8 +28282,8 @@ SELECT Id, Model, Brand, ModifiedDate, PurchaseDate FROM COMPONENT.ZeroClient WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate) {
-            return this.Update(Model, Brand, ModifiedDate, PurchaseDate, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Id);
+        public virtual int Update(string Model, string Brand, global::System.Nullable<global::System.DateTime> ModifiedDate, System.DateTime PurchaseDate, int Quantity, double UnitPrice, long Original_Id, global::System.Nullable<global::System.DateTime> Original_ModifiedDate, System.DateTime Original_PurchaseDate, int Original_Quantity, double Original_UnitPrice) {
+            return this.Update(Model, Brand, ModifiedDate, PurchaseDate, Quantity, UnitPrice, Original_Id, Original_ModifiedDate, Original_PurchaseDate, Original_Quantity, Original_UnitPrice, Original_Id);
         }
     }
     

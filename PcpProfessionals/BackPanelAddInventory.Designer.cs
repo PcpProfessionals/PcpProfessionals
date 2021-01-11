@@ -1,7 +1,7 @@
 ﻿
 namespace PcpProfessionals
 {
-    partial class KVMAddInventory
+    partial class BackPanelAddInventory
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace PcpProfessionals
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "KVMAddInventory";
+            this.Text = "BackPanelAddInventory";
         }
 
         #endregion

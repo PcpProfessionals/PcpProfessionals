@@ -29,11 +29,6 @@ namespace PcpProfessionals
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.pcpProfessionalDataSet = new PcpProfessionals.PcpProfessionalDataSet();
-            this.backPlaneBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.backPlaneTableAdapter = new PcpProfessionals.PcpProfessionalDataSetTableAdapters.BackPlaneTableAdapter();
-            this.tableAdapterManager = new PcpProfessionals.PcpProfessionalDataSetTableAdapters.TableAdapterManager();
             this.BackPlaneBtn = new System.Windows.Forms.Button();
             this.FiberCardBtn = new System.Windows.Forms.Button();
             this.EthernetCardBtn = new System.Windows.Forms.Button();
@@ -58,57 +53,7 @@ namespace PcpProfessionals
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pcpProfessionalDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backPlaneBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pcpProfessionalDataSet
-            // 
-            this.pcpProfessionalDataSet.DataSetName = "PcpProfessionalDataSet";
-            this.pcpProfessionalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // backPlaneBindingSource
-            // 
-            this.backPlaneBindingSource.DataMember = "BackPlane";
-            this.backPlaneBindingSource.DataSource = this.pcpProfessionalDataSet;
-            // 
-            // backPlaneTableAdapter
-            // 
-            this.backPlaneTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackPlaneTableAdapter = this.backPlaneTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BrandTableAdapter = null;
-            this.tableAdapterManager.EthernetCardTableAdapter = null;
-            this.tableAdapterManager.FiberCardTableAdapter = null;
-            this.tableAdapterManager.HarddiskTableAdapter = null;
-            this.tableAdapterManager.HddCadyTableAdapter = null;
-            this.tableAdapterManager.HeatSinkTableAdapter = null;
-            this.tableAdapterManager.KVMTableAdapter = null;
-            this.tableAdapterManager.LEDTableAdapter = null;
-            this.tableAdapterManager.ManagerTableAdapter = null;
-            this.tableAdapterManager.MemoryTableAdapter = null;
-            this.tableAdapterManager.MotherBroadTableAdapter = null;
-            this.tableAdapterManager.PDUTableAdapter = null;
-            this.tableAdapterManager.PowerSupplyTableAdapter = null;
-            this.tableAdapterManager.ProcessorTableAdapter = null;
-            this.tableAdapterManager.RackTableAdapter = null;
-            this.tableAdapterManager.RaidBatteryTableAdapter = null;
-            this.tableAdapterManager.RaidCardTableAdapter = null;
-            this.tableAdapterManager.RaidMemoryTableAdapter = null;
-            this.tableAdapterManager.RailKitTableAdapter = null;
-            this.tableAdapterManager.RiserCardTableAdapter = null;
-            this.tableAdapterManager.SAASCableTableAdapter = null;
-            this.tableAdapterManager.SFPTableAdapter = null;
-            this.tableAdapterManager.StorageTableAdapter = null;
-            this.tableAdapterManager.SwitchTableAdapter = null;
-            this.tableAdapterManager.TFTConsoleTableAdapter = null;
-            this.tableAdapterManager.ThinClientTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PcpProfessionals.PcpProfessionalDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UserTableAdapter = null;
-            this.tableAdapterManager.ZeroClientTableAdapter = null;
             // 
             // BackPlaneBtn
             // 
@@ -360,17 +305,11 @@ namespace PcpProfessionals
             this.Name = "AddInventory";
             this.Text = "AddInventory";
             this.Load += new System.EventHandler(this.AddInventory_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pcpProfessionalDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backPlaneBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private PcpProfessionalDataSet pcpProfessionalDataSet;
-        private System.Windows.Forms.BindingSource backPlaneBindingSource;
-        private PcpProfessionalDataSetTableAdapters.BackPlaneTableAdapter backPlaneTableAdapter;
-        private PcpProfessionalDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button BackPlaneBtn;
         private System.Windows.Forms.Button FiberCardBtn;
         private System.Windows.Forms.Button EthernetCardBtn;
