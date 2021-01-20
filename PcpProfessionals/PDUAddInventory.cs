@@ -13,9 +13,19 @@ namespace PcpProfessionals
 {
     public partial class PDUAddInventory : Form
     {
+
+        private string _componentLabelText;
+
         public PDUAddInventory()
         {
+
+
+        }
+
+        public PDUAddInventory(string componentLabelName)
+        {
             InitializeComponent();
+            _componentLabelText = componentLabelName;
         }
 
         private void pDUBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,6 +41,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.PDU' table. You can move, or remove it, as needed.
             this.pDUTableAdapter.Fill(this.pcpProfessionalDataSet.PDU);
+            this.ComponentNameLbl.Text = _componentLabelText;
 
         }
 

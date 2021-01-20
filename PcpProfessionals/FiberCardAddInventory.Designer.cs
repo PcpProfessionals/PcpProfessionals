@@ -44,7 +44,6 @@ namespace PcpProfessionals
             this.fiberCardBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -61,6 +60,7 @@ namespace PcpProfessionals
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.BackBtn = new System.Windows.Forms.Label();
+            this.ComponentNameLbl = new System.Windows.Forms.Label();
             modelNumberLabel = new System.Windows.Forms.Label();
             transferRateLabel = new System.Windows.Forms.Label();
             numberOfPortsLabel = new System.Windows.Forms.Label();
@@ -76,54 +76,66 @@ namespace PcpProfessionals
             // modelNumberLabel
             // 
             modelNumberLabel.AutoSize = true;
-            modelNumberLabel.Location = new System.Drawing.Point(32, 56);
+            modelNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            modelNumberLabel.Location = new System.Drawing.Point(48, 78);
+            modelNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             modelNumberLabel.Name = "modelNumberLabel";
-            modelNumberLabel.Size = new System.Drawing.Size(79, 13);
+            modelNumberLabel.Size = new System.Drawing.Size(110, 18);
             modelNumberLabel.TabIndex = 1;
             modelNumberLabel.Text = "Model Number:";
             // 
             // transferRateLabel
             // 
             transferRateLabel.AutoSize = true;
-            transferRateLabel.Location = new System.Drawing.Point(33, 103);
+            transferRateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            transferRateLabel.Location = new System.Drawing.Point(50, 143);
+            transferRateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             transferRateLabel.Name = "transferRateLabel";
-            transferRateLabel.Size = new System.Drawing.Size(75, 13);
+            transferRateLabel.Size = new System.Drawing.Size(102, 18);
             transferRateLabel.TabIndex = 3;
             transferRateLabel.Text = "Transfer Rate:";
             // 
             // numberOfPortsLabel
             // 
             numberOfPortsLabel.AutoSize = true;
-            numberOfPortsLabel.Location = new System.Drawing.Point(32, 147);
+            numberOfPortsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            numberOfPortsLabel.Location = new System.Drawing.Point(48, 204);
+            numberOfPortsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             numberOfPortsLabel.Name = "numberOfPortsLabel";
-            numberOfPortsLabel.Size = new System.Drawing.Size(88, 13);
+            numberOfPortsLabel.Size = new System.Drawing.Size(125, 18);
             numberOfPortsLabel.TabIndex = 5;
             numberOfPortsLabel.Text = "Number Of Ports:";
             // 
             // purchaseDateLabel
             // 
             purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Location = new System.Drawing.Point(33, 197);
+            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            purchaseDateLabel.Location = new System.Drawing.Point(50, 273);
+            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(81, 13);
+            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
             purchaseDateLabel.TabIndex = 7;
             purchaseDateLabel.Text = "Purchase Date:";
             // 
             // quantityLabel
             // 
             quantityLabel.AutoSize = true;
-            quantityLabel.Location = new System.Drawing.Point(356, 62);
+            quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            quantityLabel.Location = new System.Drawing.Point(534, 86);
+            quantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             quantityLabel.Name = "quantityLabel";
-            quantityLabel.Size = new System.Drawing.Size(49, 13);
+            quantityLabel.Size = new System.Drawing.Size(66, 18);
             quantityLabel.TabIndex = 9;
             quantityLabel.Text = "Quantity:";
             // 
             // unitPriceLabel
             // 
             unitPriceLabel.AutoSize = true;
-            unitPriceLabel.Location = new System.Drawing.Point(356, 108);
+            unitPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            unitPriceLabel.Location = new System.Drawing.Point(534, 150);
+            unitPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             unitPriceLabel.Name = "unitPriceLabel";
-            unitPriceLabel.Size = new System.Drawing.Size(56, 13);
+            unitPriceLabel.Size = new System.Drawing.Size(76, 18);
             unitPriceLabel.TabIndex = 11;
             unitPriceLabel.Text = "Unit Price:";
             // 
@@ -180,7 +192,7 @@ namespace PcpProfessionals
             this.fiberCardBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.fiberCardBindingNavigator.BindingSource = this.fiberCardBindingSource;
             this.fiberCardBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.fiberCardBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.fiberCardBindingNavigator.DeleteItem = null;
             this.fiberCardBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -192,7 +204,6 @@ namespace PcpProfessionals
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
             this.fiberCardBindingNavigatorSaveItem});
             this.fiberCardBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.fiberCardBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -200,8 +211,9 @@ namespace PcpProfessionals
             this.fiberCardBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.fiberCardBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.fiberCardBindingNavigator.Name = "fiberCardBindingNavigator";
+            this.fiberCardBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.fiberCardBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.fiberCardBindingNavigator.Size = new System.Drawing.Size(653, 25);
+            this.fiberCardBindingNavigator.Size = new System.Drawing.Size(980, 25);
             this.fiberCardBindingNavigator.TabIndex = 0;
             this.fiberCardBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -220,15 +232,6 @@ namespace PcpProfessionals
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -303,66 +306,85 @@ namespace PcpProfessionals
             // modelNumberTextBox
             // 
             this.modelNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fiberCardBindingSource, "ModelNumber", true));
-            this.modelNumberTextBox.Location = new System.Drawing.Point(130, 53);
+            this.modelNumberTextBox.Location = new System.Drawing.Point(244, 79);
+            this.modelNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.modelNumberTextBox.Name = "modelNumberTextBox";
-            this.modelNumberTextBox.Size = new System.Drawing.Size(100, 20);
+            this.modelNumberTextBox.Size = new System.Drawing.Size(148, 24);
             this.modelNumberTextBox.TabIndex = 2;
             // 
             // transferRateTextBox
             // 
             this.transferRateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fiberCardBindingSource, "TransferRate", true));
-            this.transferRateTextBox.Location = new System.Drawing.Point(130, 100);
+            this.transferRateTextBox.Location = new System.Drawing.Point(244, 145);
+            this.transferRateTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.transferRateTextBox.Name = "transferRateTextBox";
-            this.transferRateTextBox.Size = new System.Drawing.Size(100, 20);
+            this.transferRateTextBox.Size = new System.Drawing.Size(148, 24);
             this.transferRateTextBox.TabIndex = 4;
             // 
             // numberOfPortsTextBox
             // 
             this.numberOfPortsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fiberCardBindingSource, "NumberOfPorts", true));
-            this.numberOfPortsTextBox.Location = new System.Drawing.Point(130, 144);
+            this.numberOfPortsTextBox.Location = new System.Drawing.Point(244, 205);
+            this.numberOfPortsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numberOfPortsTextBox.Name = "numberOfPortsTextBox";
-            this.numberOfPortsTextBox.Size = new System.Drawing.Size(100, 20);
+            this.numberOfPortsTextBox.Size = new System.Drawing.Size(148, 24);
             this.numberOfPortsTextBox.TabIndex = 6;
             // 
             // purchaseDateDateTimePicker
             // 
             this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.fiberCardBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(130, 191);
+            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(244, 273);
+            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.purchaseDateDateTimePicker.TabIndex = 8;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fiberCardBindingSource, "Quantity", true));
-            this.quantityTextBox.Location = new System.Drawing.Point(424, 59);
+            this.quantityTextBox.Location = new System.Drawing.Point(668, 87);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.quantityTextBox.Name = "quantityTextBox";
-            this.quantityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 10;
             // 
             // unitPriceTextBox
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fiberCardBindingSource, "UnitPrice", true));
-            this.unitPriceTextBox.Location = new System.Drawing.Point(424, 105);
+            this.unitPriceTextBox.Location = new System.Drawing.Point(668, 144);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
-            this.unitPriceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 12;
             // 
             // BackBtn
             // 
             this.BackBtn.AutoSize = true;
-            this.BackBtn.Location = new System.Drawing.Point(606, 13);
+            this.BackBtn.Location = new System.Drawing.Point(909, 18);
+            this.BackBtn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(32, 13);
+            this.BackBtn.Size = new System.Drawing.Size(42, 18);
             this.BackBtn.TabIndex = 13;
             this.BackBtn.Text = "Back";
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // ComponentNameLbl
+            // 
+            this.ComponentNameLbl.AutoSize = true;
+            this.ComponentNameLbl.Location = new System.Drawing.Point(474, 18);
+            this.ComponentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ComponentNameLbl.Name = "ComponentNameLbl";
+            this.ComponentNameLbl.Size = new System.Drawing.Size(46, 18);
+            this.ComponentNameLbl.TabIndex = 14;
+            this.ComponentNameLbl.Text = "label1";
+            this.ComponentNameLbl.Click += new System.EventHandler(this.label1_Click);
+            // 
             // FiberCardAddInventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 279);
+            this.ClientSize = new System.Drawing.Size(980, 386);
+            this.Controls.Add(this.ComponentNameLbl);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(unitPriceLabel);
             this.Controls.Add(this.unitPriceTextBox);
@@ -377,6 +399,8 @@ namespace PcpProfessionals
             this.Controls.Add(modelNumberLabel);
             this.Controls.Add(this.modelNumberTextBox);
             this.Controls.Add(this.fiberCardBindingNavigator);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FiberCardAddInventory";
             this.Text = "FiberCardAddInventory";
             this.Load += new System.EventHandler(this.FiberCardAddInventory_Load);
@@ -399,7 +423,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.BindingNavigator fiberCardBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -416,5 +439,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.Label BackBtn;
+        private System.Windows.Forms.Label ComponentNameLbl;
     }
 }

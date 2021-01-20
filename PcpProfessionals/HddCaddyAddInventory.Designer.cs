@@ -43,7 +43,6 @@ namespace PcpProfessionals
             this.hddCadyBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -59,6 +58,7 @@ namespace PcpProfessionals
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.BackBtn = new System.Windows.Forms.Label();
+            this.ComponentNameLbl = new System.Windows.Forms.Label();
             brandLabel = new System.Windows.Forms.Label();
             sizeLabel = new System.Windows.Forms.Label();
             purchaseDateLabel = new System.Windows.Forms.Label();
@@ -73,45 +73,55 @@ namespace PcpProfessionals
             // brandLabel
             // 
             brandLabel.AutoSize = true;
-            brandLabel.Location = new System.Drawing.Point(43, 79);
+            brandLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            brandLabel.Location = new System.Drawing.Point(13, 109);
+            brandLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             brandLabel.Name = "brandLabel";
-            brandLabel.Size = new System.Drawing.Size(38, 13);
+            brandLabel.Size = new System.Drawing.Size(51, 18);
             brandLabel.TabIndex = 1;
             brandLabel.Text = "Brand:";
             // 
             // sizeLabel
             // 
             sizeLabel.AutoSize = true;
-            sizeLabel.Location = new System.Drawing.Point(42, 125);
+            sizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            sizeLabel.Location = new System.Drawing.Point(13, 173);
+            sizeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sizeLabel.Name = "sizeLabel";
-            sizeLabel.Size = new System.Drawing.Size(30, 13);
+            sizeLabel.Size = new System.Drawing.Size(41, 18);
             sizeLabel.TabIndex = 3;
             sizeLabel.Text = "Size:";
             // 
             // purchaseDateLabel
             // 
             purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Location = new System.Drawing.Point(42, 184);
+            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            purchaseDateLabel.Location = new System.Drawing.Point(13, 255);
+            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(81, 13);
+            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
             purchaseDateLabel.TabIndex = 5;
             purchaseDateLabel.Text = "Purchase Date:";
             // 
             // quantityLabel
             // 
             quantityLabel.AutoSize = true;
-            quantityLabel.Location = new System.Drawing.Point(307, 79);
+            quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            quantityLabel.Location = new System.Drawing.Point(460, 109);
+            quantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             quantityLabel.Name = "quantityLabel";
-            quantityLabel.Size = new System.Drawing.Size(49, 13);
+            quantityLabel.Size = new System.Drawing.Size(66, 18);
             quantityLabel.TabIndex = 7;
             quantityLabel.Text = "Quantity:";
             // 
             // unitPriceLabel
             // 
             unitPriceLabel.AutoSize = true;
-            unitPriceLabel.Location = new System.Drawing.Point(307, 119);
+            unitPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            unitPriceLabel.Location = new System.Drawing.Point(460, 165);
+            unitPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             unitPriceLabel.Name = "unitPriceLabel";
-            unitPriceLabel.Size = new System.Drawing.Size(56, 13);
+            unitPriceLabel.Size = new System.Drawing.Size(76, 18);
             unitPriceLabel.TabIndex = 9;
             unitPriceLabel.Text = "Unit Price:";
             // 
@@ -168,7 +178,7 @@ namespace PcpProfessionals
             this.hddCadyBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.hddCadyBindingNavigator.BindingSource = this.hddCadyBindingSource;
             this.hddCadyBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.hddCadyBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.hddCadyBindingNavigator.DeleteItem = null;
             this.hddCadyBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -180,7 +190,6 @@ namespace PcpProfessionals
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
             this.hddCadyBindingNavigatorSaveItem});
             this.hddCadyBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.hddCadyBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -188,8 +197,9 @@ namespace PcpProfessionals
             this.hddCadyBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.hddCadyBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.hddCadyBindingNavigator.Name = "hddCadyBindingNavigator";
+            this.hddCadyBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.hddCadyBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.hddCadyBindingNavigator.Size = new System.Drawing.Size(592, 25);
+            this.hddCadyBindingNavigator.Size = new System.Drawing.Size(888, 25);
             this.hddCadyBindingNavigator.TabIndex = 0;
             this.hddCadyBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -208,15 +218,6 @@ namespace PcpProfessionals
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -291,58 +292,75 @@ namespace PcpProfessionals
             // brandTextBox
             // 
             this.brandTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hddCadyBindingSource, "Brand", true));
-            this.brandTextBox.Location = new System.Drawing.Point(87, 76);
+            this.brandTextBox.Location = new System.Drawing.Point(131, 109);
+            this.brandTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.brandTextBox.Name = "brandTextBox";
-            this.brandTextBox.Size = new System.Drawing.Size(100, 20);
+            this.brandTextBox.Size = new System.Drawing.Size(148, 24);
             this.brandTextBox.TabIndex = 2;
             // 
             // sizeTextBox
             // 
             this.sizeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hddCadyBindingSource, "Size", true));
-            this.sizeTextBox.Location = new System.Drawing.Point(87, 122);
+            this.sizeTextBox.Location = new System.Drawing.Point(131, 170);
+            this.sizeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sizeTextBox.Name = "sizeTextBox";
-            this.sizeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.sizeTextBox.Size = new System.Drawing.Size(148, 24);
             this.sizeTextBox.TabIndex = 4;
             // 
             // purchaseDateDateTimePicker
             // 
             this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.hddCadyBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(135, 178);
+            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(131, 255);
+            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.purchaseDateDateTimePicker.TabIndex = 6;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hddCadyBindingSource, "Quantity", true));
-            this.quantityTextBox.Location = new System.Drawing.Point(369, 76);
+            this.quantityTextBox.Location = new System.Drawing.Point(584, 111);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.quantityTextBox.Name = "quantityTextBox";
-            this.quantityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 8;
             // 
             // unitPriceTextBox
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hddCadyBindingSource, "UnitPrice", true));
-            this.unitPriceTextBox.Location = new System.Drawing.Point(369, 116);
+            this.unitPriceTextBox.Location = new System.Drawing.Point(584, 162);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
-            this.unitPriceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 10;
             // 
             // BackBtn
             // 
             this.BackBtn.AutoSize = true;
-            this.BackBtn.Location = new System.Drawing.Point(545, 13);
+            this.BackBtn.Location = new System.Drawing.Point(818, 18);
+            this.BackBtn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(32, 13);
+            this.BackBtn.Size = new System.Drawing.Size(42, 18);
             this.BackBtn.TabIndex = 11;
             this.BackBtn.Text = "Back";
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // ComponentNameLbl
+            // 
+            this.ComponentNameLbl.AutoSize = true;
+            this.ComponentNameLbl.Location = new System.Drawing.Point(444, 18);
+            this.ComponentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ComponentNameLbl.Name = "ComponentNameLbl";
+            this.ComponentNameLbl.Size = new System.Drawing.Size(46, 18);
+            this.ComponentNameLbl.TabIndex = 12;
+            this.ComponentNameLbl.Text = "label1";
+            // 
             // HddCaddyAddInventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 285);
+            this.ClientSize = new System.Drawing.Size(888, 395);
+            this.Controls.Add(this.ComponentNameLbl);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(unitPriceLabel);
             this.Controls.Add(this.unitPriceTextBox);
@@ -355,6 +373,8 @@ namespace PcpProfessionals
             this.Controls.Add(brandLabel);
             this.Controls.Add(this.brandTextBox);
             this.Controls.Add(this.hddCadyBindingNavigator);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HddCaddyAddInventory";
             this.Text = "HddCaddyAddInventory";
             this.Load += new System.EventHandler(this.HddCaddyAddInventory_Load);
@@ -377,7 +397,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.BindingNavigator hddCadyBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -393,5 +412,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.Label BackBtn;
+        private System.Windows.Forms.Label ComponentNameLbl;
     }
 }

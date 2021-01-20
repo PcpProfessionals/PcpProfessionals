@@ -13,9 +13,17 @@ namespace PcpProfessionals
 {
     public partial class KVMAddInventory : Form
     {
+        private string _componentNameText;
+
         public KVMAddInventory()
         {
+
+        }
+
+        public KVMAddInventory(string componentLabelName)
+        {
             InitializeComponent();
+            _componentNameText = componentLabelName;
         }
 
         private void kVMBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,6 +39,8 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.KVM' table. You can move, or remove it, as needed.
             this.kVMTableAdapter.Fill(this.pcpProfessionalDataSet.KVM);
+            this.ComponentNameLbl.Text = _componentNameText;
+            
         }
 
         private void Back_Click(object sender, EventArgs e)

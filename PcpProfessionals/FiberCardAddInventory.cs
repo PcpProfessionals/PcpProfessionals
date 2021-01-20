@@ -13,9 +13,12 @@ namespace PcpProfessionals
 {
     public partial class FiberCardAddInventory : Form
     {
-        public FiberCardAddInventory()
+        private string _componentLabelText;
+
+        public FiberCardAddInventory(string componentLabelName)
         {
             InitializeComponent();
+            _componentLabelText = componentLabelName;
         }
 
         private void fiberCardBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,6 +34,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.FiberCard' table. You can move, or remove it, as needed.
             this.fiberCardTableAdapter.Fill(this.pcpProfessionalDataSet.FiberCard);
+            this.ComponentNameLbl.Text = _componentLabelText;
 
         }
 
@@ -39,6 +43,11 @@ namespace PcpProfessionals
             var addInventory = new AddInventory();
 
             FormManager.GotoForm(this, addInventory);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -13,9 +13,12 @@ namespace PcpProfessionals
 {
     public partial class EthernetCardAddInventory : Form
     {
-        public EthernetCardAddInventory()
+        private string _componentLabelText;
+        
+        public EthernetCardAddInventory(string componentLabelName)
         {
             InitializeComponent();
+            _componentLabelText = componentLabelName;
         }
 
         private void ethernetCardBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -29,9 +32,9 @@ namespace PcpProfessionals
         private void EthernetCardAddInventory_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
+            this.ComponentLbl.Text = _componentLabelText;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.EthernetCard' table. You can move, or remove it, as needed.
             this.ethernetCardTableAdapter.Fill(this.pcpProfessionalDataSet.EthernetCard);
-
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -39,6 +42,11 @@ namespace PcpProfessionals
             var addInventory = new AddInventory();
 
             FormManager.GotoForm(this, addInventory);
+        }
+
+        private void ComponentLbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

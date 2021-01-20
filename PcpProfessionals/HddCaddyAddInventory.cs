@@ -13,9 +13,17 @@ namespace PcpProfessionals
 {
     public partial class HddCaddyAddInventory : Form
     {
+        private string _componentLabelText;
+
         public HddCaddyAddInventory()
         {
+
+        }
+
+        public HddCaddyAddInventory(string componentLabelName)
+        {
             InitializeComponent();
+            _componentLabelText = componentLabelName;
         }
 
         private void hddCadyBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,6 +39,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.HddCady' table. You can move, or remove it, as needed.
             this.hddCadyTableAdapter.Fill(this.pcpProfessionalDataSet.HddCady);
+            this.ComponentNameLbl.Text = _componentLabelText;
 
         }
 

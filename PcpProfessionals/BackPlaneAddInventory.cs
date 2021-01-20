@@ -13,9 +13,12 @@ namespace PcpProfessionals
 {
     public partial class BackPlaneAddInventory : Form
     {
-        public BackPlaneAddInventory()
+        private string _componentLabelText;
+
+        public BackPlaneAddInventory(string componentLabelName)
         {
             InitializeComponent();
+            _componentLabelText = componentLabelName;
         }
 
         private void backPlaneBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -30,6 +33,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.BackPlane' table. You can move, or remove it, as needed.
             this.backPlaneTableAdapter.Fill(this.pcpProfessionalDataSet.BackPlane);
+            this.ComponentNameLbl.Text = _componentLabelText;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -53,6 +57,11 @@ namespace PcpProfessionals
         {
             this.ControlBox = false;
             this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+        }
+
+        private void ComponentNameLbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

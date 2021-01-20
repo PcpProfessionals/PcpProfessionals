@@ -45,7 +45,6 @@ namespace PcpProfessionals
             this.ethernetCardBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -63,6 +62,7 @@ namespace PcpProfessionals
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.BackBtn = new System.Windows.Forms.Label();
+            this.ComponentLbl = new System.Windows.Forms.Label();
             typeLabel = new System.Windows.Forms.Label();
             numberOfPortsLabel = new System.Windows.Forms.Label();
             speedLabel = new System.Windows.Forms.Label();
@@ -79,63 +79,77 @@ namespace PcpProfessionals
             // typeLabel
             // 
             typeLabel.AutoSize = true;
-            typeLabel.Location = new System.Drawing.Point(25, 81);
+            typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            typeLabel.Location = new System.Drawing.Point(13, 75);
+            typeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             typeLabel.Name = "typeLabel";
-            typeLabel.Size = new System.Drawing.Size(34, 13);
+            typeLabel.Size = new System.Drawing.Size(44, 18);
             typeLabel.TabIndex = 1;
             typeLabel.Text = "Type:";
             // 
             // numberOfPortsLabel
             // 
             numberOfPortsLabel.AutoSize = true;
-            numberOfPortsLabel.Location = new System.Drawing.Point(24, 134);
+            numberOfPortsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            numberOfPortsLabel.Location = new System.Drawing.Point(13, 132);
+            numberOfPortsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             numberOfPortsLabel.Name = "numberOfPortsLabel";
-            numberOfPortsLabel.Size = new System.Drawing.Size(88, 13);
+            numberOfPortsLabel.Size = new System.Drawing.Size(125, 18);
             numberOfPortsLabel.TabIndex = 3;
             numberOfPortsLabel.Text = "Number Of Ports:";
             // 
             // speedLabel
             // 
             speedLabel.AutoSize = true;
-            speedLabel.Location = new System.Drawing.Point(24, 182);
+            speedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            speedLabel.Location = new System.Drawing.Point(13, 193);
+            speedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             speedLabel.Name = "speedLabel";
-            speedLabel.Size = new System.Drawing.Size(41, 13);
+            speedLabel.Size = new System.Drawing.Size(54, 18);
             speedLabel.TabIndex = 5;
             speedLabel.Text = "Speed:";
             // 
             // slotTypeLabel
             // 
             slotTypeLabel.AutoSize = true;
-            slotTypeLabel.Location = new System.Drawing.Point(24, 230);
+            slotTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            slotTypeLabel.Location = new System.Drawing.Point(13, 252);
+            slotTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             slotTypeLabel.Name = "slotTypeLabel";
-            slotTypeLabel.Size = new System.Drawing.Size(55, 13);
+            slotTypeLabel.Size = new System.Drawing.Size(74, 18);
             slotTypeLabel.TabIndex = 7;
             slotTypeLabel.Text = "Slot Type:";
             // 
             // purchaseDateLabel
             // 
             purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Location = new System.Drawing.Point(24, 288);
+            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            purchaseDateLabel.Location = new System.Drawing.Point(13, 324);
+            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(81, 13);
+            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
             purchaseDateLabel.TabIndex = 9;
             purchaseDateLabel.Text = "Purchase Date:";
             // 
             // quantityLabel
             // 
             quantityLabel.AutoSize = true;
-            quantityLabel.Location = new System.Drawing.Point(336, 75);
+            quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            quantityLabel.Location = new System.Drawing.Point(504, 75);
+            quantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             quantityLabel.Name = "quantityLabel";
-            quantityLabel.Size = new System.Drawing.Size(49, 13);
+            quantityLabel.Size = new System.Drawing.Size(66, 18);
             quantityLabel.TabIndex = 11;
             quantityLabel.Text = "Quantity:";
             // 
             // unitPriceLabel
             // 
             unitPriceLabel.AutoSize = true;
-            unitPriceLabel.Location = new System.Drawing.Point(336, 122);
+            unitPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            unitPriceLabel.Location = new System.Drawing.Point(504, 132);
+            unitPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             unitPriceLabel.Name = "unitPriceLabel";
-            unitPriceLabel.Size = new System.Drawing.Size(56, 13);
+            unitPriceLabel.Size = new System.Drawing.Size(76, 18);
             unitPriceLabel.TabIndex = 13;
             unitPriceLabel.Text = "Unit Price:";
             // 
@@ -192,7 +206,7 @@ namespace PcpProfessionals
             this.ethernetCardBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.ethernetCardBindingNavigator.BindingSource = this.ethernetCardBindingSource;
             this.ethernetCardBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.ethernetCardBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.ethernetCardBindingNavigator.DeleteItem = null;
             this.ethernetCardBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -204,7 +218,6 @@ namespace PcpProfessionals
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
             this.ethernetCardBindingNavigatorSaveItem});
             this.ethernetCardBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.ethernetCardBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -212,8 +225,9 @@ namespace PcpProfessionals
             this.ethernetCardBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.ethernetCardBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.ethernetCardBindingNavigator.Name = "ethernetCardBindingNavigator";
+            this.ethernetCardBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.ethernetCardBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.ethernetCardBindingNavigator.Size = new System.Drawing.Size(663, 25);
+            this.ethernetCardBindingNavigator.Size = new System.Drawing.Size(994, 25);
             this.ethernetCardBindingNavigator.TabIndex = 0;
             this.ethernetCardBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -232,15 +246,6 @@ namespace PcpProfessionals
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -315,74 +320,94 @@ namespace PcpProfessionals
             // typeTextBox
             // 
             this.typeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "Type", true));
-            this.typeTextBox.Location = new System.Drawing.Point(124, 81);
+            this.typeTextBox.Location = new System.Drawing.Point(232, 72);
+            this.typeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.typeTextBox.Name = "typeTextBox";
-            this.typeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.typeTextBox.Size = new System.Drawing.Size(148, 24);
             this.typeTextBox.TabIndex = 2;
             // 
             // numberOfPortsTextBox
             // 
             this.numberOfPortsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "NumberOfPorts", true));
-            this.numberOfPortsTextBox.Location = new System.Drawing.Point(124, 127);
+            this.numberOfPortsTextBox.Location = new System.Drawing.Point(232, 129);
+            this.numberOfPortsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numberOfPortsTextBox.Name = "numberOfPortsTextBox";
-            this.numberOfPortsTextBox.Size = new System.Drawing.Size(100, 20);
+            this.numberOfPortsTextBox.Size = new System.Drawing.Size(148, 24);
             this.numberOfPortsTextBox.TabIndex = 4;
             // 
             // speedTextBox
             // 
             this.speedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "Speed", true));
-            this.speedTextBox.Location = new System.Drawing.Point(124, 182);
+            this.speedTextBox.Location = new System.Drawing.Point(232, 190);
+            this.speedTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.speedTextBox.Name = "speedTextBox";
-            this.speedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.speedTextBox.Size = new System.Drawing.Size(148, 24);
             this.speedTextBox.TabIndex = 6;
             // 
             // slotTypeTextBox
             // 
             this.slotTypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "SlotType", true));
-            this.slotTypeTextBox.Location = new System.Drawing.Point(124, 230);
+            this.slotTypeTextBox.Location = new System.Drawing.Point(232, 249);
+            this.slotTypeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.slotTypeTextBox.Name = "slotTypeTextBox";
-            this.slotTypeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.slotTypeTextBox.Size = new System.Drawing.Size(148, 24);
             this.slotTypeTextBox.TabIndex = 8;
             // 
             // purchaseDateDateTimePicker
             // 
             this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ethernetCardBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(118, 282);
+            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(232, 319);
+            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.purchaseDateDateTimePicker.TabIndex = 10;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "Quantity", true));
-            this.quantityTextBox.Location = new System.Drawing.Point(398, 72);
+            this.quantityTextBox.Location = new System.Drawing.Point(628, 72);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.quantityTextBox.Name = "quantityTextBox";
-            this.quantityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 12;
             // 
             // unitPriceTextBox
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "UnitPrice", true));
-            this.unitPriceTextBox.Location = new System.Drawing.Point(398, 119);
+            this.unitPriceTextBox.Location = new System.Drawing.Point(628, 129);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
-            this.unitPriceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 14;
             // 
             // BackBtn
             // 
             this.BackBtn.AutoSize = true;
-            this.BackBtn.Location = new System.Drawing.Point(616, 13);
+            this.BackBtn.Location = new System.Drawing.Point(924, 18);
+            this.BackBtn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(32, 13);
+            this.BackBtn.Size = new System.Drawing.Size(42, 18);
             this.BackBtn.TabIndex = 15;
             this.BackBtn.Text = "Back";
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // ComponentLbl
+            // 
+            this.ComponentLbl.AutoSize = true;
+            this.ComponentLbl.Location = new System.Drawing.Point(441, 18);
+            this.ComponentLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ComponentLbl.Name = "ComponentLbl";
+            this.ComponentLbl.Size = new System.Drawing.Size(46, 18);
+            this.ComponentLbl.TabIndex = 16;
+            this.ComponentLbl.Text = "label1";
+            this.ComponentLbl.Click += new System.EventHandler(this.ComponentLbl_Click);
+            // 
             // EthernetCardAddInventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 335);
+            this.ClientSize = new System.Drawing.Size(994, 464);
+            this.Controls.Add(this.ComponentLbl);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(unitPriceLabel);
             this.Controls.Add(this.unitPriceTextBox);
@@ -399,6 +424,8 @@ namespace PcpProfessionals
             this.Controls.Add(typeLabel);
             this.Controls.Add(this.typeTextBox);
             this.Controls.Add(this.ethernetCardBindingNavigator);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EthernetCardAddInventory";
             this.Text = "EthernetCardAddInventory";
             this.Load += new System.EventHandler(this.EthernetCardAddInventory_Load);
@@ -421,7 +448,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.BindingNavigator ethernetCardBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -439,5 +465,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.Label BackBtn;
+        private System.Windows.Forms.Label ComponentLbl;
     }
 }

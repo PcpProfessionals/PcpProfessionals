@@ -13,9 +13,17 @@ namespace PcpProfessionals
 {
     public partial class LedAddInventory : Form
     {
+        private string _componentLabelText;
+
         public LedAddInventory()
         {
+
+        }
+
+        public LedAddInventory(string componentNameLabel)
+        {
             InitializeComponent();
+            _componentLabelText = componentNameLabel;
         }
 
         private void lEDBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,6 +39,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.LED' table. You can move, or remove it, as needed.
             this.lEDTableAdapter.Fill(this.pcpProfessionalDataSet.LED);
+            this.ComponentNameLbl.Text = _componentLabelText;
         }
 
         private void Back_Click(object sender, EventArgs e)

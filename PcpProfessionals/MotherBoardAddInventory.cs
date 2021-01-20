@@ -13,9 +13,17 @@ namespace PcpProfessionals
 {
     public partial class MotherBoardAddInventory : Form
     {
+        private string _componentLabelText;
+
         public MotherBoardAddInventory()
         {
+
+        }
+
+        public MotherBoardAddInventory(string componentNameLabel)
+        {
             InitializeComponent();
+            _componentLabelText = componentNameLabel;
         }
 
         private void motherBroadBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +39,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.MotherBroad' table. You can move, or remove it, as needed.
             this.motherBroadTableAdapter.Fill(this.pcpProfessionalDataSet.MotherBroad);
-
+            this.ComponentNameLbl.Text = _componentLabelText;
         }
 
         private void BackBtn_Click(object sender, EventArgs e)

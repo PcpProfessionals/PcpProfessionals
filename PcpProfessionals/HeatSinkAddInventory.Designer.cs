@@ -42,7 +42,6 @@ namespace PcpProfessionals
             this.heatSinkBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -57,6 +56,7 @@ namespace PcpProfessionals
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.purchaseDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Back = new System.Windows.Forms.Label();
+            this.ComponentNameLbl = new System.Windows.Forms.Label();
             serverModelLabel = new System.Windows.Forms.Label();
             quantityLabel = new System.Windows.Forms.Label();
             unitPriceLabel = new System.Windows.Forms.Label();
@@ -70,36 +70,44 @@ namespace PcpProfessionals
             // serverModelLabel
             // 
             serverModelLabel.AutoSize = true;
-            serverModelLabel.Location = new System.Drawing.Point(43, 77);
+            serverModelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            serverModelLabel.Location = new System.Drawing.Point(13, 107);
+            serverModelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             serverModelLabel.Name = "serverModelLabel";
-            serverModelLabel.Size = new System.Drawing.Size(73, 13);
+            serverModelLabel.Size = new System.Drawing.Size(100, 18);
             serverModelLabel.TabIndex = 1;
             serverModelLabel.Text = "Server Model:";
             // 
             // quantityLabel
             // 
             quantityLabel.AutoSize = true;
-            quantityLabel.Location = new System.Drawing.Point(43, 130);
+            quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            quantityLabel.Location = new System.Drawing.Point(13, 180);
+            quantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             quantityLabel.Name = "quantityLabel";
-            quantityLabel.Size = new System.Drawing.Size(49, 13);
+            quantityLabel.Size = new System.Drawing.Size(66, 18);
             quantityLabel.TabIndex = 3;
             quantityLabel.Text = "Quantity:";
             // 
             // unitPriceLabel
             // 
             unitPriceLabel.AutoSize = true;
-            unitPriceLabel.Location = new System.Drawing.Point(43, 178);
+            unitPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            unitPriceLabel.Location = new System.Drawing.Point(13, 250);
+            unitPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             unitPriceLabel.Name = "unitPriceLabel";
-            unitPriceLabel.Size = new System.Drawing.Size(56, 13);
+            unitPriceLabel.Size = new System.Drawing.Size(76, 18);
             unitPriceLabel.TabIndex = 5;
             unitPriceLabel.Text = "Unit Price:";
             // 
             // purchaseDateLabel
             // 
             purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Location = new System.Drawing.Point(35, 236);
+            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            purchaseDateLabel.Location = new System.Drawing.Point(13, 324);
+            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(81, 13);
+            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
             purchaseDateLabel.TabIndex = 7;
             purchaseDateLabel.Text = "Purchase Date:";
             // 
@@ -156,7 +164,7 @@ namespace PcpProfessionals
             this.heatSinkBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.heatSinkBindingNavigator.BindingSource = this.heatSinkBindingSource;
             this.heatSinkBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.heatSinkBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.heatSinkBindingNavigator.DeleteItem = null;
             this.heatSinkBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -168,7 +176,6 @@ namespace PcpProfessionals
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
             this.heatSinkBindingNavigatorSaveItem});
             this.heatSinkBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.heatSinkBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -176,8 +183,9 @@ namespace PcpProfessionals
             this.heatSinkBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.heatSinkBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.heatSinkBindingNavigator.Name = "heatSinkBindingNavigator";
+            this.heatSinkBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.heatSinkBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.heatSinkBindingNavigator.Size = new System.Drawing.Size(632, 25);
+            this.heatSinkBindingNavigator.Size = new System.Drawing.Size(948, 25);
             this.heatSinkBindingNavigator.TabIndex = 0;
             this.heatSinkBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -196,15 +204,6 @@ namespace PcpProfessionals
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -235,7 +234,7 @@ namespace PcpProfessionals
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
@@ -279,50 +278,65 @@ namespace PcpProfessionals
             // serverModelTextBox
             // 
             this.serverModelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.heatSinkBindingSource, "ServerModel", true));
-            this.serverModelTextBox.Location = new System.Drawing.Point(122, 74);
+            this.serverModelTextBox.Location = new System.Drawing.Point(202, 101);
+            this.serverModelTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.serverModelTextBox.Name = "serverModelTextBox";
-            this.serverModelTextBox.Size = new System.Drawing.Size(100, 20);
+            this.serverModelTextBox.Size = new System.Drawing.Size(148, 24);
             this.serverModelTextBox.TabIndex = 2;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.heatSinkBindingSource, "Quantity", true));
-            this.quantityTextBox.Location = new System.Drawing.Point(122, 127);
+            this.quantityTextBox.Location = new System.Drawing.Point(202, 177);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.quantityTextBox.Name = "quantityTextBox";
-            this.quantityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 4;
             // 
             // unitPriceTextBox
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.heatSinkBindingSource, "UnitPrice", true));
-            this.unitPriceTextBox.Location = new System.Drawing.Point(122, 175);
+            this.unitPriceTextBox.Location = new System.Drawing.Point(202, 244);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
-            this.unitPriceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 6;
             // 
             // purchaseDateDateTimePicker
             // 
             this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.heatSinkBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(122, 232);
+            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(202, 324);
+            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.purchaseDateDateTimePicker.TabIndex = 8;
             // 
             // Back
             // 
             this.Back.AutoSize = true;
-            this.Back.Location = new System.Drawing.Point(585, 13);
+            this.Back.Location = new System.Drawing.Point(878, 18);
+            this.Back.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(32, 13);
+            this.Back.Size = new System.Drawing.Size(42, 18);
             this.Back.TabIndex = 9;
             this.Back.Text = "Back";
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
+            // ComponentNameLbl
+            // 
+            this.ComponentNameLbl.AutoSize = true;
+            this.ComponentNameLbl.Location = new System.Drawing.Point(430, 13);
+            this.ComponentNameLbl.Name = "ComponentNameLbl";
+            this.ComponentNameLbl.Size = new System.Drawing.Size(46, 18);
+            this.ComponentNameLbl.TabIndex = 10;
+            this.ComponentNameLbl.Text = "label1";
+            // 
             // HeatSinkAddInventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 322);
+            this.ClientSize = new System.Drawing.Size(948, 446);
+            this.Controls.Add(this.ComponentNameLbl);
             this.Controls.Add(this.Back);
             this.Controls.Add(purchaseDateLabel);
             this.Controls.Add(this.purchaseDateDateTimePicker);
@@ -333,6 +347,8 @@ namespace PcpProfessionals
             this.Controls.Add(serverModelLabel);
             this.Controls.Add(this.serverModelTextBox);
             this.Controls.Add(this.heatSinkBindingNavigator);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HeatSinkAddInventory";
             this.Text = "HeatSinkAddInventory";
             this.Load += new System.EventHandler(this.HeatSinkAddInventory_Load);
@@ -355,7 +371,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.BindingNavigator heatSinkBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -370,5 +385,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.DateTimePicker purchaseDateDateTimePicker;
         private System.Windows.Forms.Label Back;
+        private System.Windows.Forms.Label ComponentNameLbl;
     }
 }

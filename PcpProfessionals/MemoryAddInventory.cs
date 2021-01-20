@@ -13,9 +13,17 @@ namespace PcpProfessionals
 {
     public partial class MemoryAddInventory : Form
     {
+        private string _componentNameText;
+
         public MemoryAddInventory()
         {
+
+        }
+
+        public MemoryAddInventory(string componentNameLabel)
+        {
             InitializeComponent();
+            _componentNameText = componentNameLabel;
         }
 
         private void memoryBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +39,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.Memory' table. You can move, or remove it, as needed.
             this.memoryTableAdapter.Fill(this.pcpProfessionalDataSet.Memory);
-
+            this.ComponentNameLbl.Text = _componentNameText;
         }
 
         private void rankTextBox_TextChanged(object sender, EventArgs e)

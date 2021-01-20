@@ -13,9 +13,17 @@ namespace PcpProfessionals
 {
     public partial class ProcessorAddInventory : Form
     {
+        private string _componentLabelText;
+
         public ProcessorAddInventory()
         {
+
+        }
+
+        public ProcessorAddInventory(string componentLabelName)
+        {
             InitializeComponent();
+            _componentLabelText = componentLabelName;
         }
 
         private void processorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,6 +39,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.Processor' table. You can move, or remove it, as needed.
             this.processorTableAdapter.Fill(this.pcpProfessionalDataSet.Processor);
+            this.ComponentNameLbl.Text = _componentLabelText;
 
         }
 

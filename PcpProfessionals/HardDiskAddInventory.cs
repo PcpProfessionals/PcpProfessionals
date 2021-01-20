@@ -13,9 +13,17 @@ namespace PcpProfessionals
 {
     public partial class HardDiskAddInventory : Form
     {
+        private string _compoentLabelText;
+
         public HardDiskAddInventory()
         {
+
+        }
+
+        public HardDiskAddInventory(string componentLabelName)
+        {
             InitializeComponent();
+            _compoentLabelText = componentLabelName;
         }
 
         private void harddiskBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +39,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.Harddisk' table. You can move, or remove it, as needed.
             this.harddiskTableAdapter.Fill(this.pcpProfessionalDataSet.Harddisk);
-
+            this.ComponentNameLbl.Text = _compoentLabelText;
         }
 
         private void BackBtn_Click(object sender, EventArgs e)

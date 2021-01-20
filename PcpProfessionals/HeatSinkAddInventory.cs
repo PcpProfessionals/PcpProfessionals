@@ -13,9 +13,17 @@ namespace PcpProfessionals
 {
     public partial class HeatSinkAddInventory : Form
     {
+        private string _componentNameText;
+
         public HeatSinkAddInventory()
         {
+
+        }
+
+        public HeatSinkAddInventory(string componentNameLabel)
+        {
             InitializeComponent();
+            _componentNameText = componentNameLabel;
         }
 
         private void heatSinkBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +39,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.HeatSink' table. You can move, or remove it, as needed.
             this.heatSinkTableAdapter.Fill(this.pcpProfessionalDataSet.HeatSink);
-
+            this.ComponentNameLbl.Text = _componentNameText;
         }
 
         private void Back_Click(object sender, EventArgs e)
