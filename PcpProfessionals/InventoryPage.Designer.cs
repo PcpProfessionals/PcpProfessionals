@@ -37,6 +37,7 @@ namespace PcpProfessionals
             this.AddInvBtn = new System.Windows.Forms.Button();
             this.CompManagerBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BackBtn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,15 +102,26 @@ namespace PcpProfessionals
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(66, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(297, 101);
+            this.pictureBox1.Size = new System.Drawing.Size(305, 101);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            // 
+            // BackBtn
+            // 
+            this.BackBtn.AutoSize = true;
+            this.BackBtn.Location = new System.Drawing.Point(753, 13);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(32, 13);
+            this.BackBtn.TabIndex = 7;
+            this.BackBtn.Text = "Back";
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // InventoryPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CompManagerBtn);
             this.Controls.Add(this.AddInvBtn);
@@ -122,6 +134,7 @@ namespace PcpProfessionals
             this.Load += new System.EventHandler(this.Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -134,5 +147,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.Button AddInvBtn;
         private System.Windows.Forms.Button CompManagerBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label BackBtn;
     }
 }

@@ -9,15 +9,15 @@ namespace Utilities
 {
     public static class FormManager
     {
-
-
-        public static void OpenForm(Form currentForm, Form nextForm)
+        public static void GotoForm(Form currentForm, Form addInventory)
         {
             currentForm.Hide();
 
-            nextForm.ShowDialog();
+            addInventory.ShowDialog();
 
             currentForm.Close();
         }
+
+
     }
 }

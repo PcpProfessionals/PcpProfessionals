@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utilities;
 
 namespace PcpProfessionals
 {
@@ -19,7 +20,7 @@ namespace PcpProfessionals
 
         private void Home_Load(object sender, EventArgs e)
         {
-
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -40,6 +41,13 @@ namespace PcpProfessionals
             addInv.ShowDialog();
 
             this.Close();
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            var homePage = new HomePage();
+
+            FormManager.GotoForm(this, homePage);
         }
     }
 }
