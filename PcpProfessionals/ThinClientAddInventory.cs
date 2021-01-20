@@ -13,9 +13,12 @@ namespace PcpProfessionals
 {
     public partial class ThinClientAddInventory : Form
     {
-        public ThinClientAddInventory()
+        private string _componentLabelText;
+
+        public ThinClientAddInventory(string componentNameLabel)
         {
             InitializeComponent();
+            _componentLabelText = componentNameLabel;
         }
 
         private void thinClientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.ThinClient' table. You can move, or remove it, as needed.
             this.thinClientTableAdapter.Fill(this.pcpProfessionalDataSet.ThinClient);
-
+            this.ComponentNameLbl.Text = _componentLabelText;
         }
 
         private void BackBtn_Click(object sender, EventArgs e)

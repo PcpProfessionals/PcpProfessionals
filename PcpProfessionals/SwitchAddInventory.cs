@@ -13,9 +13,12 @@ namespace PcpProfessionals
 {
     public partial class SwitchAddInventory : Form
     {
-        public SwitchAddInventory()
+        private string _componentLabelText;
+
+        public SwitchAddInventory(string componentNameLabel)
         {
             InitializeComponent();
+            _componentLabelText = componentNameLabel;
         }
 
         private void storageBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.Storage' table. You can move, or remove it, as needed.
             this.storageTableAdapter.Fill(this.pcpProfessionalDataSet.Storage);
-
+            this.ComponentNameLbl.Text = _componentLabelText;
         }
 
         private void BackBtn_Click(object sender, EventArgs e)

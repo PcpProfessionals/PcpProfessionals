@@ -13,9 +13,12 @@ namespace PcpProfessionals
 {
     public partial class RiserCardAddInventory : Form
     {
-        public RiserCardAddInventory()
+        private string _componentLabelText;
+
+        public RiserCardAddInventory(string componentNameLabel)
         {
             InitializeComponent();
+            _componentLabelText = componentNameLabel;
         }
 
         private void riserCardBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.RiserCard' table. You can move, or remove it, as needed.
             this.riserCardTableAdapter.Fill(this.pcpProfessionalDataSet.RiserCard);
-
+            this.ComponentNameLbl.Text = _componentLabelText;
         }
 
         private void BackBtn_Click(object sender, EventArgs e)

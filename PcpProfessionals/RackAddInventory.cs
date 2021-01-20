@@ -13,9 +13,12 @@ namespace PcpProfessionals
 {
     public partial class RackAddInventory : Form
     {
-        public RackAddInventory()
+        private string _componentLabelText;
+
+        public RackAddInventory(string componentLabelName)
         {
             InitializeComponent();
+            _componentLabelText = componentLabelName;
         }
 
         private void rackBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.Rack' table. You can move, or remove it, as needed.
             this.rackTableAdapter.Fill(this.pcpProfessionalDataSet.Rack);
-
+            this.ComponentNameLbl.Text = _componentLabelText;
         }
 
         private void BackBtn_Click(object sender, EventArgs e)

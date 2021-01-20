@@ -13,9 +13,12 @@ namespace PcpProfessionals
 {
     public partial class SAASCableAddInventory : Form
     {
-        public SAASCableAddInventory()
+        private string _componentLabelText;
+
+        public SAASCableAddInventory(string componentLabelName)
         {
             InitializeComponent();
+            _componentLabelText = componentLabelName;
         }
 
         private void sAASCableBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.SAASCable' table. You can move, or remove it, as needed.
             this.sAASCableTableAdapter.Fill(this.pcpProfessionalDataSet.SAASCable);
-
+            this.ComponentNameLbl.Text = _componentLabelText;
         }
 
         private void BackBtn_Click(object sender, EventArgs e)

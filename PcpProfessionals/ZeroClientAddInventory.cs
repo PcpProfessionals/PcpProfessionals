@@ -13,9 +13,12 @@ namespace PcpProfessionals
 {
     public partial class ZeroClientAddInventory : Form
     {
-        public ZeroClientAddInventory()
+        private string _componentLabelText;
+
+        public ZeroClientAddInventory(string componentNameLabel)
         {
             InitializeComponent();
+            _componentLabelText = componentNameLabel;
         }
 
         private void zeroClientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,6 +34,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.ZeroClient' table. You can move, or remove it, as needed.
             this.zeroClientTableAdapter.Fill(this.pcpProfessionalDataSet.ZeroClient);
+            this.ComponentNameLbl.Text = _componentLabelText;
 
         }
 

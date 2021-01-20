@@ -13,9 +13,12 @@ namespace PcpProfessionals
 {
     public partial class TFTConsoleAddInventory : Form
     {
-        public TFTConsoleAddInventory()
+        private string _componentLabelText;
+
+        public TFTConsoleAddInventory(string componentNameLabel)
         {
             InitializeComponent();
+            _componentLabelText = componentNameLabel;
         }
 
         private void tFTConsoleBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.TFTConsole' table. You can move, or remove it, as needed.
             this.tFTConsoleTableAdapter.Fill(this.pcpProfessionalDataSet.TFTConsole);
-
+            this.ComponentNameLbl.Text = _componentLabelText;
         }
 
         private void BackBtn_Click(object sender, EventArgs e)

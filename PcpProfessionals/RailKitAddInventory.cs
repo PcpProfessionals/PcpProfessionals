@@ -13,9 +13,12 @@ namespace PcpProfessionals
 {
     public partial class RailKitAddInventory : Form
     {
-        public RailKitAddInventory()
+        private string _componentLabelText;
+
+        public RailKitAddInventory(string componentNameLabel)
         {
             InitializeComponent();
+            _componentLabelText = componentNameLabel;
         }
 
         private void railKitBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace PcpProfessionals
             this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.RailKit' table. You can move, or remove it, as needed.
             this.railKitTableAdapter.Fill(this.pcpProfessionalDataSet.RailKit);
-
+            this.ComponentNameLbl.Text = _componentLabelText;
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
