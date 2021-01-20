@@ -27,6 +27,7 @@ namespace PcpProfessionals
 
         private void SearchInventory_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = FormBorderStyle.None;
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.TFTConsole' table. You can move, or remove it, as needed.
             this.tFTConsoleTableAdapter.Fill(this.pcpProfessionalDataSet.TFTConsole);
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.ZeroClient' table. You can move, or remove it, as needed.

@@ -39,5 +39,12 @@ namespace PcpProfessionals
             this.Close();
             this.Dispose();
         }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            this.SalesModuleBtn.Enabled = false;
+            this.PurchaseModuleBtn.Enabled = false;
+            this.ReportModuleBtn.Enabled = false;
+        }
     }
 }

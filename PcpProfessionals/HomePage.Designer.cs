@@ -42,7 +42,7 @@ namespace PcpProfessionals
             // 
             // PurchaseModuleBtn
             // 
-            this.PurchaseModuleBtn.Location = new System.Drawing.Point(12, 122);
+            this.PurchaseModuleBtn.Location = new System.Drawing.Point(12, 140);
             this.PurchaseModuleBtn.Name = "PurchaseModuleBtn";
             this.PurchaseModuleBtn.Size = new System.Drawing.Size(177, 89);
             this.PurchaseModuleBtn.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace PcpProfessionals
             // 
             // InventoryModuleBtn
             // 
-            this.InventoryModuleBtn.Location = new System.Drawing.Point(12, 229);
+            this.InventoryModuleBtn.Location = new System.Drawing.Point(12, 259);
             this.InventoryModuleBtn.Name = "InventoryModuleBtn";
             this.InventoryModuleBtn.Size = new System.Drawing.Size(177, 92);
             this.InventoryModuleBtn.TabIndex = 1;
@@ -61,7 +61,7 @@ namespace PcpProfessionals
             // 
             // ReportModuleBtn
             // 
-            this.ReportModuleBtn.Location = new System.Drawing.Point(308, 230);
+            this.ReportModuleBtn.Location = new System.Drawing.Point(448, 138);
             this.ReportModuleBtn.Name = "ReportModuleBtn";
             this.ReportModuleBtn.Size = new System.Drawing.Size(177, 91);
             this.ReportModuleBtn.TabIndex = 2;
@@ -70,7 +70,7 @@ namespace PcpProfessionals
             // 
             // SalesModuleBtn
             // 
-            this.SalesModuleBtn.Location = new System.Drawing.Point(308, 122);
+            this.SalesModuleBtn.Location = new System.Drawing.Point(228, 140);
             this.SalesModuleBtn.Name = "SalesModuleBtn";
             this.SalesModuleBtn.Size = new System.Drawing.Size(177, 89);
             this.SalesModuleBtn.TabIndex = 3;
@@ -89,9 +89,9 @@ namespace PcpProfessionals
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(512, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(600, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 19);
+            this.pictureBox2.Size = new System.Drawing.Size(46, 29);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -100,7 +100,7 @@ namespace PcpProfessionals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 338);
+            this.ClientSize = new System.Drawing.Size(658, 363);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.SalesModuleBtn);
@@ -109,6 +109,7 @@ namespace PcpProfessionals
             this.Controls.Add(this.PurchaseModuleBtn);
             this.Name = "HomePage";
             this.Text = "HomePage";
+            this.Load += new System.EventHandler(this.HomePage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

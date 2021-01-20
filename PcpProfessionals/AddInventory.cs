@@ -27,7 +27,7 @@ namespace PcpProfessionals
         
         private void AddInventory_Load(object sender, EventArgs e)
         {
-            
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
 

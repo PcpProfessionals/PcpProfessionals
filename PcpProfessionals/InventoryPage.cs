@@ -21,26 +21,25 @@ namespace PcpProfessionals
         private void Home_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
+            this.BiBtn.Enabled = false;
+            this.AnalyseInvBtn.Enabled = false;
+            this.RptGenBtn.Enabled = false;
+            this.CompManagerBtn.Enabled = false;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             var searchInventory = new SearchInventory();
 
-            searchInventory.ShowDialog();
-
-            this.Hide();
+            FormManager.GotoForm(this, searchInventory);
         }
 
         private void AddInvBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
             var addInv = new AddInventory();
 
-            addInv.ShowDialog();
-
-            this.Close();
+            FormManager.GotoForm(this, addInv);
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
