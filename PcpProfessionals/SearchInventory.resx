@@ -117,4 +117,305 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        0//Z
+</value>
+  </data>
+  <metadata name="tFTConsoleBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>742, 329</value>
+  </metadata>
+  <metadata name="pcpProfessionalDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="backPlaneBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>197, 17</value>
+  </metadata>
+  <metadata name="backPlaneTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>382, 17</value>
+  </metadata>
+  <metadata name="ethernetCardBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>562, 17</value>
+  </metadata>
+  <metadata name="pcpProfessionalDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="ethernetCardTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>764, 17</value>
+  </metadata>
+  <metadata name="backPlaneBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>197, 17</value>
+  </metadata>
+  <metadata name="ethernetCardBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>562, 17</value>
+  </metadata>
+  <metadata name="fiberCardBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="fiberCardBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="fiberCardTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>198, 56</value>
+  </metadata>
+  <metadata name="harddiskBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>373, 56</value>
+  </metadata>
+  <metadata name="harddiskBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>373, 56</value>
+  </metadata>
+  <metadata name="harddiskTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>550, 56</value>
+  </metadata>
+  <metadata name="hddCadyBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>721, 56</value>
+  </metadata>
+  <metadata name="hddCadyBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>721, 56</value>
+  </metadata>
+  <metadata name="hddCadyTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>900, 56</value>
+  </metadata>
+  <metadata name="heatSinkBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <metadata name="heatSinkBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <metadata name="heatSinkTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>194, 95</value>
+  </metadata>
+  <metadata name="kVMBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>624, 95</value>
+  </metadata>
+  <metadata name="pcpProfessionalDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>365, 95</value>
+  </metadata>
+  <metadata name="kVMBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>624, 95</value>
+  </metadata>
+  <metadata name="kVMTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>779, 95</value>
+  </metadata>
+  <metadata name="lEDBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>283, 134</value>
+  </metadata>
+  <metadata name="pcpProfessionalDataSetBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
+  <metadata name="lEDBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>283, 134</value>
+  </metadata>
+  <metadata name="lEDTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>431, 134</value>
+  </metadata>
+  <metadata name="memoryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>574, 134</value>
+  </metadata>
+  <metadata name="memoryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>574, 134</value>
+  </metadata>
+  <metadata name="memoryTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>750, 134</value>
+  </metadata>
+  <metadata name="motherBroadBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>920, 134</value>
+  </metadata>
+  <metadata name="motherBroadBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>920, 134</value>
+  </metadata>
+  <metadata name="motherBroadTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>24, 173</value>
+  </metadata>
+  <metadata name="pDUBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>221, 173</value>
+  </metadata>
+  <metadata name="pDUBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>221, 173</value>
+  </metadata>
+  <metadata name="pDUTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>376, 173</value>
+  </metadata>
+  <metadata name="powerSupplyBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>525, 173</value>
+  </metadata>
+  <metadata name="powerSupplyBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>525, 173</value>
+  </metadata>
+  <metadata name="powerSupplyTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>727, 173</value>
+  </metadata>
+  <metadata name="powerSupplyBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>923, 173</value>
+  </metadata>
+  <metadata name="powerSupplyBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>923, 173</value>
+  </metadata>
+  <metadata name="rackBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>33, 212</value>
+  </metadata>
+  <metadata name="rackBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>33, 212</value>
+  </metadata>
+  <metadata name="rackTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>186, 212</value>
+  </metadata>
+  <metadata name="raidBatteryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>333, 212</value>
+  </metadata>
+  <metadata name="raidBatteryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>333, 212</value>
+  </metadata>
+  <metadata name="raidBatteryTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>523, 212</value>
+  </metadata>
+  <metadata name="raidMemoryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>707, 212</value>
+  </metadata>
+  <metadata name="raidMemoryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>707, 212</value>
+  </metadata>
+  <metadata name="raidMemoryTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>904, 212</value>
+  </metadata>
+  <metadata name="railKitBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 251</value>
+  </metadata>
+  <metadata name="railKitBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 251</value>
+  </metadata>
+  <metadata name="railKitTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>178, 251</value>
+  </metadata>
+  <metadata name="riserCardBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>334, 251</value>
+  </metadata>
+  <metadata name="riserCardBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>334, 251</value>
+  </metadata>
+  <metadata name="riserCardTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>513, 251</value>
+  </metadata>
+  <metadata name="sAASCableBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>687, 251</value>
+  </metadata>
+  <metadata name="sAASCableBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>687, 251</value>
+  </metadata>
+  <metadata name="sAASCableTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>876, 251</value>
+  </metadata>
+  <metadata name="sFPBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 290</value>
+  </metadata>
+  <metadata name="sFPBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 290</value>
+  </metadata>
+  <metadata name="sFPTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>166, 290</value>
+  </metadata>
+  <metadata name="storageBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>309, 290</value>
+  </metadata>
+  <metadata name="storageBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>309, 290</value>
+  </metadata>
+  <metadata name="storageTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>480, 290</value>
+  </metadata>
+  <metadata name="switchBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>646, 290</value>
+  </metadata>
+  <metadata name="switchBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>646, 290</value>
+  </metadata>
+  <metadata name="switchTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>810, 290</value>
+  </metadata>
+  <metadata name="thinClientBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 329</value>
+  </metadata>
+  <metadata name="thinClientBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 329</value>
+  </metadata>
+  <metadata name="thinClientTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>200, 329</value>
+  </metadata>
+  <metadata name="zeroClientBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>377, 329</value>
+  </metadata>
+  <metadata name="zeroClientBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>377, 329</value>
+  </metadata>
+  <metadata name="zeroClientTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>562, 329</value>
+  </metadata>
+  <metadata name="tFTConsoleTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>933, 329</value>
+  </metadata>
 </root>
