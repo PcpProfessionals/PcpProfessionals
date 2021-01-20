@@ -16,19 +16,6 @@ namespace PcpProfessionals
         public SearchInventory()
         {
             InitializeComponent();
-
-            LoadDefaultValues();
-            
-        }
-
-        private void LoadDefaultValues()
-        {
-            
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -70,35 +57,25 @@ namespace PcpProfessionals
             this.pDUTableAdapter.Fill(this.pcpProfessionalDataSet.PDU);
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.MotherBroad' table. You can move, or remove it, as needed.
             this.motherBroadTableAdapter.Fill(this.pcpProfessionalDataSet.MotherBroad);
-            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.Memory' table. You can move, or remove it, as needed.
-            this.memoryTableAdapter.Fill(this.pcpProfessionalDataSet.Memory);
-            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.LED' table. You can move, or remove it, as needed.
-            this.lEDTableAdapter.Fill(this.pcpProfessionalDataSet.LED);
-            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.KVM' table. You can move, or remove it, as needed.
-            this.kVMTableAdapter.Fill(this.pcpProfessionalDataSet.KVM);
-            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.HeatSink' table. You can move, or remove it, as needed.
-            this.heatSinkTableAdapter.Fill(this.pcpProfessionalDataSet.HeatSink);
-            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.HddCady' table. You can move, or remove it, as needed.
-            this.hddCadyTableAdapter.Fill(this.pcpProfessionalDataSet.HddCady);
-            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.Harddisk' table. You can move, or remove it, as needed.
-            this.harddiskTableAdapter.Fill(this.pcpProfessionalDataSet.Harddisk);
-            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.FiberCard' table. You can move, or remove it, as needed.
-            this.fiberCardTableAdapter.Fill(this.pcpProfessionalDataSet.FiberCard);
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.EthernetCard' table. You can move, or remove it, as needed.
             this.ethernetCardTableAdapter.Fill(this.pcpProfessionalDataSet.EthernetCard);
             // TODO: This line of code loads data into the 'pcpProfessionalDataSet.BackPlane' table. You can move, or remove it, as needed.
             this.backPlaneTableAdapter.Fill(this.pcpProfessionalDataSet.BackPlane);
+            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.Harddisk' table. You can move, or remove it, as needed.
+            this.harddiskTableAdapter.Fill(this.pcpProfessionalDataSet.Harddisk);
+            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.FiberCard' table. You can move, or remove it, as needed.
+            this.fiberCardTableAdapter.Fill(this.pcpProfessionalDataSet.FiberCard);
+            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.HddCady' table. You can move, or remove it, as needed.
+            this.hddCadyTableAdapter.Fill(this.pcpProfessionalDataSet.HddCady);
+            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.HeatSink' table. You can move, or remove it, as needed.
+            this.heatSinkTableAdapter.Fill(this.pcpProfessionalDataSet.HeatSink);
 
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.KVM' table. You can move, or remove it, as needed.
+            this.kVMTableAdapter.Fill(this.pcpProfessionalDataSet.KVM);
+            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.LED' table. You can move, or remove it, as needed.
+            this.lEDTableAdapter.Fill(this.pcpProfessionalDataSet.LED);
+            // TODO: This line of code loads data into the 'pcpProfessionalDataSet.Memory' table. You can move, or remove it, as needed.
+            this.memoryTableAdapter.Fill(this.pcpProfessionalDataSet.Memory);
         }
     }
 }

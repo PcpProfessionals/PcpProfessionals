@@ -35,7 +35,9 @@ namespace PcpProfessionals
             this.ReportModuleBtn = new System.Windows.Forms.Button();
             this.SalesModuleBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // PurchaseModuleBtn
@@ -59,7 +61,7 @@ namespace PcpProfessionals
             // 
             // ReportModuleBtn
             // 
-            this.ReportModuleBtn.Location = new System.Drawing.Point(213, 230);
+            this.ReportModuleBtn.Location = new System.Drawing.Point(308, 230);
             this.ReportModuleBtn.Name = "ReportModuleBtn";
             this.ReportModuleBtn.Size = new System.Drawing.Size(177, 91);
             this.ReportModuleBtn.TabIndex = 2;
@@ -68,7 +70,7 @@ namespace PcpProfessionals
             // 
             // SalesModuleBtn
             // 
-            this.SalesModuleBtn.Location = new System.Drawing.Point(213, 122);
+            this.SalesModuleBtn.Location = new System.Drawing.Point(308, 122);
             this.SalesModuleBtn.Name = "SalesModuleBtn";
             this.SalesModuleBtn.Size = new System.Drawing.Size(177, 89);
             this.SalesModuleBtn.TabIndex = 3;
@@ -80,15 +82,26 @@ namespace PcpProfessionals
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 85);
+            this.pictureBox1.Size = new System.Drawing.Size(305, 104);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(512, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 19);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 338);
+            this.ClientSize = new System.Drawing.Size(551, 338);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.SalesModuleBtn);
             this.Controls.Add(this.ReportModuleBtn);
@@ -97,6 +110,7 @@ namespace PcpProfessionals
             this.Name = "HomePage";
             this.Text = "HomePage";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -108,5 +122,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.Button ReportModuleBtn;
         private System.Windows.Forms.Button SalesModuleBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

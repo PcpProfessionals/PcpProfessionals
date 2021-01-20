@@ -478,7 +478,6 @@ namespace PcpProfessionals
             this.EthernetCardTb.TabIndex = 0;
             this.EthernetCardTb.Text = "Ethernet Card";
             this.EthernetCardTb.UseVisualStyleBackColor = true;
-            this.EthernetCardTb.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // BackPlaneTb
             // 

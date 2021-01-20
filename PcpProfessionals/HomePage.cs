@@ -15,6 +15,7 @@ namespace PcpProfessionals
         public HomePage()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -31,6 +32,12 @@ namespace PcpProfessionals
             inventoryHome.ShowDialog();
 
             this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
         }
     }
 }
