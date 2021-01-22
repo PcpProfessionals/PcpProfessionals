@@ -34,7 +34,6 @@ namespace PcpProfessionals
             System.Windows.Forms.Label numberOfPortsLabel;
             System.Windows.Forms.Label speedLabel;
             System.Windows.Forms.Label slotTypeLabel;
-            System.Windows.Forms.Label purchaseDateLabel;
             System.Windows.Forms.Label quantityLabel;
             System.Windows.Forms.Label unitPriceLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EthernetCardAddInventory));
@@ -58,7 +57,6 @@ namespace PcpProfessionals
             this.numberOfPortsTextBox = new System.Windows.Forms.TextBox();
             this.speedTextBox = new System.Windows.Forms.TextBox();
             this.slotTypeTextBox = new System.Windows.Forms.TextBox();
-            this.purchaseDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.BackBtn = new System.Windows.Forms.Label();
@@ -67,7 +65,6 @@ namespace PcpProfessionals
             numberOfPortsLabel = new System.Windows.Forms.Label();
             speedLabel = new System.Windows.Forms.Label();
             slotTypeLabel = new System.Windows.Forms.Label();
-            purchaseDateLabel = new System.Windows.Forms.Label();
             quantityLabel = new System.Windows.Forms.Label();
             unitPriceLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcpProfessionalDataSet)).BeginInit();
@@ -119,17 +116,6 @@ namespace PcpProfessionals
             slotTypeLabel.Size = new System.Drawing.Size(74, 18);
             slotTypeLabel.TabIndex = 7;
             slotTypeLabel.Text = "Slot Type:";
-            // 
-            // purchaseDateLabel
-            // 
-            purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            purchaseDateLabel.Location = new System.Drawing.Point(13, 324);
-            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
-            purchaseDateLabel.TabIndex = 9;
-            purchaseDateLabel.Text = "Purchase Date:";
             // 
             // quantityLabel
             // 
@@ -274,7 +260,6 @@ namespace PcpProfessionals
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -321,7 +306,7 @@ namespace PcpProfessionals
             // 
             this.typeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "Type", true));
             this.typeTextBox.Location = new System.Drawing.Point(232, 72);
-            this.typeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.typeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.typeTextBox.Name = "typeTextBox";
             this.typeTextBox.Size = new System.Drawing.Size(148, 24);
             this.typeTextBox.TabIndex = 2;
@@ -330,7 +315,7 @@ namespace PcpProfessionals
             // 
             this.numberOfPortsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "NumberOfPorts", true));
             this.numberOfPortsTextBox.Location = new System.Drawing.Point(232, 129);
-            this.numberOfPortsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numberOfPortsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.numberOfPortsTextBox.Name = "numberOfPortsTextBox";
             this.numberOfPortsTextBox.Size = new System.Drawing.Size(148, 24);
             this.numberOfPortsTextBox.TabIndex = 4;
@@ -339,7 +324,7 @@ namespace PcpProfessionals
             // 
             this.speedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "Speed", true));
             this.speedTextBox.Location = new System.Drawing.Point(232, 190);
-            this.speedTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.speedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.speedTextBox.Name = "speedTextBox";
             this.speedTextBox.Size = new System.Drawing.Size(148, 24);
             this.speedTextBox.TabIndex = 6;
@@ -348,25 +333,16 @@ namespace PcpProfessionals
             // 
             this.slotTypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "SlotType", true));
             this.slotTypeTextBox.Location = new System.Drawing.Point(232, 249);
-            this.slotTypeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.slotTypeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.slotTypeTextBox.Name = "slotTypeTextBox";
             this.slotTypeTextBox.Size = new System.Drawing.Size(148, 24);
             this.slotTypeTextBox.TabIndex = 8;
-            // 
-            // purchaseDateDateTimePicker
-            // 
-            this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ethernetCardBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(232, 319);
-            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
-            this.purchaseDateDateTimePicker.TabIndex = 10;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "Quantity", true));
             this.quantityTextBox.Location = new System.Drawing.Point(628, 72);
-            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 12;
@@ -375,7 +351,7 @@ namespace PcpProfessionals
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ethernetCardBindingSource, "UnitPrice", true));
             this.unitPriceTextBox.Location = new System.Drawing.Point(628, 129);
-            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 14;
@@ -413,8 +389,6 @@ namespace PcpProfessionals
             this.Controls.Add(this.unitPriceTextBox);
             this.Controls.Add(quantityLabel);
             this.Controls.Add(this.quantityTextBox);
-            this.Controls.Add(purchaseDateLabel);
-            this.Controls.Add(this.purchaseDateDateTimePicker);
             this.Controls.Add(slotTypeLabel);
             this.Controls.Add(this.slotTypeTextBox);
             this.Controls.Add(speedLabel);
@@ -425,7 +399,7 @@ namespace PcpProfessionals
             this.Controls.Add(this.typeTextBox);
             this.Controls.Add(this.ethernetCardBindingNavigator);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EthernetCardAddInventory";
             this.Text = "EthernetCardAddInventory";
             this.Load += new System.EventHandler(this.EthernetCardAddInventory_Load);
@@ -461,7 +435,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox numberOfPortsTextBox;
         private System.Windows.Forms.TextBox speedTextBox;
         private System.Windows.Forms.TextBox slotTypeTextBox;
-        private System.Windows.Forms.DateTimePicker purchaseDateDateTimePicker;
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.Label BackBtn;

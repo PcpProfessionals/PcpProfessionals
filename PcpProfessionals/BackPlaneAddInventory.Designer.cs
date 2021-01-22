@@ -33,7 +33,6 @@ namespace PcpProfessionals
             System.Windows.Forms.Label typeLabel;
             System.Windows.Forms.Label sizeLabel;
             System.Windows.Forms.Label numberOfPortsLabel;
-            System.Windows.Forms.Label purchaseDateLabel;
             System.Windows.Forms.Label quantityLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackPlaneAddInventory));
             this.pcpProfessionalDataSet = new PcpProfessionals.PcpProfessionalDataSet();
@@ -55,7 +54,6 @@ namespace PcpProfessionals
             this.typeTextBox = new System.Windows.Forms.TextBox();
             this.sizeTextBox = new System.Windows.Forms.TextBox();
             this.numberOfPortsTextBox = new System.Windows.Forms.TextBox();
-            this.purchaseDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,7 +63,6 @@ namespace PcpProfessionals
             typeLabel = new System.Windows.Forms.Label();
             sizeLabel = new System.Windows.Forms.Label();
             numberOfPortsLabel = new System.Windows.Forms.Label();
-            purchaseDateLabel = new System.Windows.Forms.Label();
             quantityLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcpProfessionalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backPlaneBindingSource)).BeginInit();
@@ -105,17 +102,6 @@ namespace PcpProfessionals
             numberOfPortsLabel.Size = new System.Drawing.Size(125, 18);
             numberOfPortsLabel.TabIndex = 5;
             numberOfPortsLabel.Text = "Number Of Ports:";
-            // 
-            // purchaseDateLabel
-            // 
-            purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            purchaseDateLabel.Location = new System.Drawing.Point(36, 242);
-            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
-            purchaseDateLabel.TabIndex = 7;
-            purchaseDateLabel.Text = "Purchase Date:";
             // 
             // quantityLabel
             // 
@@ -295,7 +281,7 @@ namespace PcpProfessionals
             // 
             this.typeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.backPlaneBindingSource, "Type", true));
             this.typeTextBox.Location = new System.Drawing.Point(232, 68);
-            this.typeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.typeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.typeTextBox.Name = "typeTextBox";
             this.typeTextBox.Size = new System.Drawing.Size(148, 24);
             this.typeTextBox.TabIndex = 2;
@@ -304,7 +290,7 @@ namespace PcpProfessionals
             // 
             this.sizeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.backPlaneBindingSource, "Size", true));
             this.sizeTextBox.Location = new System.Drawing.Point(232, 123);
-            this.sizeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sizeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.sizeTextBox.Name = "sizeTextBox";
             this.sizeTextBox.Size = new System.Drawing.Size(148, 24);
             this.sizeTextBox.TabIndex = 4;
@@ -313,25 +299,16 @@ namespace PcpProfessionals
             // 
             this.numberOfPortsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.backPlaneBindingSource, "NumberOfPorts", true));
             this.numberOfPortsTextBox.Location = new System.Drawing.Point(232, 179);
-            this.numberOfPortsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numberOfPortsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.numberOfPortsTextBox.Name = "numberOfPortsTextBox";
             this.numberOfPortsTextBox.Size = new System.Drawing.Size(148, 24);
             this.numberOfPortsTextBox.TabIndex = 6;
-            // 
-            // purchaseDateDateTimePicker
-            // 
-            this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.backPlaneBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(232, 242);
-            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
-            this.purchaseDateDateTimePicker.TabIndex = 8;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.backPlaneBindingSource, "Quantity", true));
             this.quantityTextBox.Location = new System.Drawing.Point(596, 68);
-            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 10;
@@ -340,7 +317,7 @@ namespace PcpProfessionals
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.backPlaneBindingSource, "UnitPrice", true));
             this.unitPriceTextBox.Location = new System.Drawing.Point(596, 123);
-            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 12;
@@ -401,8 +378,6 @@ namespace PcpProfessionals
             this.Controls.Add(this.unitPriceTextBox);
             this.Controls.Add(quantityLabel);
             this.Controls.Add(this.quantityTextBox);
-            this.Controls.Add(purchaseDateLabel);
-            this.Controls.Add(this.purchaseDateDateTimePicker);
             this.Controls.Add(numberOfPortsLabel);
             this.Controls.Add(this.numberOfPortsTextBox);
             this.Controls.Add(sizeLabel);
@@ -411,7 +386,7 @@ namespace PcpProfessionals
             this.Controls.Add(this.typeTextBox);
             this.Controls.Add(this.backPlaneBindingNavigator);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BackPlaneAddInventory";
             this.Text = "BackPlaneAddInventory";
             this.Load += new System.EventHandler(this.BackPlaneAddInventory_Load);
@@ -446,7 +421,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox typeTextBox;
         private System.Windows.Forms.TextBox sizeTextBox;
         private System.Windows.Forms.TextBox numberOfPortsTextBox;
-        private System.Windows.Forms.DateTimePicker purchaseDateDateTimePicker;
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.Label label1;

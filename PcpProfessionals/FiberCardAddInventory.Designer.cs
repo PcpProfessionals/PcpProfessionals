@@ -33,7 +33,6 @@ namespace PcpProfessionals
             System.Windows.Forms.Label modelNumberLabel;
             System.Windows.Forms.Label transferRateLabel;
             System.Windows.Forms.Label numberOfPortsLabel;
-            System.Windows.Forms.Label purchaseDateLabel;
             System.Windows.Forms.Label quantityLabel;
             System.Windows.Forms.Label unitPriceLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiberCardAddInventory));
@@ -56,7 +55,6 @@ namespace PcpProfessionals
             this.modelNumberTextBox = new System.Windows.Forms.TextBox();
             this.transferRateTextBox = new System.Windows.Forms.TextBox();
             this.numberOfPortsTextBox = new System.Windows.Forms.TextBox();
-            this.purchaseDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.BackBtn = new System.Windows.Forms.Label();
@@ -64,7 +62,6 @@ namespace PcpProfessionals
             modelNumberLabel = new System.Windows.Forms.Label();
             transferRateLabel = new System.Windows.Forms.Label();
             numberOfPortsLabel = new System.Windows.Forms.Label();
-            purchaseDateLabel = new System.Windows.Forms.Label();
             quantityLabel = new System.Windows.Forms.Label();
             unitPriceLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcpProfessionalDataSet)).BeginInit();
@@ -105,17 +102,6 @@ namespace PcpProfessionals
             numberOfPortsLabel.Size = new System.Drawing.Size(125, 18);
             numberOfPortsLabel.TabIndex = 5;
             numberOfPortsLabel.Text = "Number Of Ports:";
-            // 
-            // purchaseDateLabel
-            // 
-            purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            purchaseDateLabel.Location = new System.Drawing.Point(50, 273);
-            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
-            purchaseDateLabel.TabIndex = 7;
-            purchaseDateLabel.Text = "Purchase Date:";
             // 
             // quantityLabel
             // 
@@ -260,7 +246,6 @@ namespace PcpProfessionals
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -307,7 +292,7 @@ namespace PcpProfessionals
             // 
             this.modelNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fiberCardBindingSource, "ModelNumber", true));
             this.modelNumberTextBox.Location = new System.Drawing.Point(244, 79);
-            this.modelNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modelNumberTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.modelNumberTextBox.Name = "modelNumberTextBox";
             this.modelNumberTextBox.Size = new System.Drawing.Size(148, 24);
             this.modelNumberTextBox.TabIndex = 2;
@@ -316,7 +301,7 @@ namespace PcpProfessionals
             // 
             this.transferRateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fiberCardBindingSource, "TransferRate", true));
             this.transferRateTextBox.Location = new System.Drawing.Point(244, 145);
-            this.transferRateTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.transferRateTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.transferRateTextBox.Name = "transferRateTextBox";
             this.transferRateTextBox.Size = new System.Drawing.Size(148, 24);
             this.transferRateTextBox.TabIndex = 4;
@@ -325,25 +310,16 @@ namespace PcpProfessionals
             // 
             this.numberOfPortsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fiberCardBindingSource, "NumberOfPorts", true));
             this.numberOfPortsTextBox.Location = new System.Drawing.Point(244, 205);
-            this.numberOfPortsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numberOfPortsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.numberOfPortsTextBox.Name = "numberOfPortsTextBox";
             this.numberOfPortsTextBox.Size = new System.Drawing.Size(148, 24);
             this.numberOfPortsTextBox.TabIndex = 6;
-            // 
-            // purchaseDateDateTimePicker
-            // 
-            this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.fiberCardBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(244, 273);
-            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
-            this.purchaseDateDateTimePicker.TabIndex = 8;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fiberCardBindingSource, "Quantity", true));
             this.quantityTextBox.Location = new System.Drawing.Point(668, 87);
-            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 10;
@@ -352,7 +328,7 @@ namespace PcpProfessionals
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fiberCardBindingSource, "UnitPrice", true));
             this.unitPriceTextBox.Location = new System.Drawing.Point(668, 144);
-            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 12;
@@ -390,8 +366,6 @@ namespace PcpProfessionals
             this.Controls.Add(this.unitPriceTextBox);
             this.Controls.Add(quantityLabel);
             this.Controls.Add(this.quantityTextBox);
-            this.Controls.Add(purchaseDateLabel);
-            this.Controls.Add(this.purchaseDateDateTimePicker);
             this.Controls.Add(numberOfPortsLabel);
             this.Controls.Add(this.numberOfPortsTextBox);
             this.Controls.Add(transferRateLabel);
@@ -400,7 +374,7 @@ namespace PcpProfessionals
             this.Controls.Add(this.modelNumberTextBox);
             this.Controls.Add(this.fiberCardBindingNavigator);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FiberCardAddInventory";
             this.Text = "FiberCardAddInventory";
             this.Load += new System.EventHandler(this.FiberCardAddInventory_Load);
@@ -435,7 +409,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox modelNumberTextBox;
         private System.Windows.Forms.TextBox transferRateTextBox;
         private System.Windows.Forms.TextBox numberOfPortsTextBox;
-        private System.Windows.Forms.DateTimePicker purchaseDateDateTimePicker;
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.Label BackBtn;

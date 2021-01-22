@@ -34,7 +34,6 @@ namespace PcpProfessionals
             System.Windows.Forms.Label rankLabel;
             System.Windows.Forms.Label ddrLabel;
             System.Windows.Forms.Label brandLabel;
-            System.Windows.Forms.Label purchaseDateLabel;
             System.Windows.Forms.Label quantityLabel;
             System.Windows.Forms.Label unitPriceLabel;
             System.Windows.Forms.Label heatSinkLabel;
@@ -59,7 +58,6 @@ namespace PcpProfessionals
             this.rankTextBox = new System.Windows.Forms.TextBox();
             this.ddrTextBox = new System.Windows.Forms.TextBox();
             this.brandTextBox = new System.Windows.Forms.TextBox();
-            this.purchaseDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.heatSinkCheckBox = new System.Windows.Forms.CheckBox();
@@ -69,7 +67,6 @@ namespace PcpProfessionals
             rankLabel = new System.Windows.Forms.Label();
             ddrLabel = new System.Windows.Forms.Label();
             brandLabel = new System.Windows.Forms.Label();
-            purchaseDateLabel = new System.Windows.Forms.Label();
             quantityLabel = new System.Windows.Forms.Label();
             unitPriceLabel = new System.Windows.Forms.Label();
             heatSinkLabel = new System.Windows.Forms.Label();
@@ -123,17 +120,6 @@ namespace PcpProfessionals
             brandLabel.TabIndex = 7;
             brandLabel.Text = "Brand:";
             // 
-            // purchaseDateLabel
-            // 
-            purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            purchaseDateLabel.Location = new System.Drawing.Point(13, 303);
-            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
-            purchaseDateLabel.TabIndex = 9;
-            purchaseDateLabel.Text = "Purchase Date:";
-            // 
             // quantityLabel
             // 
             quantityLabel.AutoSize = true;
@@ -160,12 +146,13 @@ namespace PcpProfessionals
             // 
             heatSinkLabel.AutoSize = true;
             heatSinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            heatSinkLabel.Location = new System.Drawing.Point(609, 305);
+            heatSinkLabel.Location = new System.Drawing.Point(13, 308);
             heatSinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             heatSinkLabel.Name = "heatSinkLabel";
             heatSinkLabel.Size = new System.Drawing.Size(69, 16);
             heatSinkLabel.TabIndex = 15;
             heatSinkLabel.Text = "Heat Sink:";
+            heatSinkLabel.Click += new System.EventHandler(this.heatSinkLabel_Click);
             // 
             // pcpProfessionalDataSet
             // 
@@ -288,7 +275,6 @@ namespace PcpProfessionals
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -335,7 +321,7 @@ namespace PcpProfessionals
             // 
             this.sizeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memoryBindingSource, "Size", true));
             this.sizeTextBox.Location = new System.Drawing.Point(153, 76);
-            this.sizeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sizeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.sizeTextBox.Name = "sizeTextBox";
             this.sizeTextBox.Size = new System.Drawing.Size(148, 24);
             this.sizeTextBox.TabIndex = 2;
@@ -344,7 +330,7 @@ namespace PcpProfessionals
             // 
             this.rankTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memoryBindingSource, "Rank", true));
             this.rankTextBox.Location = new System.Drawing.Point(153, 147);
-            this.rankTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rankTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.rankTextBox.Name = "rankTextBox";
             this.rankTextBox.Size = new System.Drawing.Size(148, 24);
             this.rankTextBox.TabIndex = 4;
@@ -354,7 +340,7 @@ namespace PcpProfessionals
             // 
             this.ddrTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memoryBindingSource, "Ddr", true));
             this.ddrTextBox.Location = new System.Drawing.Point(153, 219);
-            this.ddrTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ddrTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ddrTextBox.Name = "ddrTextBox";
             this.ddrTextBox.Size = new System.Drawing.Size(148, 24);
             this.ddrTextBox.TabIndex = 6;
@@ -363,25 +349,16 @@ namespace PcpProfessionals
             // 
             this.brandTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memoryBindingSource, "Brand", true));
             this.brandTextBox.Location = new System.Drawing.Point(646, 76);
-            this.brandTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.brandTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.brandTextBox.Name = "brandTextBox";
             this.brandTextBox.Size = new System.Drawing.Size(148, 24);
             this.brandTextBox.TabIndex = 8;
-            // 
-            // purchaseDateDateTimePicker
-            // 
-            this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.memoryBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(153, 300);
-            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
-            this.purchaseDateDateTimePicker.TabIndex = 10;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memoryBindingSource, "Quantity", true));
             this.quantityTextBox.Location = new System.Drawing.Point(646, 141);
-            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 12;
@@ -390,7 +367,7 @@ namespace PcpProfessionals
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memoryBindingSource, "UnitPrice", true));
             this.unitPriceTextBox.Location = new System.Drawing.Point(646, 219);
-            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 14;
@@ -398,8 +375,8 @@ namespace PcpProfessionals
             // heatSinkCheckBox
             // 
             this.heatSinkCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.memoryBindingSource, "HeatSink", true));
-            this.heatSinkCheckBox.Location = new System.Drawing.Point(722, 300);
-            this.heatSinkCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.heatSinkCheckBox.Location = new System.Drawing.Point(153, 291);
+            this.heatSinkCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.heatSinkCheckBox.Name = "heatSinkCheckBox";
             this.heatSinkCheckBox.Size = new System.Drawing.Size(156, 33);
             this.heatSinkCheckBox.TabIndex = 16;
@@ -440,8 +417,6 @@ namespace PcpProfessionals
             this.Controls.Add(this.unitPriceTextBox);
             this.Controls.Add(quantityLabel);
             this.Controls.Add(this.quantityTextBox);
-            this.Controls.Add(purchaseDateLabel);
-            this.Controls.Add(this.purchaseDateDateTimePicker);
             this.Controls.Add(brandLabel);
             this.Controls.Add(this.brandTextBox);
             this.Controls.Add(ddrLabel);
@@ -452,7 +427,7 @@ namespace PcpProfessionals
             this.Controls.Add(this.sizeTextBox);
             this.Controls.Add(this.memoryBindingNavigator);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MemoryAddInventory";
             this.Text = "MemoryAddInventory";
             this.Load += new System.EventHandler(this.MemoryAddInventory_Load);
@@ -488,7 +463,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox rankTextBox;
         private System.Windows.Forms.TextBox ddrTextBox;
         private System.Windows.Forms.TextBox brandTextBox;
-        private System.Windows.Forms.DateTimePicker purchaseDateDateTimePicker;
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.CheckBox heatSinkCheckBox;

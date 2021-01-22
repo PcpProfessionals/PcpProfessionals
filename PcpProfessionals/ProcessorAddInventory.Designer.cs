@@ -34,7 +34,6 @@ namespace PcpProfessionals
             System.Windows.Forms.Label cacheSizeLabel;
             System.Windows.Forms.Label typeLabel;
             System.Windows.Forms.Label speedLabel;
-            System.Windows.Forms.Label purchaseDateLabel;
             System.Windows.Forms.Label quantityLabel;
             System.Windows.Forms.Label unitPriceLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProcessorAddInventory));
@@ -58,7 +57,6 @@ namespace PcpProfessionals
             this.cacheSizeTextBox = new System.Windows.Forms.TextBox();
             this.typeTextBox = new System.Windows.Forms.TextBox();
             this.speedTextBox = new System.Windows.Forms.TextBox();
-            this.purchaseDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.BackBtn = new System.Windows.Forms.Label();
@@ -67,7 +65,6 @@ namespace PcpProfessionals
             cacheSizeLabel = new System.Windows.Forms.Label();
             typeLabel = new System.Windows.Forms.Label();
             speedLabel = new System.Windows.Forms.Label();
-            purchaseDateLabel = new System.Windows.Forms.Label();
             quantityLabel = new System.Windows.Forms.Label();
             unitPriceLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcpProfessionalDataSet)).BeginInit();
@@ -119,17 +116,6 @@ namespace PcpProfessionals
             speedLabel.Size = new System.Drawing.Size(54, 18);
             speedLabel.TabIndex = 9;
             speedLabel.Text = "Speed:";
-            // 
-            // purchaseDateLabel
-            // 
-            purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            purchaseDateLabel.Location = new System.Drawing.Point(18, 281);
-            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
-            purchaseDateLabel.TabIndex = 11;
-            purchaseDateLabel.Text = "Purchase Date:";
             // 
             // quantityLabel
             // 
@@ -274,7 +260,6 @@ namespace PcpProfessionals
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -321,7 +306,7 @@ namespace PcpProfessionals
             // 
             this.modelNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.processorBindingSource, "ModelNumber", true));
             this.modelNumberTextBox.Location = new System.Drawing.Point(243, 86);
-            this.modelNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modelNumberTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.modelNumberTextBox.Name = "modelNumberTextBox";
             this.modelNumberTextBox.Size = new System.Drawing.Size(148, 24);
             this.modelNumberTextBox.TabIndex = 2;
@@ -330,7 +315,7 @@ namespace PcpProfessionals
             // 
             this.cacheSizeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.processorBindingSource, "CacheSize", true));
             this.cacheSizeTextBox.Location = new System.Drawing.Point(681, 94);
-            this.cacheSizeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cacheSizeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cacheSizeTextBox.Name = "cacheSizeTextBox";
             this.cacheSizeTextBox.Size = new System.Drawing.Size(148, 24);
             this.cacheSizeTextBox.TabIndex = 4;
@@ -339,7 +324,7 @@ namespace PcpProfessionals
             // 
             this.typeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.processorBindingSource, "Type", true));
             this.typeTextBox.Location = new System.Drawing.Point(681, 216);
-            this.typeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.typeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.typeTextBox.Name = "typeTextBox";
             this.typeTextBox.Size = new System.Drawing.Size(148, 24);
             this.typeTextBox.TabIndex = 8;
@@ -348,25 +333,16 @@ namespace PcpProfessionals
             // 
             this.speedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.processorBindingSource, "Speed", true));
             this.speedTextBox.Location = new System.Drawing.Point(243, 154);
-            this.speedTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.speedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.speedTextBox.Name = "speedTextBox";
             this.speedTextBox.Size = new System.Drawing.Size(148, 24);
             this.speedTextBox.TabIndex = 10;
-            // 
-            // purchaseDateDateTimePicker
-            // 
-            this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.processorBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(243, 281);
-            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
-            this.purchaseDateDateTimePicker.TabIndex = 12;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.processorBindingSource, "Quantity", true));
             this.quantityTextBox.Location = new System.Drawing.Point(243, 216);
-            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 14;
@@ -375,7 +351,7 @@ namespace PcpProfessionals
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.processorBindingSource, "UnitPrice", true));
             this.unitPriceTextBox.Location = new System.Drawing.Point(681, 154);
-            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 16;
@@ -412,8 +388,6 @@ namespace PcpProfessionals
             this.Controls.Add(this.unitPriceTextBox);
             this.Controls.Add(quantityLabel);
             this.Controls.Add(this.quantityTextBox);
-            this.Controls.Add(purchaseDateLabel);
-            this.Controls.Add(this.purchaseDateDateTimePicker);
             this.Controls.Add(speedLabel);
             this.Controls.Add(this.speedTextBox);
             this.Controls.Add(typeLabel);
@@ -424,7 +398,7 @@ namespace PcpProfessionals
             this.Controls.Add(this.modelNumberTextBox);
             this.Controls.Add(this.processorBindingNavigator);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProcessorAddInventory";
             this.Text = "ProcessorAddInventory";
             this.Load += new System.EventHandler(this.ProcessorAddInventory_Load);
@@ -460,7 +434,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox cacheSizeTextBox;
         private System.Windows.Forms.TextBox typeTextBox;
         private System.Windows.Forms.TextBox speedTextBox;
-        private System.Windows.Forms.DateTimePicker purchaseDateDateTimePicker;
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.Label BackBtn;

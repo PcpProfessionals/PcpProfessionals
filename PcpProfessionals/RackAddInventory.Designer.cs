@@ -34,7 +34,6 @@ namespace PcpProfessionals
             System.Windows.Forms.Label heightLabel;
             System.Windows.Forms.Label widthLabel;
             System.Windows.Forms.Label depthLabel;
-            System.Windows.Forms.Label purchaseDateLabel;
             System.Windows.Forms.Label quantityLabel;
             System.Windows.Forms.Label unitPriceLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RackAddInventory));
@@ -58,7 +57,6 @@ namespace PcpProfessionals
             this.heightTextBox = new System.Windows.Forms.TextBox();
             this.widthTextBox = new System.Windows.Forms.TextBox();
             this.depthTextBox = new System.Windows.Forms.TextBox();
-            this.purchaseDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.BackBtn = new System.Windows.Forms.Label();
@@ -67,7 +65,6 @@ namespace PcpProfessionals
             heightLabel = new System.Windows.Forms.Label();
             widthLabel = new System.Windows.Forms.Label();
             depthLabel = new System.Windows.Forms.Label();
-            purchaseDateLabel = new System.Windows.Forms.Label();
             quantityLabel = new System.Windows.Forms.Label();
             unitPriceLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcpProfessionalDataSet)).BeginInit();
@@ -117,16 +114,6 @@ namespace PcpProfessionals
             depthLabel.Size = new System.Drawing.Size(51, 18);
             depthLabel.TabIndex = 7;
             depthLabel.Text = "Depth:";
-            // 
-            // purchaseDateLabel
-            // 
-            purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Location = new System.Drawing.Point(18, 322);
-            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
-            purchaseDateLabel.TabIndex = 9;
-            purchaseDateLabel.Text = "Purchase Date:";
             // 
             // quantityLabel
             // 
@@ -269,7 +256,6 @@ namespace PcpProfessionals
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -316,7 +302,7 @@ namespace PcpProfessionals
             // 
             this.sizeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rackBindingSource, "Size", true));
             this.sizeTextBox.Location = new System.Drawing.Point(147, 101);
-            this.sizeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sizeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.sizeTextBox.Name = "sizeTextBox";
             this.sizeTextBox.Size = new System.Drawing.Size(148, 24);
             this.sizeTextBox.TabIndex = 2;
@@ -325,7 +311,7 @@ namespace PcpProfessionals
             // 
             this.heightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rackBindingSource, "Height", true));
             this.heightTextBox.Location = new System.Drawing.Point(147, 169);
-            this.heightTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.heightTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.heightTextBox.Name = "heightTextBox";
             this.heightTextBox.Size = new System.Drawing.Size(148, 24);
             this.heightTextBox.TabIndex = 4;
@@ -334,7 +320,7 @@ namespace PcpProfessionals
             // 
             this.widthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rackBindingSource, "Width", true));
             this.widthTextBox.Location = new System.Drawing.Point(147, 246);
-            this.widthTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.widthTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.widthTextBox.Name = "widthTextBox";
             this.widthTextBox.Size = new System.Drawing.Size(148, 24);
             this.widthTextBox.TabIndex = 6;
@@ -343,25 +329,16 @@ namespace PcpProfessionals
             // 
             this.depthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rackBindingSource, "Depth", true));
             this.depthTextBox.Location = new System.Drawing.Point(639, 100);
-            this.depthTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.depthTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.depthTextBox.Name = "depthTextBox";
             this.depthTextBox.Size = new System.Drawing.Size(148, 24);
             this.depthTextBox.TabIndex = 8;
-            // 
-            // purchaseDateDateTimePicker
-            // 
-            this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.rackBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(177, 322);
-            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
-            this.purchaseDateDateTimePicker.TabIndex = 10;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rackBindingSource, "Quantity", true));
             this.quantityTextBox.Location = new System.Drawing.Point(639, 172);
-            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 12;
@@ -370,7 +347,7 @@ namespace PcpProfessionals
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rackBindingSource, "UnitPrice", true));
             this.unitPriceTextBox.Location = new System.Drawing.Point(639, 246);
-            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 14;
@@ -406,8 +383,6 @@ namespace PcpProfessionals
             this.Controls.Add(this.unitPriceTextBox);
             this.Controls.Add(quantityLabel);
             this.Controls.Add(this.quantityTextBox);
-            this.Controls.Add(purchaseDateLabel);
-            this.Controls.Add(this.purchaseDateDateTimePicker);
             this.Controls.Add(depthLabel);
             this.Controls.Add(this.depthTextBox);
             this.Controls.Add(widthLabel);
@@ -418,7 +393,7 @@ namespace PcpProfessionals
             this.Controls.Add(this.sizeTextBox);
             this.Controls.Add(this.rackBindingNavigator);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RackAddInventory";
             this.Text = "RackAddInventory";
             this.Load += new System.EventHandler(this.RackAddInventory_Load);
@@ -454,7 +429,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox heightTextBox;
         private System.Windows.Forms.TextBox widthTextBox;
         private System.Windows.Forms.TextBox depthTextBox;
-        private System.Windows.Forms.DateTimePicker purchaseDateDateTimePicker;
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.Label BackBtn;

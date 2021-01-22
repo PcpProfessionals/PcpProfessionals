@@ -53,5 +53,10 @@ namespace PcpProfessionals
 
             FormManager.GotoForm(this, addInventory);
         }
+
+        private void heatSinkLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

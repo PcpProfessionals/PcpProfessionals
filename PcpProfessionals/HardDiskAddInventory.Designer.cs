@@ -36,7 +36,6 @@ namespace PcpProfessionals
             System.Windows.Forms.Label sizeLabel;
             System.Windows.Forms.Label typeLabel;
             System.Windows.Forms.Label brandLabel;
-            System.Windows.Forms.Label purchaseDateLabel;
             System.Windows.Forms.Label quantityLabel;
             System.Windows.Forms.Label unitPriceLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HardDiskAddInventory));
@@ -62,7 +61,6 @@ namespace PcpProfessionals
             this.sizeTextBox = new System.Windows.Forms.TextBox();
             this.typeTextBox = new System.Windows.Forms.TextBox();
             this.brandTextBox = new System.Windows.Forms.TextBox();
-            this.purchaseDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.BackBtn = new System.Windows.Forms.Label();
@@ -73,7 +71,6 @@ namespace PcpProfessionals
             sizeLabel = new System.Windows.Forms.Label();
             typeLabel = new System.Windows.Forms.Label();
             brandLabel = new System.Windows.Forms.Label();
-            purchaseDateLabel = new System.Windows.Forms.Label();
             quantityLabel = new System.Windows.Forms.Label();
             unitPriceLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcpProfessionalDataSet)).BeginInit();
@@ -147,17 +144,6 @@ namespace PcpProfessionals
             brandLabel.Size = new System.Drawing.Size(51, 18);
             brandLabel.TabIndex = 11;
             brandLabel.Text = "Brand:";
-            // 
-            // purchaseDateLabel
-            // 
-            purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            purchaseDateLabel.Location = new System.Drawing.Point(46, 343);
-            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
-            purchaseDateLabel.TabIndex = 13;
-            purchaseDateLabel.Text = "Purchase Date:";
             // 
             // quantityLabel
             // 
@@ -302,7 +288,6 @@ namespace PcpProfessionals
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -349,7 +334,7 @@ namespace PcpProfessionals
             // 
             this.partNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.harddiskBindingSource, "PartNumber", true));
             this.partNumberTextBox.Location = new System.Drawing.Point(214, 100);
-            this.partNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.partNumberTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.partNumberTextBox.Name = "partNumberTextBox";
             this.partNumberTextBox.Size = new System.Drawing.Size(148, 24);
             this.partNumberTextBox.TabIndex = 2;
@@ -358,7 +343,7 @@ namespace PcpProfessionals
             // 
             this.capacityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.harddiskBindingSource, "Capacity", true));
             this.capacityTextBox.Location = new System.Drawing.Point(214, 154);
-            this.capacityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.capacityTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.capacityTextBox.Name = "capacityTextBox";
             this.capacityTextBox.Size = new System.Drawing.Size(148, 24);
             this.capacityTextBox.TabIndex = 4;
@@ -367,7 +352,7 @@ namespace PcpProfessionals
             // 
             this.rPMTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.harddiskBindingSource, "RPM", true));
             this.rPMTextBox.Location = new System.Drawing.Point(214, 216);
-            this.rPMTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rPMTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.rPMTextBox.Name = "rPMTextBox";
             this.rPMTextBox.Size = new System.Drawing.Size(148, 24);
             this.rPMTextBox.TabIndex = 6;
@@ -376,7 +361,7 @@ namespace PcpProfessionals
             // 
             this.sizeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.harddiskBindingSource, "Size", true));
             this.sizeTextBox.Location = new System.Drawing.Point(214, 274);
-            this.sizeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sizeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.sizeTextBox.Name = "sizeTextBox";
             this.sizeTextBox.Size = new System.Drawing.Size(148, 24);
             this.sizeTextBox.TabIndex = 8;
@@ -385,7 +370,7 @@ namespace PcpProfessionals
             // 
             this.typeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.harddiskBindingSource, "Type", true));
             this.typeTextBox.Location = new System.Drawing.Point(698, 216);
-            this.typeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.typeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.typeTextBox.Name = "typeTextBox";
             this.typeTextBox.Size = new System.Drawing.Size(148, 24);
             this.typeTextBox.TabIndex = 10;
@@ -394,25 +379,16 @@ namespace PcpProfessionals
             // 
             this.brandTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.harddiskBindingSource, "Brand", true));
             this.brandTextBox.Location = new System.Drawing.Point(698, 270);
-            this.brandTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.brandTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.brandTextBox.Name = "brandTextBox";
             this.brandTextBox.Size = new System.Drawing.Size(148, 24);
             this.brandTextBox.TabIndex = 12;
-            // 
-            // purchaseDateDateTimePicker
-            // 
-            this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.harddiskBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(214, 341);
-            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
-            this.purchaseDateDateTimePicker.TabIndex = 14;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.harddiskBindingSource, "Quantity", true));
             this.quantityTextBox.Location = new System.Drawing.Point(698, 100);
-            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 16;
@@ -421,7 +397,7 @@ namespace PcpProfessionals
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.harddiskBindingSource, "UnitPrice", true));
             this.unitPriceTextBox.Location = new System.Drawing.Point(698, 158);
-            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 18;
@@ -458,8 +434,6 @@ namespace PcpProfessionals
             this.Controls.Add(this.unitPriceTextBox);
             this.Controls.Add(quantityLabel);
             this.Controls.Add(this.quantityTextBox);
-            this.Controls.Add(purchaseDateLabel);
-            this.Controls.Add(this.purchaseDateDateTimePicker);
             this.Controls.Add(brandLabel);
             this.Controls.Add(this.brandTextBox);
             this.Controls.Add(typeLabel);
@@ -474,7 +448,7 @@ namespace PcpProfessionals
             this.Controls.Add(this.partNumberTextBox);
             this.Controls.Add(this.harddiskBindingNavigator);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HardDiskAddInventory";
             this.Text = "HardDiskAddInventory";
             this.Load += new System.EventHandler(this.HardDiskAddInventory_Load);
@@ -512,7 +486,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox sizeTextBox;
         private System.Windows.Forms.TextBox typeTextBox;
         private System.Windows.Forms.TextBox brandTextBox;
-        private System.Windows.Forms.DateTimePicker purchaseDateDateTimePicker;
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.Label BackBtn;

@@ -34,7 +34,6 @@ namespace PcpProfessionals
             System.Windows.Forms.Label wattLabel;
             System.Windows.Forms.Label numberOfPortsLabel;
             System.Windows.Forms.Label brandLabel;
-            System.Windows.Forms.Label purchaseDateLabel;
             System.Windows.Forms.Label quantityLabel;
             System.Windows.Forms.Label unitPriceLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PowerSupplyAddInventory));
@@ -58,7 +57,6 @@ namespace PcpProfessionals
             this.wattTextBox = new System.Windows.Forms.TextBox();
             this.numberOfPortsTextBox = new System.Windows.Forms.TextBox();
             this.brandTextBox = new System.Windows.Forms.TextBox();
-            this.purchaseDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.BackBtn = new System.Windows.Forms.Label();
@@ -67,7 +65,6 @@ namespace PcpProfessionals
             wattLabel = new System.Windows.Forms.Label();
             numberOfPortsLabel = new System.Windows.Forms.Label();
             brandLabel = new System.Windows.Forms.Label();
-            purchaseDateLabel = new System.Windows.Forms.Label();
             quantityLabel = new System.Windows.Forms.Label();
             unitPriceLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcpProfessionalDataSet)).BeginInit();
@@ -119,17 +116,6 @@ namespace PcpProfessionals
             brandLabel.Size = new System.Drawing.Size(51, 18);
             brandLabel.TabIndex = 7;
             brandLabel.Text = "Brand:";
-            // 
-            // purchaseDateLabel
-            // 
-            purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            purchaseDateLabel.Location = new System.Drawing.Point(12, 343);
-            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
-            purchaseDateLabel.TabIndex = 9;
-            purchaseDateLabel.Text = "Purchase Date:";
             // 
             // quantityLabel
             // 
@@ -274,7 +260,6 @@ namespace PcpProfessionals
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -321,7 +306,7 @@ namespace PcpProfessionals
             // 
             this.modelNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.powerSupplyBindingSource, "ModelNumber", true));
             this.modelNumberTextBox.Location = new System.Drawing.Point(236, 93);
-            this.modelNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modelNumberTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.modelNumberTextBox.Name = "modelNumberTextBox";
             this.modelNumberTextBox.Size = new System.Drawing.Size(148, 24);
             this.modelNumberTextBox.TabIndex = 2;
@@ -330,7 +315,7 @@ namespace PcpProfessionals
             // 
             this.wattTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.powerSupplyBindingSource, "Watt", true));
             this.wattTextBox.Location = new System.Drawing.Point(236, 147);
-            this.wattTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.wattTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.wattTextBox.Name = "wattTextBox";
             this.wattTextBox.Size = new System.Drawing.Size(148, 24);
             this.wattTextBox.TabIndex = 4;
@@ -339,7 +324,7 @@ namespace PcpProfessionals
             // 
             this.numberOfPortsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.powerSupplyBindingSource, "NumberOfPorts", true));
             this.numberOfPortsTextBox.Location = new System.Drawing.Point(236, 262);
-            this.numberOfPortsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numberOfPortsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.numberOfPortsTextBox.Name = "numberOfPortsTextBox";
             this.numberOfPortsTextBox.Size = new System.Drawing.Size(148, 24);
             this.numberOfPortsTextBox.TabIndex = 6;
@@ -348,25 +333,16 @@ namespace PcpProfessionals
             // 
             this.brandTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.powerSupplyBindingSource, "Brand", true));
             this.brandTextBox.Location = new System.Drawing.Point(236, 206);
-            this.brandTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.brandTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.brandTextBox.Name = "brandTextBox";
             this.brandTextBox.Size = new System.Drawing.Size(148, 24);
             this.brandTextBox.TabIndex = 8;
-            // 
-            // purchaseDateDateTimePicker
-            // 
-            this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.powerSupplyBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(237, 337);
-            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
-            this.purchaseDateDateTimePicker.TabIndex = 10;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.powerSupplyBindingSource, "Quantity", true));
             this.quantityTextBox.Location = new System.Drawing.Point(612, 87);
-            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 12;
@@ -375,7 +351,7 @@ namespace PcpProfessionals
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.powerSupplyBindingSource, "UnitPrice", true));
             this.unitPriceTextBox.Location = new System.Drawing.Point(612, 147);
-            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 14;
@@ -412,8 +388,6 @@ namespace PcpProfessionals
             this.Controls.Add(this.unitPriceTextBox);
             this.Controls.Add(quantityLabel);
             this.Controls.Add(this.quantityTextBox);
-            this.Controls.Add(purchaseDateLabel);
-            this.Controls.Add(this.purchaseDateDateTimePicker);
             this.Controls.Add(brandLabel);
             this.Controls.Add(this.brandTextBox);
             this.Controls.Add(numberOfPortsLabel);
@@ -424,7 +398,7 @@ namespace PcpProfessionals
             this.Controls.Add(this.modelNumberTextBox);
             this.Controls.Add(this.powerSupplyBindingNavigator);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PowerSupplyAddInventory";
             this.Text = "PowerSupplyAddInventory";
             this.Load += new System.EventHandler(this.PowerSupplyAddInventory_Load);
@@ -460,7 +434,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox wattTextBox;
         private System.Windows.Forms.TextBox numberOfPortsTextBox;
         private System.Windows.Forms.TextBox brandTextBox;
-        private System.Windows.Forms.DateTimePicker purchaseDateDateTimePicker;
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
         private System.Windows.Forms.Label BackBtn;

@@ -33,7 +33,6 @@ namespace PcpProfessionals
             System.Windows.Forms.Label serverModelLabel;
             System.Windows.Forms.Label quantityLabel;
             System.Windows.Forms.Label unitPriceLabel;
-            System.Windows.Forms.Label purchaseDateLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HeatSinkAddInventory));
             this.pcpProfessionalDataSet = new PcpProfessionals.PcpProfessionalDataSet();
             this.heatSinkBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -54,13 +53,11 @@ namespace PcpProfessionals
             this.serverModelTextBox = new System.Windows.Forms.TextBox();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.unitPriceTextBox = new System.Windows.Forms.TextBox();
-            this.purchaseDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Back = new System.Windows.Forms.Label();
             this.ComponentNameLbl = new System.Windows.Forms.Label();
             serverModelLabel = new System.Windows.Forms.Label();
             quantityLabel = new System.Windows.Forms.Label();
             unitPriceLabel = new System.Windows.Forms.Label();
-            purchaseDateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcpProfessionalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heatSinkBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heatSinkBindingNavigator)).BeginInit();
@@ -99,17 +96,6 @@ namespace PcpProfessionals
             unitPriceLabel.Size = new System.Drawing.Size(76, 18);
             unitPriceLabel.TabIndex = 5;
             unitPriceLabel.Text = "Unit Price:";
-            // 
-            // purchaseDateLabel
-            // 
-            purchaseDateLabel.AutoSize = true;
-            purchaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            purchaseDateLabel.Location = new System.Drawing.Point(13, 324);
-            purchaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            purchaseDateLabel.Name = "purchaseDateLabel";
-            purchaseDateLabel.Size = new System.Drawing.Size(110, 18);
-            purchaseDateLabel.TabIndex = 7;
-            purchaseDateLabel.Text = "Purchase Date:";
             // 
             // pcpProfessionalDataSet
             // 
@@ -232,7 +218,6 @@ namespace PcpProfessionals
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -279,7 +264,7 @@ namespace PcpProfessionals
             // 
             this.serverModelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.heatSinkBindingSource, "ServerModel", true));
             this.serverModelTextBox.Location = new System.Drawing.Point(202, 101);
-            this.serverModelTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.serverModelTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.serverModelTextBox.Name = "serverModelTextBox";
             this.serverModelTextBox.Size = new System.Drawing.Size(148, 24);
             this.serverModelTextBox.TabIndex = 2;
@@ -288,7 +273,7 @@ namespace PcpProfessionals
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.heatSinkBindingSource, "Quantity", true));
             this.quantityTextBox.Location = new System.Drawing.Point(202, 177);
-            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(148, 24);
             this.quantityTextBox.TabIndex = 4;
@@ -297,19 +282,10 @@ namespace PcpProfessionals
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.heatSinkBindingSource, "UnitPrice", true));
             this.unitPriceTextBox.Location = new System.Drawing.Point(202, 244);
-            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(148, 24);
             this.unitPriceTextBox.TabIndex = 6;
-            // 
-            // purchaseDateDateTimePicker
-            // 
-            this.purchaseDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.heatSinkBindingSource, "PurchaseDate", true));
-            this.purchaseDateDateTimePicker.Location = new System.Drawing.Point(202, 324);
-            this.purchaseDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.purchaseDateDateTimePicker.Name = "purchaseDateDateTimePicker";
-            this.purchaseDateDateTimePicker.Size = new System.Drawing.Size(298, 24);
-            this.purchaseDateDateTimePicker.TabIndex = 8;
             // 
             // Back
             // 
@@ -338,8 +314,6 @@ namespace PcpProfessionals
             this.ClientSize = new System.Drawing.Size(948, 446);
             this.Controls.Add(this.ComponentNameLbl);
             this.Controls.Add(this.Back);
-            this.Controls.Add(purchaseDateLabel);
-            this.Controls.Add(this.purchaseDateDateTimePicker);
             this.Controls.Add(unitPriceLabel);
             this.Controls.Add(this.unitPriceTextBox);
             this.Controls.Add(quantityLabel);
@@ -348,7 +322,7 @@ namespace PcpProfessionals
             this.Controls.Add(this.serverModelTextBox);
             this.Controls.Add(this.heatSinkBindingNavigator);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HeatSinkAddInventory";
             this.Text = "HeatSinkAddInventory";
             this.Load += new System.EventHandler(this.HeatSinkAddInventory_Load);
@@ -383,7 +357,6 @@ namespace PcpProfessionals
         private System.Windows.Forms.TextBox serverModelTextBox;
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox unitPriceTextBox;
-        private System.Windows.Forms.DateTimePicker purchaseDateDateTimePicker;
         private System.Windows.Forms.Label Back;
         private System.Windows.Forms.Label ComponentNameLbl;
     }
