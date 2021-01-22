@@ -31,7 +31,6 @@ namespace PcpProfessionals
             this.Validate();
             this.harddiskBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.pcpProfessionalDataSet);
-
         }
 
         private void HardDiskAddInventory_Load(object sender, EventArgs e)

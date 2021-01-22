@@ -86,7 +86,6 @@
     <Compile Include="Entities\Components\TFTConsoleEntity.cs" />
     <Compile Include="Entities\Components\ThinClientEntity.cs" />
     <Compile Include="Entities\Components\ZeroClientEntity.cs" />
-    <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Migrations\202012311325260_InitialCreate.cs" />
     <Compile Include="Migrations\202012311325260_InitialCreate.designer.cs">
       <DependentUpon>202012311325260_InitialCreate.cs</DependentUpon>
@@ -110,6 +109,10 @@
     <Compile Include="Migrations\202101110704431_AddingBaseEntityChanges.cs" />
     <Compile Include="Migrations\202101110704431_AddingBaseEntityChanges.designer.cs">
       <DependentUpon>202101110704431_AddingBaseEntityChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101220934139_AddColumnsToBaseEntity.cs" />
+    <Compile Include="Migrations\202101220934139_AddColumnsToBaseEntity.designer.cs">
+      <DependentUpon>202101220934139_AddColumnsToBaseEntity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -152,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101110704431_AddingBaseEntityChanges.resx">
       <DependentUpon>202101110704431_AddingBaseEntityChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101220934139_AddColumnsToBaseEntity.resx">
+      <DependentUpon>202101220934139_AddColumnsToBaseEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

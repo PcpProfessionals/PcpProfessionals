@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    public class BaseComponentEntity : IEntity
+    public class BaseComponentEntity 
     {
-        public DateTime PurchaseDate { get; set; }
         public int Quantity { get; set; }
         public double UnitPrice { get; set; }
-        public DateTime? ModifiedDate { get; set; }
+        public double SellingPrice { get; set; }
+        public double AveragePrice { get; set; }
+        public double PurchasingPrice { get; set; }
     }
 }
